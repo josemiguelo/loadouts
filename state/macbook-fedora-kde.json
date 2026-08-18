@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:05:24.857591647Z",
+  "updatedAt": "2026-08-18T06:13:34.590404505Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -102,6 +102,10 @@
     "code": {
       "status": "installed",
       "version": "1.133.0"
+    },
+    "antigravity": {
+      "status": "installed",
+      "version": "1.107.0"
     },
     "vlc": {
       "status": "installed",
