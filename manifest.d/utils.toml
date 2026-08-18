@@ -92,3 +92,8 @@ check = "test -f $HOME/.ssh/$1 && grep -q 'AddKeysToAgent yes' $HOME/.ssh/config
 description = "git identity and delta configuration"
 file = "scripts/setup-git.sh"
 check = "test -n \"$(git config --global user.email)\" && test \"$(git config --global core.pager)\" = delta && test \"$(git config --global merge.conflictStyle)\" = zdiff3"
+
+[scripts.download-fonts]
+description = "FiraCode nerd fonts"
+file = "scripts/download-fonts.sh"
+check = "ls \"$HOME/.local/share/fonts/Fira Code\"* >/dev/null 2>&1"
