@@ -108,3 +108,8 @@ description = "symlink JetBrains Toolbox launcher scripts into ~/.local/bin"
 file = "scripts/link-jetbrains-launchers.sh"
 check = "sh scripts/link-jetbrains-launchers.sh check"
 after = ["programs.jetbrains-toolbox"]
+
+[scripts.setup-dnf]
+description = "dnf.conf performance and behavior tweaks"
+file = "scripts/setup-dnf.sh"
+check = "sh scripts/setup-dnf.sh check"

@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T07:40:08.528743086Z",
+  "updatedAt": "2026-08-18T07:49:48.238271134Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -295,7 +295,12 @@
       "exitCode": 0
     },
     "link-jetbrains-launchers": {
-      "status": "pending",
+      "status": "done",
+      "lastRun": "2026-08-18T07:49:48.102535453Z",
+      "exitCode": 0
+    },
+    "setup-dnf": {
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     }

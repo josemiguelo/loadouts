@@ -9,6 +9,7 @@ scripts = [
   "download-fonts",
   "setup-completions",
   "link-jetbrains-launchers",
+  "setup-dnf",
 ]
 
 [pm]
