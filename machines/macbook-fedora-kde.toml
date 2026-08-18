@@ -11,6 +11,7 @@ scripts = [
   "link-jetbrains-launchers",
   "setup-dnf",
   "remove-shadowed-rpms",
+  "setup-libvirt",
 ]
 
 [pm]
@@ -40,6 +41,7 @@ gdbm-devel = "dnf"
 ncurses-devel = "dnf"
 perl-FindBin = "dnf"
 development-tools-group = "dnf"
+virtualization = "dnf"
 kitty = "dnf"
 code = "dnf"
 antigravity = "dnf"

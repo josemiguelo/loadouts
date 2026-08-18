@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T07:53:36.321983489Z",
+  "updatedAt": "2026-08-18T16:37:02.552720165Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -227,6 +227,10 @@
       "status": "installed",
       "version": "0.18.0"
     },
+    "virtualization": {
+      "status": "installed",
+      "version": "12.0.0"
+    },
     "vlc": {
       "status": "installed",
       "version": "3.0.23"
@@ -333,6 +337,11 @@
       "exitCode": null
     },
     "remove-shadowed-rpms": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "setup-libvirt": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
