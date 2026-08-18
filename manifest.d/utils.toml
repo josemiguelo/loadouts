@@ -1,0 +1,18 @@
+############
+## SOLAAR ##
+############
+[programs.solaar]
+description = "Logitech device manager"
+
+[programs.solaar.version]
+command = "solaar --version 2>/dev/null || rpm -q solaar"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.solaar.install]
+dnf = "sudo dnf install -y solaar"
+
+[scripts.solaar-no-autostart]
+description = "remove solaar autostart entry"
+run = "sudo rm -f /etc/xdg/autostart/solaar.desktop"
+check = "test ! -f /etc/xdg/autostart/solaar.desktop"
+after = ["programs.solaar"]

@@ -1,0 +1,10 @@
+[programs.development-libs]
+description = "development libraries for general-purpose programming"
+
+# The package list lives once, in the script; check and install can't drift.
+[programs.development-libs.version]
+command = "sh scripts/development-libs.sh check"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.development-libs.install]
+dnf = "file:scripts/development-libs.sh install"

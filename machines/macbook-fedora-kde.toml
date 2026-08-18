@@ -1,0 +1,6 @@
+# Per-machine config for "macbook-fedora-kde" (Fedora, KDE).
+[pm]
+vlc = "dnf"
+okular = "dnf"
+solaar = "dnf"
+development-libs = "dnf"

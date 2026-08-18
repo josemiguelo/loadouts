@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "machine": "macbook-fedora-kde",
+  "os": "linux",
+  "distro": "fedora",
+  "arch": "x86_64",
+  "toolVersion": "0.1.0",
+  "updatedAt": "2026-08-18T04:20:12.283252700Z",
+  "programs": {
+    "development-libs": {
+      "status": "installed",
+      "version": "1.16.2"
+    },
+    "vlc": {
+      "status": "installed",
+      "version": "3.0.23"
+    },
+    "okular": {
+      "status": "installed",
+      "version": "26.04.3"
+    },
+    "solaar": {
+      "status": "installed",
+      "version": "1.1.20"
+    }
+  },
+  "scripts": {
+    "solaar-no-autostart": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    }
+  }
+}

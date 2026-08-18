@@ -1,0 +1,12 @@
+#########
+## VLC ##
+#########
+[programs.vlc]
+description = "VLC media player"
+
+[programs.vlc.version]
+command = "vlc --version 2>/dev/null | head -1 || rpm -q vlc"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.vlc.install]
+dnf = "sudo dnf install -y vlc"
