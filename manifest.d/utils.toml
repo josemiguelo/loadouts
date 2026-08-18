@@ -82,3 +82,8 @@ description = "clone and apply the chezmoi dotfiles"
 file = "scripts/chezmoi-init.sh"
 check = "test -d $HOME/.local/share/chezmoi"
 after = ["programs.chezmoi"]
+
+[scripts.setup-ssh]
+description = "machine ssh key and agent auto-add config"
+file = "scripts/setup-ssh.sh"
+check = "test -f $HOME/.ssh/$1 && grep -q 'AddKeysToAgent yes' $HOME/.ssh/config"
