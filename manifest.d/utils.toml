@@ -102,3 +102,9 @@ check = "ls \"$HOME/.local/share/fonts/Fira Code\"* >/dev/null 2>&1"
 description = "shell completions"
 file = "scripts/setup-completions.sh"
 check = "sh scripts/setup-completions.sh check"
+
+[scripts.link-jetbrains-launchers]
+description = "symlink JetBrains Toolbox launcher scripts into ~/.local/bin"
+file = "scripts/link-jetbrains-launchers.sh"
+check = "sh scripts/link-jetbrains-launchers.sh check"
+after = ["programs.jetbrains-toolbox"]

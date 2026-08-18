@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T07:18:18.450202940Z",
+  "updatedAt": "2026-08-18T07:40:08.528743086Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -86,6 +86,10 @@
     "ngrok": {
       "status": "installed",
       "version": "3.39.9"
+    },
+    "jumpkwapp": {
+      "status": "installed",
+      "version": "0.01"
     },
     "konsole": {
       "status": "installed",
@@ -289,6 +293,11 @@
       "status": "done",
       "lastRun": "2026-08-18T07:18:18.338755671Z",
       "exitCode": 0
+    },
+    "link-jetbrains-launchers": {
+      "status": "pending",
+      "lastRun": null,
+      "exitCode": null
     }
   }
 }

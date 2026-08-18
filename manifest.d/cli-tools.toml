@@ -86,3 +86,14 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.ngrok.install]
 script = "file:scripts/install-ngrok.sh"
+
+# jumpkwapp has no --version flag; the check reports the pinned release.
+[programs.jumpkwapp]
+description = "jumpkwapp window jumper"
+
+[programs.jumpkwapp.version]
+command = "test -x $HOME/.local/bin/jumpkwapp && echo 0.01"
+regex = "([0-9][0-9.]*)"
+
+[programs.jumpkwapp.install]
+script = "file:scripts/install-jumpkwapp.sh"
