@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:15:25.647428215Z",
+  "updatedAt": "2026-08-18T06:16:43.195068136Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -126,6 +126,10 @@
     "firefox": {
       "status": "installed",
       "version": "153.0.3"
+    },
+    "1password": {
+      "status": "installed",
+      "version": "8.12.32"
     }
   },
   "scripts": {
