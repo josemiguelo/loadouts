@@ -97,3 +97,24 @@ regex = "([0-9][0-9.]*)"
 
 [programs.jumpkwapp.install]
 script = "file:scripts/install-jumpkwapp.sh"
+
+[programs.just]
+template = "pkg"
+
+[programs.vim-enhanced]
+template = "pkg"
+
+[programs.curl]
+template = "pkg"
+
+[programs.git]
+template = "pkg"
+
+[programs.procps-ng]
+template = "pkg"
+
+[programs.libxcrypt-compat]
+template = "pkg"
+
+[programs.zsh]
+template = "pkg"

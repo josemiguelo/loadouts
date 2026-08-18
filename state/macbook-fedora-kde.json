@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T07:49:48.238271134Z",
+  "updatedAt": "2026-08-18T07:52:00.544291624Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -90,6 +90,34 @@
     "jumpkwapp": {
       "status": "installed",
       "version": "0.01"
+    },
+    "just": {
+      "status": "installed",
+      "version": "1.57.0"
+    },
+    "vim-enhanced": {
+      "status": "installed",
+      "version": "9.2.920"
+    },
+    "curl": {
+      "status": "installed",
+      "version": "8.21.0"
+    },
+    "git": {
+      "status": "installed",
+      "version": "2.55.0"
+    },
+    "procps-ng": {
+      "status": "installed",
+      "version": "4.0.6"
+    },
+    "libxcrypt-compat": {
+      "status": "installed",
+      "version": "4.5.2"
+    },
+    "zsh": {
+      "status": "installed",
+      "version": "5.9"
     },
     "konsole": {
       "status": "installed",
