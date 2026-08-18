@@ -1,2 +1,2 @@
 [programs.yazi]
-template = "pkg"
+via = ["brew"]

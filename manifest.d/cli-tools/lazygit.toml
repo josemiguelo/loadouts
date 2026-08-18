@@ -1,2 +1,2 @@
 [programs.lazygit]
-template = "pkg"
+via = ["brew"]

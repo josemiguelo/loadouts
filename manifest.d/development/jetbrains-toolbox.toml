@@ -1,16 +1,17 @@
+# The linux cask lives in the ublue-os tap (see ublue-os-tap.toml).
 [programs.jetbrains-toolbox]
 description = "JetBrains Toolbox"
+depends-on = ["ublue-os-tap"]
 
 [programs.jetbrains-toolbox.install.brew-linux]
 installer = "brew-cask"
 pkg = "jetbrains-toolbox-linux"
-command = "brew tap ublue-os/tap && brew trust ublue-os/tap && brew install --cask jetbrains-toolbox-linux"
 
 [programs.jetbrains-toolbox.install.brew-macos]
 installer = "brew-cask"
 
-[scripts.link-jetbrains-launchers]
+[scripts.link-jetbrains-launchers-linux]
 description = "symlink JetBrains Toolbox launcher scripts into ~/.local/bin"
-file = "scripts/link-jetbrains-launchers.sh"
-check = "sh scripts/link-jetbrains-launchers.sh check"
+file = "scripts/link-jetbrains-launchers-linux.sh"
+check = "file:scripts/link-jetbrains-launchers-linux.sh check"
 after = ["programs.jetbrains-toolbox"]

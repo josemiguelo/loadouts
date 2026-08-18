@@ -1,4 +1,4 @@
 [scripts.setup-completions]
 description = "shell completions"
 file = "scripts/setup-completions.sh"
-check = "sh scripts/setup-completions.sh check"
+check = "file:scripts/setup-completions.sh check"

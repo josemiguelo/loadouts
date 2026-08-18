@@ -1,0 +1,11 @@
+# dnf.conf tweaks must land before anything is installed with dnf. Programs
+# with no dependency edges install in declaration order (fragments sorted by
+# path), so this file's 00_ prefix at the manifest.d root is what puts it
+# first — keep it sorting before every program-declaring fragment.
+[programs.setup-dnf]
+description = "dnf.conf performance and behavior tweaks"
+
+[programs.setup-dnf.install.dnf]
+command = "file:scripts/setup-dnf.sh install"
+check = "file:scripts/setup-dnf.sh check && echo configured"
+regex = "(configured)"

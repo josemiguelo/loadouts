@@ -1,2 +1,2 @@
 [programs.zoxide]
-template = "pkg"
+via = ["brew"]

@@ -1,2 +1,2 @@
 [programs.bat]
-template = "pkg"
+via = ["brew"]

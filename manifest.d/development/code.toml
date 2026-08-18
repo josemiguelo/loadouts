@@ -1,5 +1,0 @@
-[programs.code]
-description = "Visual Studio Code"
-
-[programs.code.install.dnf]
-command = "file:scripts/install-vscode-fedora.sh"

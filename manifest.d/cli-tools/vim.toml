@@ -1,2 +1,2 @@
 [programs.vim-enhanced]
-template = "pkg"
+via = ["dnf"]

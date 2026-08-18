@@ -1,3 +1,0 @@
-[programs.konsole]
-template = "pkg"
-description = "KDE terminal emulator"

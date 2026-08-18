@@ -8,8 +8,7 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 [programs.asdf.install.script]
 command = "file:scripts/install-asdf.sh"
 
-# Installs plugin-manager on first run; rerun with --force after adding tools
-# to ~/.tool-versions.
+# Installs plugin-manager on first run; rerun with --force after adding tools to ~/.tool-versions.
 [scripts.asdf-tools]
 description = "asdf plugins and tool builds from ~/.tool-versions"
 file = "scripts/asdf-tools.sh"

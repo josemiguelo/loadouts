@@ -11,66 +11,72 @@ check = "dnf group list --installed 2>/dev/null | grep '^development-tools '"
 regex = "(development-tools)"
 
 [programs.gcc]
-template = "pkg"
+via = ["dnf"]
 
 [programs.autoconf]
-template = "pkg"
+via = ["dnf"]
 
 [programs.patch]
-template = "pkg"
+via = ["dnf"]
 
 [programs.rust]
-template = "pkg"
+via = ["dnf"]
 
 [programs.findutils]
-template = "pkg"
+via = ["dnf"]
 
 [programs.zlib-devel]
-template = "pkg"
+via = ["dnf"]
 
 # Virtual provide on modern Fedora: override the dnf installer's check.
 [programs.zlib-devel.install.dnf]
 check = "rpm -q --whatprovides zlib-devel"
 
 [programs.bzip2-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.readline-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.sqlite]
-template = "pkg"
+via = ["dnf"]
 
 [programs.sqlite-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.openssl-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.xz-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.libffi-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.tk-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.libzstd-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.libyaml-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.gdbm-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.ncurses-devel]
-template = "pkg"
+via = ["dnf"]
 
 [programs.dbus-devel]
-template = "pkg"
+via = ["dnf"]
 description = "D-Bus development headers"
 
 [programs.perl-FindBin]
-template = "pkg"
+via = ["dnf"]
+
+[programs.libxcrypt-compat]
+via = ["dnf"]
+
+[programs.procps-ng]
+via = ["dnf"]

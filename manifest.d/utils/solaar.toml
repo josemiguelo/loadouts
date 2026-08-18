@@ -1,5 +1,5 @@
 [programs.solaar]
-template = "pkg"
+via = ["dnf"]
 description = "Logitech device manager"
 
 [scripts.solaar-no-autostart]

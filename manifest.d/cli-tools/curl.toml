@@ -1,2 +1,2 @@
 [programs.curl]
-template = "pkg"
+via = ["dnf"]

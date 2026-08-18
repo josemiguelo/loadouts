@@ -6,18 +6,6 @@ install = "sudo dnf install -y {pkg}"
 check = "rpm -q {pkg}"
 regex = "([0-9]+\\.[0-9][0-9.]*)"
 
-[installers.apt]
-probe = "apt-get"
-install = "sudo apt-get install -y {pkg}"
-check = "dpkg-query -W {pkg}"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[installers.pacman]
-probe = "pacman"
-install = "sudo pacman -S --noconfirm {pkg}"
-check = "pacman -Q {pkg}"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
 [installers.brew]
 probe = "brew"
 install = "brew install {pkg}"
@@ -36,9 +24,3 @@ probe = "flatpak"
 install = "flatpak --user install -y flathub {pkg}"
 check = "flatpak --user info {pkg}"
 regex = "Version: ([0-9][0-9.]*)"
-
-# Standard native package, manager-neutral: programs opt in with
-# template = "pkg", and each machine's machines/<name>.toml picks which
-# install key (= installer) it uses.
-[templates.pkg]
-via = ["dnf", "apt", "pacman", "brew"]

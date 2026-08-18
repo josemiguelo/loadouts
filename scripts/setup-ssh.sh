@@ -3,7 +3,12 @@
 # usage: setup-ssh.sh <key-name>   (key lands at ~/.ssh/<key-name>)
 set -eu
 
-SSH_KEY="$HOME/.ssh/${1:?usage: setup-ssh.sh <key-name>}"
+if [ -z "${1:-}" ]; then
+  echo "error: no key name given" >&2
+  echo "usage: setup-ssh.sh <key-name>" >&2
+  exit 2
+fi
+SSH_KEY="$HOME/.ssh/$1"
 
 if [ ! -f "$SSH_KEY" ]; then
   ssh-keygen -t ed25519 -C "josemiguelo.ochoa@gmail.com" -f "$SSH_KEY" -N ""

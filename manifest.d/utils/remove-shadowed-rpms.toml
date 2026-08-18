@@ -1,4 +1,0 @@
-[scripts.remove-shadowed-rpms]
-description = "remove rpm packages that the brew versions own (tmux, bat)"
-file = "scripts/remove-shadowed-rpms.sh"
-check = "sh scripts/remove-shadowed-rpms.sh check"

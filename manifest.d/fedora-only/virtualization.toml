@@ -4,7 +4,7 @@ description = "virtualization stack (libvirt, qemu, virt-manager)"
 # A dnf group, not a package: the two-mode script is the check oracle.
 [programs.virtualization.install.dnf]
 command = "file:scripts/virtualization.sh install"
-check = "sh scripts/virtualization.sh check"
+check = "file:scripts/virtualization.sh check"
 
 # The source script ran usermod as root ($(whoami) bug) — the intent was the
 # login user, which is what this does.

@@ -1,0 +1,19 @@
+[programs.code]
+description = "Visual Studio Code"
+
+[programs.code.install.dnf]
+command = "file:scripts/install-vscode-fedora.sh"
+
+[programs.antigravity]
+description = "Antigravity IDE"
+
+[programs.antigravity.install.dnf]
+command = "file:scripts/install-antigravity-fedora.sh"
+
+# Sublime versions are build numbers (e.g. 4192), not dotted versions.
+[programs.sublime-text]
+description = "Sublime Text editor"
+
+[programs.sublime-text.install.dnf]
+command = "file:scripts/install-sublime-fedora.sh"
+regex = "([0-9]+)"

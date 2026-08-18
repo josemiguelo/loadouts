@@ -1,2 +1,2 @@
 [programs.tmux]
-template = "pkg"
+via = ["brew"]

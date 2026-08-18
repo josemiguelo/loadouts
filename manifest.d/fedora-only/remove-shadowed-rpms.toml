@@ -1,0 +1,4 @@
+[scripts.remove-shadowed-rpms]
+description = "remove rpm packages that other package managers own"
+file = "scripts/remove-shadowed-rpms.sh"
+check = "file:scripts/remove-shadowed-rpms.sh check"

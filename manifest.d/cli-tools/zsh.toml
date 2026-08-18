@@ -1,2 +1,2 @@
 [programs.zsh]
-template = "pkg"
+via = ["dnf"]

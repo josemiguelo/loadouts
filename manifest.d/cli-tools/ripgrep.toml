@@ -1,2 +1,2 @@
 [programs.ripgrep]
-template = "pkg"
+via = ["brew"]

@@ -1,2 +1,2 @@
 [programs.tree-sitter-cli]
-template = "pkg"
+via = ["brew"]

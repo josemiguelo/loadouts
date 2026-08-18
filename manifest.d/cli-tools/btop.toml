@@ -1,2 +1,2 @@
 [programs.btop]
-template = "pkg"
+via = ["brew"]

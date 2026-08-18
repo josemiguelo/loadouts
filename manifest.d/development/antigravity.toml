@@ -1,5 +1,0 @@
-[programs.antigravity]
-description = "Antigravity IDE"
-
-[programs.antigravity.install.dnf]
-command = "file:scripts/install-antigravity-fedora.sh"

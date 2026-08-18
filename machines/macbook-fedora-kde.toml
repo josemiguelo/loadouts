@@ -8,13 +8,13 @@ scripts = [
   "setup-git",
   "download-fonts",
   "setup-completions",
-  "link-jetbrains-launchers",
-  "setup-dnf",
+  "link-jetbrains-launchers-linux",
   "remove-shadowed-rpms",
   "setup-libvirt",
 ]
 
 [pm]
+setup-dnf = "dnf"
 vlc = "dnf"
 okular = "dnf"
 solaar = "dnf"
@@ -68,9 +68,10 @@ lazygit = "brew"
 lazydocker = "brew"
 starship = "brew"
 yazi = "brew"
-tpack = "brew"
+tpack = "brew-cask"
 opencode = "brew"
 jetbrains-toolbox = "brew-linux"
+ublue-os-tap = "brew"
 flathub-remote = "flatpak"
 obsidian = "flatpak"
 asdf = "script"

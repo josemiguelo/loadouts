@@ -3,6 +3,5 @@
 [programs.tpack]
 description = "tmux package manager"
 
-[programs.tpack.install.brew]
-installer = "brew-cask"
+[programs.tpack.install.brew-cask]
 command = "brew install tmuxpack/tpack/tpack"
