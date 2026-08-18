@@ -1,12 +1,3 @@
-############
-## OKULAR ##
-############
 [programs.okular]
+template = "rpm"
 description = "KDE document viewer"
-
-[programs.okular.version]
-command = "okular --version 2>/dev/null || rpm -q okular"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[programs.okular.install]
-dnf = "sudo dnf install -y okular"

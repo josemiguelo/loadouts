@@ -3,4 +3,6 @@
 vlc = "dnf"
 okular = "dnf"
 solaar = "dnf"
-development-libs = "dnf"
+konsole = "dnf"
+dbus-devel = "dnf"
+copr-plugin = "dnf"

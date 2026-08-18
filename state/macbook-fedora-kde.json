@@ -5,11 +5,19 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T04:20:12.283252700Z",
+  "updatedAt": "2026-08-18T04:36:23.935249948Z",
   "programs": {
-    "development-libs": {
+    "konsole": {
+      "status": "installed",
+      "version": "26.04.3"
+    },
+    "dbus-devel": {
       "status": "installed",
       "version": "1.16.2"
+    },
+    "copr-plugin": {
+      "status": "installed",
+      "version": "4.10.1"
     },
     "vlc": {
       "status": "installed",
