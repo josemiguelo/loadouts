@@ -8,6 +8,7 @@ scripts = [
   "setup-git",
   "download-fonts",
   "setup-completions",
+  "link-jetbrains-launchers",
 ]
 
 [pm]
