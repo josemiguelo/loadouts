@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T05:53:16.478745301Z",
+  "updatedAt": "2026-08-18T05:57:55.987067026Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -98,6 +98,10 @@
     "development-tools-group": {
       "status": "installed",
       "version": "development-tools"
+    },
+    "kitty": {
+      "status": "installed",
+      "version": "0.47.1"
     },
     "vlc": {
       "status": "installed",

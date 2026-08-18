@@ -7,3 +7,11 @@ description = "remove solaar autostart entry"
 run = "sudo rm -f /etc/xdg/autostart/solaar.desktop"
 check = "test ! -f /etc/xdg/autostart/solaar.desktop"
 after = ["programs.solaar"]
+
+[programs.kitty]
+template = "pkg"
+description = "kitty terminal emulator"
+depends-on = ["dnf-plugins-core"]
+
+[programs.kitty.install]
+dnf = "file:scripts/install-kitty-fedora.sh"
