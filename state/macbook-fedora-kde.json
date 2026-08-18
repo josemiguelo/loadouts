@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T07:13:59.136495411Z",
+  "updatedAt": "2026-08-18T07:18:18.450202940Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -284,6 +284,11 @@
       "status": "done",
       "lastRun": null,
       "exitCode": null
+    },
+    "setup-completions": {
+      "status": "done",
+      "lastRun": "2026-08-18T07:18:18.338755671Z",
+      "exitCode": 0
     }
   }
 }

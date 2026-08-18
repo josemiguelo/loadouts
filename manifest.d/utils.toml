@@ -97,3 +97,8 @@ check = "test -n \"$(git config --global user.email)\" && test \"$(git config --
 description = "FiraCode nerd fonts"
 file = "scripts/download-fonts.sh"
 check = "ls \"$HOME/.local/share/fonts/Fira Code\"* >/dev/null 2>&1"
+
+[scripts.setup-completions]
+description = "shell completions"
+file = "scripts/setup-completions.sh"
+check = "sh scripts/setup-completions.sh check"

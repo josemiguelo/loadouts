@@ -7,6 +7,7 @@ scripts = [
   "setup-ssh fedora",
   "setup-git",
   "download-fonts",
+  "setup-completions",
 ]
 
 [pm]
