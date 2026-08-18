@@ -11,3 +11,13 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.slack.install]
 dnf = "file:scripts/install-slack-fedora.sh"
+
+[programs.teams-for-linux]
+description = "Microsoft Teams client"
+
+[programs.teams-for-linux.version]
+command = "teams-for-linux --version 2>/dev/null || rpm -q teams-for-linux"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.teams-for-linux.install]
+dnf = "file:scripts/install-teams-fedora.sh"

@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:19:59.269655765Z",
+  "updatedAt": "2026-08-18T06:21:35.150809796Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -118,6 +118,10 @@
     "slack": {
       "status": "installed",
       "version": "4.51.180"
+    },
+    "teams-for-linux": {
+      "status": "installed",
+      "version": "2.14.1"
     },
     "solaar": {
       "status": "installed",
