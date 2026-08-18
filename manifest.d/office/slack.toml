@@ -1,9 +1,5 @@
 [programs.slack]
 description = "Slack desktop app"
 
-[programs.slack.version]
-command = "slack --version 2>/dev/null || rpm -q slack"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[programs.slack.install]
-dnf = "file:scripts/install-slack-fedora.sh"
+[programs.slack.install.dnf]
+command = "file:scripts/install-slack-fedora.sh"

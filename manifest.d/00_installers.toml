@@ -1,0 +1,44 @@
+# Installers: each mechanism's probe, install command, and version check,
+# defined once. {pkg} is the package id — it defaults to the program name.
+[installers.dnf]
+probe = "dnf"
+install = "sudo dnf install -y {pkg}"
+check = "rpm -q {pkg}"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[installers.apt]
+probe = "apt-get"
+install = "sudo apt-get install -y {pkg}"
+check = "dpkg-query -W {pkg}"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[installers.pacman]
+probe = "pacman"
+install = "sudo pacman -S --noconfirm {pkg}"
+check = "pacman -Q {pkg}"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[installers.brew]
+probe = "brew"
+install = "brew install {pkg}"
+check = "brew list --versions {pkg}"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[installers.brew-cask]
+probe = "brew"
+install = "brew install --cask {pkg}"
+check = "brew list --cask --versions {pkg}"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+# Flatpak apps at user level; pkg is the application id.
+[installers.flatpak]
+probe = "flatpak"
+install = "flatpak --user install -y flathub {pkg}"
+check = "flatpak --user info {pkg}"
+regex = "Version: ([0-9][0-9.]*)"
+
+# Standard native package, manager-neutral: programs opt in with
+# template = "pkg", and each machine's machines/<name>.toml picks which
+# install key (= installer) it uses.
+[templates.pkg]
+via = ["dnf", "apt", "pacman", "brew"]

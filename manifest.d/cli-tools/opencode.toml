@@ -1,9 +1,5 @@
 [programs.opencode]
 description = "opencode agent"
 
-[programs.opencode.version]
-command = "opencode --version 2>/dev/null || brew list --versions opencode"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[programs.opencode.install]
-brew = "brew install anomalyco/tap/opencode"
+[programs.opencode.install.brew]
+command = "brew install anomalyco/tap/opencode"

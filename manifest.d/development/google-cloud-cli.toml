@@ -1,9 +1,5 @@
 [programs.google-cloud-cli]
 description = "Google Cloud CLI"
 
-[programs.google-cloud-cli.version]
-command = "gcloud --version 2>/dev/null || rpm -q google-cloud-cli"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[programs.google-cloud-cli.install]
-dnf = "file:scripts/install-gcloud-fedora.sh"
+[programs.google-cloud-cli.install.dnf]
+command = "file:scripts/install-gcloud-fedora.sh"

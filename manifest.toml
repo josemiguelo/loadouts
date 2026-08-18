@@ -1,2 +1,3 @@
 [meta]
 name = "jm's machines"
+min-tool-version = "0.2.0"

@@ -1,10 +1,8 @@
-# Installed from taps, so the full tap path is required.
+# Installed from a tap, so the full tap path is required; it ships as a
+# cask, so brew-cask mechanics observe it.
 [programs.tpack]
 description = "tmux package manager"
 
-[programs.tpack.version]
-command = "tpack --version 2>/dev/null || brew list --versions tpack"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[programs.tpack.install]
-brew = "brew install tmuxpack/tpack/tpack"
+[programs.tpack.install.brew]
+installer = "brew-cask"
+command = "brew install tmuxpack/tpack/tpack"

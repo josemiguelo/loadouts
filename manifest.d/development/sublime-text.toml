@@ -2,9 +2,6 @@
 [programs.sublime-text]
 description = "Sublime Text editor"
 
-[programs.sublime-text.version]
-command = "subl --version 2>/dev/null || rpm -q sublime-text"
+[programs.sublime-text.install.dnf]
+command = "file:scripts/install-sublime-fedora.sh"
 regex = "([0-9]+)"
-
-[programs.sublime-text.install]
-dnf = "file:scripts/install-sublime-fedora.sh"

@@ -4,12 +4,11 @@
 [programs.development-tools-group]
 description = "dnf Development Tools group"
 
-[programs.development-tools-group.version]
-command = "dnf group list --installed 2>/dev/null | grep '^development-tools '"
+# A dnf group, not a package: its own install command and check.
+[programs.development-tools-group.install.dnf]
+command = "sudo dnf group install -y development-tools"
+check = "dnf group list --installed 2>/dev/null | grep '^development-tools '"
 regex = "(development-tools)"
-
-[programs.development-tools-group.install]
-dnf = "sudo dnf group install -y development-tools"
 
 [programs.gcc]
 template = "pkg"
@@ -29,9 +28,9 @@ template = "pkg"
 [programs.zlib-devel]
 template = "pkg"
 
-[programs.zlib-devel.version]
-command = "rpm -q --whatprovides zlib-devel"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
+# Virtual provide on modern Fedora: override the dnf installer's check.
+[programs.zlib-devel.install.dnf]
+check = "rpm -q --whatprovides zlib-devel"
 
 [programs.bzip2-devel]
 template = "pkg"

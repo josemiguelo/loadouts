@@ -3,9 +3,9 @@
 [programs.flathub-remote]
 description = "flathub flatpak remote (user)"
 
-[programs.flathub-remote.version]
-command = "flatpak --user remotes --columns=name | grep -x flathub"
+# A remote, not an app: probe comes from the flatpak installer, the rest
+# is its own.
+[programs.flathub-remote.install.flatpak]
+command = "flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+check = "flatpak --user remotes --columns=name | grep -x flathub"
 regex = "(flathub)"
-
-[programs.flathub-remote.install]
-flatpak = "flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
