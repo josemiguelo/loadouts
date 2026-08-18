@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:34:21.753966455Z",
+  "updatedAt": "2026-08-18T06:36:11.399075029Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -203,6 +203,10 @@
       "status": "installed",
       "version": "2.14.1"
     },
+    "obsidian": {
+      "status": "installed",
+      "version": "1.13.7"
+    },
     "solaar": {
       "status": "installed",
       "version": "1.1.20"
@@ -226,10 +230,19 @@
     "anydesk": {
       "status": "installed",
       "version": "8.0.3"
+    },
+    "flathub-remote": {
+      "status": "installed",
+      "version": "flathub"
     }
   },
   "scripts": {
     "solaar-no-autostart": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "remove-firefox-flatpak": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

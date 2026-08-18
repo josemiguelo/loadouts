@@ -58,3 +58,21 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.anydesk.install]
 dnf = "file:scripts/install-anydesk-fedora.sh"
+
+# Flathub as a user-level remote (this machine is not bootc, matching the
+# source's --user branch). A program so other flatpaks can depend on it.
+[programs.flathub-remote]
+description = "flathub flatpak remote (user)"
+
+[programs.flathub-remote.version]
+command = "flatpak --user remotes --columns=name | grep -x flathub"
+regex = "(flathub)"
+
+[programs.flathub-remote.install]
+flatpak = "flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"
+
+# The rpm firefox wins; the flatpak gets removed.
+[scripts.remove-firefox-flatpak]
+description = "remove the firefox flatpak"
+run = "flatpak --user uninstall --delete-data -y org.mozilla.firefox"
+check = "! flatpak --user info org.mozilla.firefox >/dev/null 2>&1"

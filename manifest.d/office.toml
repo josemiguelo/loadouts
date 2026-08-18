@@ -21,3 +21,14 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.teams-for-linux.install]
 dnf = "file:scripts/install-teams-fedora.sh"
+
+[programs.obsidian]
+description = "Obsidian notes"
+depends-on = ["flathub-remote"]
+
+[programs.obsidian.version]
+command = "flatpak --user info md.obsidian.Obsidian"
+regex = "Version: ([0-9][0-9.]*)"
+
+[programs.obsidian.install]
+flatpak = "flatpak --user install -y flathub md.obsidian.Obsidian"
