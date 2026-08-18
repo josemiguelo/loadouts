@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T07:52:00.544291624Z",
+  "updatedAt": "2026-08-18T07:53:36.321983489Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -328,6 +328,11 @@
       "exitCode": 0
     },
     "setup-dnf": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "remove-shadowed-rpms": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

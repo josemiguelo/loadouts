@@ -10,6 +10,7 @@ scripts = [
   "setup-completions",
   "link-jetbrains-launchers",
   "setup-dnf",
+  "remove-shadowed-rpms",
 ]
 
 [pm]

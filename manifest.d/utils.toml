@@ -113,3 +113,8 @@ after = ["programs.jetbrains-toolbox"]
 description = "dnf.conf performance and behavior tweaks"
 file = "scripts/setup-dnf.sh"
 check = "sh scripts/setup-dnf.sh check"
+
+[scripts.remove-shadowed-rpms]
+description = "remove rpm packages that the brew versions own (tmux, bat)"
+file = "scripts/remove-shadowed-rpms.sh"
+check = "sh scripts/remove-shadowed-rpms.sh check"
