@@ -76,3 +76,13 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.jetbrains-toolbox.install]
 brew = "brew tap ublue-os/tap && brew trust ublue-os/tap && brew install --cask jetbrains-toolbox-linux"
+
+[programs.ngrok]
+description = "ngrok tunnel"
+
+[programs.ngrok.version]
+command = "ngrok version 2>/dev/null || $HOME/.local/bin/ngrok version"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.ngrok.install]
+script = "file:scripts/install-ngrok.sh"

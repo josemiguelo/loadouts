@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T07:12:43.115192739Z",
+  "updatedAt": "2026-08-18T07:13:59.136495411Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -82,6 +82,10 @@
     "jetbrains-toolbox": {
       "status": "installed",
       "version": "3.5.0.84344"
+    },
+    "ngrok": {
+      "status": "installed",
+      "version": "3.39.9"
     },
     "konsole": {
       "status": "installed",
