@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:13:34.590404505Z",
+  "updatedAt": "2026-08-18T06:15:25.647428215Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -122,6 +122,10 @@
     "kitty": {
       "status": "installed",
       "version": "0.47.1"
+    },
+    "firefox": {
+      "status": "installed",
+      "version": "153.0.3"
     }
   },
   "scripts": {

@@ -18,3 +18,13 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.kitty.install]
 dnf = "file:scripts/install-kitty-fedora.sh"
+
+[programs.firefox]
+description = "Firefox browser"
+
+[programs.firefox.version]
+command = "firefox --version 2>/dev/null || rpm -q firefox"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.firefox.install]
+dnf = "file:scripts/install-firefox-fedora.sh"
