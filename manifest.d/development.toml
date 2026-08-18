@@ -6,14 +6,8 @@ description = "KDE terminal emulator"
 template = "rpm"
 description = "D-Bus development headers"
 
-# 'dnf-command(copr)' is a virtual provide (from dnf-plugins-core): rpm needs
-# --whatprovides and the parens must stay quoted, so no template here.
-[programs.copr-plugin]
-description = "dnf copr plugin"
-
-[programs.copr-plugin.version]
-command = "rpm -q --whatprovides 'dnf-command(copr)'"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[programs.copr-plugin.install]
-dnf = "sudo dnf install -y 'dnf-command(copr)'"
+# The real package behind the 'dnf-command(copr)' virtual provide — using the
+# concrete name keeps it fully template-shaped.
+[programs.dnf-plugins-core]
+template = "rpm"
+description = "dnf plugins (provides the copr command)"

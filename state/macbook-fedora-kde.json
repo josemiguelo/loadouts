@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T04:36:23.935249948Z",
+  "updatedAt": "2026-08-18T04:43:40.564527877Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -15,7 +15,7 @@
       "status": "installed",
       "version": "1.16.2"
     },
-    "copr-plugin": {
+    "dnf-plugins-core": {
       "status": "installed",
       "version": "4.10.1"
     },
