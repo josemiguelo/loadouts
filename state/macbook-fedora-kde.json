@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:17:42.712296346Z",
+  "updatedAt": "2026-08-18T06:19:01.666602248Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -114,6 +114,10 @@
     "okular": {
       "status": "installed",
       "version": "26.04.3"
+    },
+    "slack": {
+      "status": "installed",
+      "version": "4.51.180"
     },
     "solaar": {
       "status": "installed",
