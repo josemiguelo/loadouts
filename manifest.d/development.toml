@@ -111,3 +111,27 @@ regex = "([0-9]+)"
 
 [programs.sublime-text.install]
 dnf = "file:scripts/install-sublime-fedora.sh"
+
+[programs.asdf]
+description = "asdf version manager"
+
+[programs.asdf.version]
+command = "asdf --version 2>/dev/null || $HOME/.local/bin/asdf --version"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.asdf.install]
+script = "file:scripts/install-asdf.sh"
+
+# Installs plugin-manager on first run; rerun with --force after adding tools
+# to ~/.tool-versions.
+[scripts.asdf-tools]
+description = "asdf plugins and tool builds from ~/.tool-versions"
+file = "scripts/asdf-tools.sh"
+check = "asdf plugin list 2>/dev/null | grep -q asdf-plugin-manager"
+after = ["programs.asdf"]
+
+# The dotfiles checkout should push/pull over ssh.
+[scripts.chezmoi-dotfiles-remote]
+description = "point the chezmoi checkout at the ssh dotfiles remote"
+run = "git -C $HOME/.local/share/chezmoi remote set-url origin git@github.com:josemiguelo/.dotfiles.git"
+check = "test \"$(git -C $HOME/.local/share/chezmoi remote get-url origin 2>/dev/null)\" = git@github.com:josemiguelo/.dotfiles.git"
