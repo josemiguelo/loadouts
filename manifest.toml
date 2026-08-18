@@ -1,13 +1,2 @@
 [meta]
 name = "jm's machines"
-
-# Standard Fedora rpm package: version from the tool itself, falling back to
-# the rpm database; installed with dnf. Programs opt in with template = "rpm".
-[templates.rpm.version]
-# No pipes here: a pipeline's exit code would be the last command's, breaking
-# both the || fallback and missing-detection. The regex takes the first match.
-command = "{name} --version 2>/dev/null || rpm -q {name}"
-regex = "([0-9]+\\.[0-9][0-9.]*)"
-
-[templates.rpm.install]
-dnf = "sudo dnf install -y {name}"

@@ -1,5 +1,5 @@
 [programs.solaar]
-template = "rpm"
+template = "pkg"
 description = "Logitech device manager"
 
 [scripts.solaar-no-autostart]
