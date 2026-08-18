@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:21:35.150809796Z",
+  "updatedAt": "2026-08-18T06:22:54.013867324Z",
   "programs": {
     "konsole": {
       "status": "installed",
@@ -106,6 +106,10 @@
     "antigravity": {
       "status": "installed",
       "version": "1.107.0"
+    },
+    "sublime-text": {
+      "status": "installed",
+      "version": "4200"
     },
     "vlc": {
       "status": "installed",
