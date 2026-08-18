@@ -87,3 +87,8 @@ after = ["programs.chezmoi"]
 description = "machine ssh key and agent auto-add config"
 file = "scripts/setup-ssh.sh"
 check = "test -f $HOME/.ssh/$1 && grep -q 'AddKeysToAgent yes' $HOME/.ssh/config"
+
+[scripts.setup-git]
+description = "git identity and delta configuration"
+file = "scripts/setup-git.sh"
+check = "test -n \"$(git config --global user.email)\" && test \"$(git config --global core.pager)\" = delta && test \"$(git config --global merge.conflictStyle)\" = zdiff3"

@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:48:24.801738440Z",
+  "updatedAt": "2026-08-18T07:10:30.071069903Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -241,16 +241,6 @@
     }
   },
   "scripts": {
-    "asdf-tools": {
-      "status": "done",
-      "lastRun": null,
-      "exitCode": null
-    },
-    "chezmoi-dotfiles-remote": {
-      "status": "done",
-      "lastRun": null,
-      "exitCode": null
-    },
     "solaar-no-autostart": {
       "status": "done",
       "lastRun": null,
@@ -266,7 +256,22 @@
       "lastRun": null,
       "exitCode": null
     },
+    "asdf-tools": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "chezmoi-dotfiles-remote": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
     "setup-ssh": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "setup-git": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

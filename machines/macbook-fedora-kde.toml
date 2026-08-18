@@ -5,6 +5,7 @@ scripts = [
   "asdf-tools",
   "chezmoi-dotfiles-remote",
   "setup-ssh fedora",
+  "setup-git",
 ]
 
 [pm]
