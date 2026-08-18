@@ -76,3 +76,9 @@ flatpak = "flatpak --user remote-add --if-not-exists flathub https://dl.flathub.
 description = "remove the firefox flatpak"
 run = "flatpak --user uninstall --delete-data -y org.mozilla.firefox"
 check = "! flatpak --user info org.mozilla.firefox >/dev/null 2>&1"
+
+[scripts.chezmoi-init]
+description = "clone and apply the chezmoi dotfiles"
+file = "scripts/chezmoi-init.sh"
+check = "test -d $HOME/.local/share/chezmoi"
+after = ["programs.chezmoi"]

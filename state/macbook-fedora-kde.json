@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.1.0",
-  "updatedAt": "2026-08-18T06:40:16.212263549Z",
+  "updatedAt": "2026-08-18T06:43:32.572605551Z",
   "programs": {
     "yq": {
       "status": "installed",
@@ -257,6 +257,11 @@
       "exitCode": null
     },
     "remove-firefox-flatpak": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "chezmoi-init": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
