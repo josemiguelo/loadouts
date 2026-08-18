@@ -1,0 +1,2 @@
+[programs.tmux]
+template = "pkg"

@@ -1,0 +1,17 @@
+[programs.virtualization]
+description = "virtualization stack (libvirt, qemu, virt-manager)"
+
+[programs.virtualization.version]
+command = "sh scripts/virtualization.sh check"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.virtualization.install]
+dnf = "file:scripts/virtualization.sh install"
+
+# The source script ran usermod as root ($(whoami) bug) — the intent was the
+# login user, which is what this does.
+[scripts.setup-libvirt]
+description = "enable libvirtd and join the kvm group"
+run = "sudo systemctl enable libvirtd && sudo systemctl start libvirtd && sudo usermod -a -G kvm \"$USER\""
+check = "systemctl is-enabled libvirtd >/dev/null 2>&1 && id -nG \"$USER\" | grep -qw kvm"
+after = ["programs.virtualization"]

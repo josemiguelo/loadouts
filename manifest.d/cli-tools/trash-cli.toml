@@ -1,0 +1,2 @@
+[programs.trash-cli]
+template = "pkg"

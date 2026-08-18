@@ -1,0 +1,2 @@
+[programs.curl]
+template = "pkg"

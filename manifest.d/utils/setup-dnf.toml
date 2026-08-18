@@ -1,0 +1,4 @@
+[scripts.setup-dnf]
+description = "dnf.conf performance and behavior tweaks"
+file = "scripts/setup-dnf.sh"
+check = "sh scripts/setup-dnf.sh check"

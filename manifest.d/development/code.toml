@@ -1,0 +1,9 @@
+[programs.code]
+description = "Visual Studio Code"
+
+[programs.code.version]
+command = "code --version 2>/dev/null || rpm -q code"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.code.install]
+dnf = "file:scripts/install-vscode-fedora.sh"

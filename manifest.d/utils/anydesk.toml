@@ -1,0 +1,9 @@
+[programs.anydesk]
+description = "AnyDesk remote desktop"
+
+[programs.anydesk.version]
+command = "anydesk --version 2>/dev/null || rpm -q anydesk"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.anydesk.install]
+dnf = "file:scripts/install-anydesk-fedora.sh"

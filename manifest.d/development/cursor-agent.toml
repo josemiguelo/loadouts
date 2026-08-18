@@ -1,0 +1,11 @@
+# cursor.com/install ships the agent CLI (not the IDE); its version is
+# date-based, e.g. 2026.07.09-a3815c0.
+[programs.cursor-agent]
+description = "Cursor agent CLI"
+
+[programs.cursor-agent.version]
+command = "cursor-agent --version 2>/dev/null || $HOME/.local/bin/cursor-agent --version"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.cursor-agent.install]
+script = "curl https://cursor.com/install -fsS | bash"

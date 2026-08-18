@@ -1,0 +1,9 @@
+[programs.google-chrome-stable]
+description = "Google Chrome browser"
+
+[programs.google-chrome-stable.version]
+command = "google-chrome-stable --version 2>/dev/null || rpm -q google-chrome-stable"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.google-chrome-stable.install]
+dnf = "file:scripts/install-chrome-fedora.sh"

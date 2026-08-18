@@ -1,0 +1,9 @@
+[programs.solaar]
+template = "pkg"
+description = "Logitech device manager"
+
+[scripts.solaar-no-autostart]
+description = "remove solaar autostart entry"
+run = "sudo rm -f /etc/xdg/autostart/solaar.desktop"
+check = "test ! -f /etc/xdg/autostart/solaar.desktop"
+after = ["programs.solaar"]

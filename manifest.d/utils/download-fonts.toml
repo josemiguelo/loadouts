@@ -1,0 +1,4 @@
+[scripts.download-fonts]
+description = "FiraCode nerd fonts"
+file = "scripts/download-fonts.sh"
+check = "ls \"$HOME/.local/share/fonts/Fira Code\"* >/dev/null 2>&1"

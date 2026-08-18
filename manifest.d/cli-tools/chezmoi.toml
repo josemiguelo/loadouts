@@ -1,0 +1,2 @@
+[programs.chezmoi]
+template = "pkg"

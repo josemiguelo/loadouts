@@ -1,0 +1,9 @@
+[programs.antigravity]
+description = "Antigravity IDE"
+
+[programs.antigravity.version]
+command = "antigravity --version 2>/dev/null || rpm -q antigravity"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.antigravity.install]
+dnf = "file:scripts/install-antigravity-fedora.sh"

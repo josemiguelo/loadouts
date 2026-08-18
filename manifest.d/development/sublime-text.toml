@@ -1,0 +1,10 @@
+# Sublime versions are build numbers (e.g. 4192), not dotted versions.
+[programs.sublime-text]
+description = "Sublime Text editor"
+
+[programs.sublime-text.version]
+command = "subl --version 2>/dev/null || rpm -q sublime-text"
+regex = "([0-9]+)"
+
+[programs.sublime-text.install]
+dnf = "file:scripts/install-sublime-fedora.sh"

@@ -1,0 +1,11 @@
+# Flathub as a user-level remote (this machine is not bootc, matching the
+# source's --user branch). A program so other flatpaks can depend on it.
+[programs.flathub-remote]
+description = "flathub flatpak remote (user)"
+
+[programs.flathub-remote.version]
+command = "flatpak --user remotes --columns=name | grep -x flathub"
+regex = "(flathub)"
+
+[programs.flathub-remote.install]
+flatpak = "flatpak --user remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo"

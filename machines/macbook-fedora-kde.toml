@@ -83,3 +83,6 @@ git = "dnf"
 procps-ng = "dnf"
 libxcrypt-compat = "dnf"
 zsh = "dnf"
+
+
+google-cloud-cli = "dnf"

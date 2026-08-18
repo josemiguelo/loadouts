@@ -1,0 +1,2 @@
+[programs.git-delta]
+template = "pkg"
