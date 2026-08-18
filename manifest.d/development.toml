@@ -9,3 +9,74 @@ description = "D-Bus development headers"
 [programs.dnf-plugins-core]
 template = "pkg"
 description = "dnf plugins (provides the copr command)"
+
+[programs.zlib-devel]
+template = "pkg"
+
+[programs.zlib-devel.version]
+command = "rpm -q --whatprovides zlib-devel"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.bzip2-devel]
+template = "pkg"
+
+[programs.readline-devel]
+template = "pkg"
+
+[programs.sqlite]
+template = "pkg"
+
+[programs.sqlite-devel]
+template = "pkg"
+
+[programs.openssl-devel]
+template = "pkg"
+
+[programs.xz-devel]
+template = "pkg"
+
+[programs.libffi-devel]
+template = "pkg"
+
+[programs.findutils]
+template = "pkg"
+
+[programs.tk-devel]
+template = "pkg"
+
+[programs.libzstd-devel]
+template = "pkg"
+
+[programs.autoconf]
+template = "pkg"
+
+[programs.gcc]
+template = "pkg"
+
+[programs.rust]
+template = "pkg"
+
+[programs.patch]
+template = "pkg"
+
+[programs.libyaml-devel]
+template = "pkg"
+
+[programs.gdbm-devel]
+template = "pkg"
+
+[programs.ncurses-devel]
+template = "pkg"
+
+[programs.perl-FindBin]
+template = "pkg"
+
+[programs.development-tools-group]
+description = "dnf Development Tools group"
+
+[programs.development-tools-group.version]
+command = "dnf group list --installed 2>/dev/null | grep '^development-tools '"
+regex = "(development-tools)"
+
+[programs.development-tools-group.install]
+dnf = "sudo dnf group install -y development-tools"
