@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "machine": "GFT-GJD4Y36T5V",
+  "os": "macos",
+  "distro": null,
+  "arch": "arm64",
+  "toolVersion": "0.2.0",
+  "updatedAt": "2026-08-19T01:40:37.154874Z",
+  "programs": {
+    "asdf": {
+      "status": "installed",
+      "version": "0.18.1"
+    },
+    "atuin": {
+      "status": "installed",
+      "version": "18.19.0"
+    },
+    "bat": {
+      "status": "installed",
+      "version": "0.25.0"
+    },
+    "btop": {
+      "status": "installed",
+      "version": "1.4.7"
+    },
+    "chezmoi": {
+      "status": "installed",
+      "version": "2.69.4"
+    },
+    "fd": {
+      "status": "installed",
+      "version": "10.4.2"
+    },
+    "git-delta": {
+      "status": "installed",
+      "version": "0.18.2"
+    },
+    "lazydocker": {
+      "status": "installed",
+      "version": "0.24.4"
+    },
+    "lazygit": {
+      "status": "installed",
+      "version": "0.60.0"
+    },
+    "ngrok": {
+      "status": "installed",
+      "version": "3.22.0"
+    },
+    "opencode": {
+      "status": "installed",
+      "version": "1.3.0"
+    },
+    "ripgrep": {
+      "status": "installed",
+      "version": "15.1.0"
+    },
+    "starship": {
+      "status": "installed",
+      "version": "1.23.0"
+    },
+    "tmux": {
+      "status": "installed",
+      "version": "3.6"
+    },
+    "tpack": {
+      "status": "installed",
+      "version": "2.0.4"
+    },
+    "trash-cli": {
+      "status": "installed",
+      "version": "0.24.5.26"
+    },
+    "tree-sitter-cli": {
+      "status": "installed",
+      "version": "0.26.12"
+    },
+    "yazi": {
+      "status": "installed",
+      "version": "25.2.11"
+    },
+    "yq": {
+      "status": "installed",
+      "version": "4.53.3"
+    },
+    "zoxide": {
+      "status": "installed",
+      "version": "0.9.7"
+    }
+  },
+  "scripts": {
+    "chezmoi-init": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "chezmoi-dotfiles-remote": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "asdf-tools": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "setup-git": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "download-fonts": {
+      "status": "done",
+      "lastRun": "2026-08-19T01:40:36.140652Z",
+      "exitCode": 0
+    },
+    "setup-completions": {
+      "status": "done",
+      "lastRun": "2026-08-19T01:40:36.883354Z",
+      "exitCode": 0
+    }
+  }
+}
