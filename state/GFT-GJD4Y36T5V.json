@@ -5,7 +5,7 @@
   "distro": null,
   "arch": "arm64",
   "toolVersion": "0.2.0",
-  "updatedAt": "2026-08-19T03:25:53.203090Z",
+  "updatedAt": "2026-08-19T03:35:38.276753Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -98,6 +98,10 @@
     "raycast": {
       "status": "installed",
       "version": "1.89.1"
+    },
+    "scrcpy": {
+      "status": "installed",
+      "version": "4.1"
     }
   },
   "scripts": {
