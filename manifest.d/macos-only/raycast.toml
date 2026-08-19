@@ -1,0 +1,6 @@
+[programs.raycast]
+description = "Raycast launcher"
+
+[programs.raycast.install.brew-cask]
+installer = "brew-cask"
+pkg = "raycast"

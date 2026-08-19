@@ -1,0 +1,2 @@
+[programs.fzf]
+via = ["brew", "dnf"]
