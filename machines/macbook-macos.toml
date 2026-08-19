@@ -1,0 +1,36 @@
+# PLACEHOLDER: rename this file to the mac's real hostname before first use.
+# Ported from atomic's ujust/custom-macos.just: setup-brews, setup-chezmoi,
+# setup-asdf, setup-git, download-fonts, setup-ngrok, setup-completions.
+# Deliberately absent (not in the macOS recipe): setup-ssh, jetbrains-toolbox
+# (ostree-gated in setup-brews), flatpaks, cursor, user binaries.
+
+scripts = [
+  "chezmoi-init",
+  "chezmoi-dotfiles-remote",
+  "asdf-tools",
+  "setup-git",
+  "download-fonts",
+  "setup-completions",
+]
+
+[pm]
+atuin = "brew"
+bat = "brew"
+btop = "brew"
+chezmoi = "brew"
+fd = "brew"
+git-delta = "brew"
+lazydocker = "brew"
+lazygit = "brew"
+ripgrep = "brew"
+starship = "brew"
+tmux = "brew"
+trash-cli = "brew"
+tree-sitter-cli = "brew"
+yazi = "brew"
+yq = "brew"
+zoxide = "brew"
+tpack = "brew-cask"
+opencode = "brew"
+asdf = "script"
+ngrok = "script"

@@ -22,7 +22,7 @@ each() {
 check_one() { test -f "$DIR/_$1"; }
 install_one() {
   if [ ! -f "$DIR/_$1" ]; then
-    wget "$2" -O "$DIR/_$1"
+    curl -fsSL "$2" -o "$DIR/_$1"
   fi
 }
 
