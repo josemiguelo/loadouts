@@ -2,6 +2,7 @@ scripts = [
   "chezmoi-init",
   "chezmoi-dotfiles-remote",
   "asdf-tools",
+  "asdf-default-packages",
   "setup-git",
   "download-fonts",
   "setup-completions",

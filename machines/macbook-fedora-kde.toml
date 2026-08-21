@@ -3,6 +3,7 @@ scripts = [
   "remove-firefox-flatpak",
   "chezmoi-init",
   "asdf-tools",
+  "asdf-default-packages",
   "chezmoi-dotfiles-remote",
   "setup-ssh fedora",
   "setup-git",

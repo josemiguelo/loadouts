@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.2.0",
-  "updatedAt": "2026-08-19T03:48:49.517841400Z",
+  "updatedAt": "2026-08-21T04:27:52.365209624Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -322,8 +322,13 @@
     },
     "asdf-tools": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-21T04:26:52.262392507Z",
+      "exitCode": 0
+    },
+    "asdf-default-packages": {
+      "status": "done",
+      "lastRun": "2026-08-21T04:27:20.676241769Z",
+      "exitCode": 0
     },
     "chezmoi-dotfiles-remote": {
       "status": "done",

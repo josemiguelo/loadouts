@@ -8,9 +8,16 @@ regex = "([0-9]+\\.[0-9][0-9.]*)"
 [programs.asdf.install.script]
 command = "file:scripts/install-asdf.sh"
 
-# Installs plugin-manager on first run; rerun with --force after adding tools to ~/.tool-versions.
 [scripts.asdf-tools]
 description = "asdf plugins and tool builds from ~/.tool-versions"
 file = "scripts/asdf-tools.sh"
-check = "asdf plugin list 2>/dev/null | grep -q asdf-plugin-manager"
+check = "file:scripts/asdf-tools.sh check"
 after = ["programs.asdf", "scripts.chezmoi-init"]
+
+# asdf only seeds default packages into NEWLY built versions; this backfills
+# ~/.default-npm-packages and ~/.default-gems into every existing version.
+[scripts.asdf-default-packages]
+description = "default npm/gem packages in every tool version"
+file = "scripts/asdf-default-packages.sh"
+check = "file:scripts/asdf-default-packages.sh check"
+after = ["scripts.asdf-tools"]
