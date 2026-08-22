@@ -15,7 +15,7 @@ $ loadout setup-new-machine               # install what's missing + run opted-i
 $ loadout outdated            # ask dnf/brew/flathub for newer versions of my programs
 $ loadout check               # which script checks fail, and what exactly is missing
 $ loadout maintain            # pick scripts and run them, watching output live
-$ loadout show <name>         # a program as the engine sees it, fully resolved
+$ loadout explain <name>         # a program as the engine sees it, fully resolved
 $ loadout diff                # compare all machines' states
 $ loadout sync                # pull --rebase, refresh, commit + push my state
 ```
