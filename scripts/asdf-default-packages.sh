@@ -4,6 +4,8 @@
 # auto-installs them into newly built versions, so packages added later need
 # this backfill into the versions that already exist.
 # Modes: `check` / `install` (default).
+# One `npm ls` / `gem list` query per tool version (not per package) — the
+# per-package form made the check take minutes.
 set -eu
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -20,10 +22,11 @@ versions_of() { awk -v p="$1" '$1 == p { $1 = ""; print }' "$TOOL_VERSIONS" 2>/d
 # nodejs versions x ~/.default-npm-packages
 if [ -f "$HOME/.default-npm-packages" ]; then
   for v in $(versions_of nodejs); do
+    globals=$(ASDF_NODEJS_VERSION="$v" npm ls -g --depth=0 --parseable 2>/dev/null || true)
     while read -r pkg _; do
       [ -n "$pkg" ] || continue
       case "$pkg" in \#*) continue ;; esac
-      if ASDF_NODEJS_VERSION="$v" npm ls -g --depth=0 "$pkg" >/dev/null 2>&1; then
+      if printf '%s\n' "$globals" | grep -q "/$pkg\$"; then
         :
       elif [ "$MODE" = "install" ]; then
         echo "installing $pkg for nodejs $v"
@@ -39,10 +42,11 @@ fi
 # ruby versions x ~/.default-gems
 if [ -f "$HOME/.default-gems" ]; then
   for v in $(versions_of ruby); do
+    gems=$(ASDF_RUBY_VERSION="$v" gem list --no-versions 2>/dev/null || true)
     while read -r pkg _; do
       [ -n "$pkg" ] || continue
       case "$pkg" in \#*) continue ;; esac
-      if ASDF_RUBY_VERSION="$v" gem list -i "^${pkg}$" >/dev/null 2>&1; then
+      if printf '%s\n' "$gems" | grep -qx "$pkg"; then
         :
       elif [ "$MODE" = "install" ]; then
         echo "installing $pkg for ruby $v"

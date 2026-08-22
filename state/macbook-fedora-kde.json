@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.2.0",
-  "updatedAt": "2026-08-21T04:27:52.365209624Z",
+  "updatedAt": "2026-08-22T00:48:02.685269390Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -307,68 +307,68 @@
   "scripts": {
     "solaar-no-autostart": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:47:41.469082789Z",
+      "exitCode": 0
     },
     "remove-firefox-flatpak": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:47:41.504257503Z",
+      "exitCode": 1
     },
     "chezmoi-init": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:47:41.999568790Z",
+      "exitCode": 0
     },
     "asdf-tools": {
       "status": "done",
-      "lastRun": "2026-08-21T04:26:52.262392507Z",
+      "lastRun": "2026-08-22T00:47:43.932055287Z",
       "exitCode": 0
     },
     "asdf-default-packages": {
       "status": "done",
-      "lastRun": "2026-08-21T04:27:20.676241769Z",
+      "lastRun": "2026-08-22T00:47:51.330381507Z",
       "exitCode": 0
     },
     "chezmoi-dotfiles-remote": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:47:58.630321169Z",
+      "exitCode": 0
     },
     "setup-ssh": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:47:58.637448559Z",
+      "exitCode": 0
     },
     "setup-git": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:47:58.650322290Z",
+      "exitCode": 0
     },
     "download-fonts": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:48:01.777382744Z",
+      "exitCode": 0
     },
     "setup-completions": {
       "status": "done",
-      "lastRun": "2026-08-18T07:18:18.338755671Z",
+      "lastRun": "2026-08-22T00:48:01.800797558Z",
       "exitCode": 0
     },
     "link-jetbrains-launchers-linux": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:48:01.813662938Z",
+      "exitCode": 0
     },
     "remove-shadowed-rpms": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:48:01.847215053Z",
+      "exitCode": 0
     },
     "setup-libvirt": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-22T00:48:02.655128871Z",
+      "exitCode": 0
     }
   }
 }
