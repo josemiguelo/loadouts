@@ -19,14 +19,29 @@ STATUS=0
 
 versions_of() { awk -v p="$1" '$1 == p { $1 = ""; print }' "$TOOL_VERSIONS" 2>/dev/null; }
 
+# Probe every tool version concurrently up front — npm boots a node each,
+# so serial probes are what made this take many seconds.
+PROBES=$(mktemp -d)
+trap 'rm -rf "$PROBES"' EXIT
+if [ -f "$HOME/.default-npm-packages" ]; then
+  for v in $(versions_of nodejs); do
+    ASDF_NODEJS_VERSION="$v" npm ls -g --depth=0 --parseable >"$PROBES/node-$v" 2>/dev/null &
+  done
+fi
+if [ -f "$HOME/.default-gems" ]; then
+  for v in $(versions_of ruby); do
+    ASDF_RUBY_VERSION="$v" gem list --no-versions >"$PROBES/ruby-$v" 2>/dev/null &
+  done
+fi
+wait
+
 # nodejs versions x ~/.default-npm-packages
 if [ -f "$HOME/.default-npm-packages" ]; then
   for v in $(versions_of nodejs); do
-    globals=$(ASDF_NODEJS_VERSION="$v" npm ls -g --depth=0 --parseable 2>/dev/null || true)
     while read -r pkg _; do
       [ -n "$pkg" ] || continue
       case "$pkg" in \#*) continue ;; esac
-      if printf '%s\n' "$globals" | grep -q "/$pkg\$"; then
+      if grep -q "/$pkg\$" "$PROBES/node-$v"; then
         :
       elif [ "$MODE" = "install" ]; then
         echo "installing $pkg for nodejs $v"
@@ -42,11 +57,10 @@ fi
 # ruby versions x ~/.default-gems
 if [ -f "$HOME/.default-gems" ]; then
   for v in $(versions_of ruby); do
-    gems=$(ASDF_RUBY_VERSION="$v" gem list --no-versions 2>/dev/null || true)
     while read -r pkg _; do
       [ -n "$pkg" ] || continue
       case "$pkg" in \#*) continue ;; esac
-      if printf '%s\n' "$gems" | grep -qx "$pkg"; then
+      if grep -qx "$pkg" "$PROBES/ruby-$v"; then
         :
       elif [ "$MODE" = "install" ]; then
         echo "installing $pkg for ruby $v"

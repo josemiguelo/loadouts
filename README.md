@@ -9,11 +9,10 @@ Requires loadout >= 0.2.0 (`min-tool-version` in `manifest.toml`).
 ## Daily use
 
 ```console
-$ loadout status              # observe this machine, write state/<name>.json
+$ loadout status              # observe programs + script drift (with detail), write state
 $ loadout setup-new-machine --dry-run     # what a converge would do
 $ loadout setup-new-machine               # install what's missing + run opted-in scripts
 $ loadout outdated            # ask dnf/brew/flathub for newer versions of my programs
-$ loadout check               # which script checks fail, and what exactly is missing
 $ loadout maintain            # pick scripts and run them, watching output live
 $ loadout explain <name>         # a program as the engine sees it, fully resolved
 $ loadout diff                # compare all machines' states
