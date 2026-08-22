@@ -6,6 +6,6 @@
 description = "dnf.conf performance and behavior tweaks"
 
 [programs.setup-dnf.install.dnf]
-command = "file:scripts/setup-dnf.sh install"
-check = "file:scripts/setup-dnf.sh check && echo configured"
+command = "file:scripts/install/setup-dnf.sh install"
+check = "file:scripts/install/setup-dnf.sh check && echo configured"
 regex = "(configured)"

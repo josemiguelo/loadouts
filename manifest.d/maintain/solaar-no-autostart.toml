@@ -1,7 +1,3 @@
-[programs.solaar]
-via = ["dnf"]
-description = "Logitech device manager"
-
 [scripts.solaar-no-autostart]
 description = "remove solaar autostart entry"
 run = "sudo rm -f /etc/xdg/autostart/solaar.desktop"

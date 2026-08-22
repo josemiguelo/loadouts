@@ -2,4 +2,4 @@
 description = "AnyDesk remote desktop"
 
 [programs.anydesk.install.dnf]
-command = "file:scripts/install-anydesk-fedora.sh"
+command = "file:scripts/install/install-anydesk-fedora.sh"

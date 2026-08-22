@@ -1,0 +1,7 @@
+[programs.virtualization]
+description = "virtualization stack (libvirt, qemu, virt-manager)"
+
+# A dnf group, not a package: the two-mode script is the check oracle.
+[programs.virtualization.install.dnf]
+command = "file:scripts/install/virtualization.sh install"
+check = "file:scripts/install/virtualization.sh check"

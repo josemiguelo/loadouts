@@ -7,6 +7,6 @@ check = "test \"$(git -C $HOME/.local/share/chezmoi remote get-url origin 2>/dev
 
 [scripts.chezmoi-init]
 description = "clone and apply the chezmoi dotfiles"
-file = "scripts/chezmoi-init.sh"
+file = "scripts/maintain/chezmoi-init.sh"
 check = "test -d $HOME/.local/share/chezmoi"
 after = ["programs.chezmoi"]

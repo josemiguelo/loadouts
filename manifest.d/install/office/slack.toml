@@ -2,4 +2,4 @@
 description = "Slack desktop app"
 
 [programs.slack.install.dnf]
-command = "file:scripts/install-slack-fedora.sh"
+command = "file:scripts/install/install-slack-fedora.sh"

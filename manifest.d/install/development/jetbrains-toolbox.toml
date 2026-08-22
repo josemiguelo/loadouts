@@ -9,9 +9,3 @@ pkg = "jetbrains-toolbox-linux"
 
 [programs.jetbrains-toolbox.install.brew-macos]
 installer = "brew-cask"
-
-[scripts.link-jetbrains-launchers-linux]
-description = "symlink JetBrains Toolbox launcher scripts into ~/.local/bin"
-file = "scripts/link-jetbrains-launchers-linux.sh"
-check = "file:scripts/link-jetbrains-launchers-linux.sh check"
-after = ["programs.jetbrains-toolbox"]

@@ -6,4 +6,4 @@ command = "test -x $HOME/.local/bin/jumpkwapp && echo 0.01" # it has no --versio
 regex = "([0-9][0-9.]*)"
 
 [programs.jumpkwapp.install.script]
-command = "file:scripts/install-jumpkwapp.sh"
+command = "file:scripts/install/install-jumpkwapp.sh"

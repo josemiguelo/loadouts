@@ -1,0 +1,9 @@
+[programs.asdf]
+description = "asdf version manager"
+
+[programs.asdf.version]
+command = "asdf --version 2>/dev/null || $HOME/.local/bin/asdf --version"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.asdf.install.script]
+command = "file:scripts/install/install-asdf.sh"

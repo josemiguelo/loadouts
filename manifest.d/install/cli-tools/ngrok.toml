@@ -6,4 +6,4 @@ command = "ngrok version 2>/dev/null || $HOME/.local/bin/ngrok version"
 regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.ngrok.install.script]
-command = "file:scripts/install-ngrok.sh"
+command = "file:scripts/install/install-ngrok.sh"

@@ -1,0 +1,5 @@
+[programs.firefox]
+description = "Firefox browser"
+
+[programs.firefox.install.dnf]
+command = "file:scripts/install/install-firefox-fedora.sh"

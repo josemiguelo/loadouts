@@ -2,4 +2,4 @@
 description = "Google Cloud CLI"
 
 [programs.google-cloud-cli.install.dnf]
-command = "file:scripts/install-gcloud-fedora.sh"
+command = "file:scripts/install/install-gcloud-fedora.sh"

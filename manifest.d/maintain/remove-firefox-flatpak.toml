@@ -1,9 +1,3 @@
-[programs.firefox]
-description = "Firefox browser"
-
-[programs.firefox.install.dnf]
-command = "file:scripts/install-firefox-fedora.sh"
-
 # The rpm firefox wins; the flatpak gets removed.
 [scripts.remove-firefox-flatpak]
 description = "remove the firefox flatpak"

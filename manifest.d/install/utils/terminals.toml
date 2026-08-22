@@ -5,7 +5,7 @@ description = "kitty terminal emulator"
 depends-on = ["dnf-plugins-core"]
 
 [programs.kitty.install.dnf]
-command = "file:scripts/install-kitty-fedora.sh"
+command = "file:scripts/install/install-kitty-fedora.sh"
 
 [programs.konsole]
 description = "KDE terminal emulator"

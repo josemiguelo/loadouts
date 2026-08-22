@@ -1,4 +1,4 @@
 [scripts.setup-ssh]
 description = "machine ssh key and agent auto-add config"
-file = "scripts/setup-ssh.sh"
+file = "scripts/maintain/setup-ssh.sh"
 check = "test -f $HOME/.ssh/$1 && grep -q 'AddKeysToAgent yes' $HOME/.ssh/config"

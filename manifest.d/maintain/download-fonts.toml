@@ -1,0 +1,4 @@
+[scripts.download-fonts]
+description = "FiraCode nerd fonts"
+file = "scripts/maintain/download-fonts.sh"
+check = "file:scripts/maintain/download-fonts.sh check"

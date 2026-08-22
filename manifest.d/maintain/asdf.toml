@@ -1,0 +1,13 @@
+[scripts.asdf-tools]
+description = "asdf plugins and tool builds from ~/.tool-versions"
+file = "scripts/maintain/asdf-tools.sh"
+check = "file:scripts/maintain/asdf-tools.sh check"
+after = ["programs.asdf", "scripts.chezmoi-init"]
+
+# asdf only seeds default packages into NEWLY built versions; this backfills
+# ~/.default-npm-packages and ~/.default-gems into every existing version.
+[scripts.asdf-default-packages]
+description = "default npm/gem packages in every tool version"
+file = "scripts/maintain/asdf-default-packages.sh"
+check = "file:scripts/maintain/asdf-default-packages.sh check"
+after = ["scripts.asdf-tools"]

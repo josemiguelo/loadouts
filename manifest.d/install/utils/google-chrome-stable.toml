@@ -2,4 +2,4 @@
 description = "Google Chrome browser"
 
 [programs.google-chrome-stable.install.dnf]
-command = "file:scripts/install-chrome-fedora.sh"
+command = "file:scripts/install/install-chrome-fedora.sh"

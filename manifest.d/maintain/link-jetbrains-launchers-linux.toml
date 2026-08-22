@@ -1,0 +1,5 @@
+[scripts.link-jetbrains-launchers-linux]
+description = "symlink JetBrains Toolbox launcher scripts into ~/.local/bin"
+file = "scripts/maintain/link-jetbrains-launchers-linux.sh"
+check = "file:scripts/maintain/link-jetbrains-launchers-linux.sh check"
+after = ["programs.jetbrains-toolbox"]
