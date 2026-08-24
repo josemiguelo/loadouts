@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "fedora",
   "arch": "x86_64",
-  "toolVersion": "0.2.0",
-  "updatedAt": "2026-08-22T00:48:02.685269390Z",
+  "toolVersion": "0.3.0",
+  "updatedAt": "2026-08-24T15:52:26.006032904Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -305,6 +305,11 @@
     }
   },
   "scripts": {
+    "upgrade-loadout": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
     "solaar-no-autostart": {
       "status": "done",
       "lastRun": "2026-08-22T00:47:41.469082789Z",

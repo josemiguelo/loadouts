@@ -1,4 +1,5 @@
 scripts = [
+  "upgrade-loadout",
   "solaar-no-autostart",
   "remove-firefox-flatpak",
   "chezmoi-init",
