@@ -5,7 +5,7 @@
   "distro": null,
   "arch": "arm64",
   "toolVersion": "0.4.0",
-  "updatedAt": "2026-08-24T19:12:53.918001Z",
+  "updatedAt": "2026-08-24T20:13:39.205852Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -126,7 +126,7 @@
       "exitCode": null
     },
     "asdf-default-packages": {
-      "status": "pending",
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
