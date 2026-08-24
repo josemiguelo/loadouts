@@ -3,6 +3,7 @@ scripts = [
   "solaar-no-autostart",
   "remove-firefox-flatpak",
   "chezmoi-init",
+  "chezmoi-update",
   "asdf-tools",
   "asdf-default-packages",
   "chezmoi-dotfiles-remote",

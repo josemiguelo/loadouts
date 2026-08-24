@@ -1,6 +1,7 @@
 scripts = [
   "upgrade-loadout",
   "chezmoi-init",
+  "chezmoi-update",
   "chezmoi-dotfiles-remote",
   "asdf-tools",
   "asdf-default-packages",
