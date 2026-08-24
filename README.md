@@ -1,8 +1,8 @@
-# machines
+# loadouts
 
-My [loadout](https://github.com/josemiguelo/loadout) config repo: what every
-one of my machines should have installed, how to install it, and (in `state/`)
-what each machine actually has.
+My [loadout](https://github.com/josemiguelo/loadout) config repo: each
+machine's loadout — what it should have installed, how to install it, and
+(in `state/`) what it actually has.
 
 Requires loadout >= 0.3.0 (`min-tool-version` in `manifest.toml`).
 
@@ -32,11 +32,11 @@ Both `manifest.d/` and `scripts/` are split by responsibility:
 ## New machine
 
 ```console
-$ git clone <this repo> ~/.config/machines
+$ git clone <this repo> ~/.config/loadouts
 $ cp machines/macbook-fedora-kde.toml machines/$(hostname).toml   # then edit:
 #   - map every program this machine should have to one of its install keys
 #   - opt into the scripts it needs (top-level scripts = [...] list)
-$ loadout --repo ~/.config/machines setup-new-machine
-$ loadout --repo ~/.config/machines sync
+$ loadout --repo ~/.config/loadouts setup-new-machine
+$ loadout --repo ~/.config/loadouts sync
 ```
 
