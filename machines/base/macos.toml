@@ -1,3 +1,6 @@
+# Shared truth for every macOS machine.
+base = true
+
 scripts = [
   "dotfiles-bootstrap",
   "dotfiles-pull",

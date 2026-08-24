@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "fedora",
   "arch": "x86_64",
-  "toolVersion": "0.3.1",
-  "updatedAt": "2026-08-24T20:06:49.227723387Z",
+  "toolVersion": "0.5.0",
+  "updatedAt": "2026-08-24T20:42:08.181954467Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -305,11 +305,6 @@
     }
   },
   "scripts": {
-    "solaar-no-autostart": {
-      "status": "done",
-      "lastRun": "2026-08-22T00:47:41.469082789Z",
-      "exitCode": 0
-    },
     "remove-firefox-flatpak": {
       "status": "done",
       "lastRun": "2026-08-22T00:47:41.504257503Z",
@@ -345,11 +340,6 @@
       "lastRun": null,
       "exitCode": null
     },
-    "setup-ssh": {
-      "status": "done",
-      "lastRun": "2026-08-22T00:47:58.637448559Z",
-      "exitCode": 0
-    },
     "setup-git": {
       "status": "done",
       "lastRun": "2026-08-22T00:47:58.650322290Z",
@@ -373,6 +363,16 @@
     "remove-shadowed-rpms": {
       "status": "done",
       "lastRun": "2026-08-22T00:48:01.847215053Z",
+      "exitCode": 0
+    },
+    "solaar-no-autostart": {
+      "status": "done",
+      "lastRun": "2026-08-22T00:47:41.469082789Z",
+      "exitCode": 0
+    },
+    "setup-ssh": {
+      "status": "done",
+      "lastRun": "2026-08-22T00:47:58.637448559Z",
       "exitCode": 0
     },
     "setup-libvirt": {

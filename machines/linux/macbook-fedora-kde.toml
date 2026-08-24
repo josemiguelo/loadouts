@@ -1,0 +1,11 @@
+extends = "fedora"
+
+scripts = [
+  "solaar-no-autostart",
+  "setup-ssh fedora",
+  "setup-libvirt",
+]
+
+[pm]
+solaar = "dnf"
+virtualization = "dnf"

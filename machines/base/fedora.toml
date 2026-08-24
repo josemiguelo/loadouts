@@ -1,5 +1,8 @@
+# Shared truth for every Fedora workstation. Host-specifics (hardware,
+# virtualization choices, ssh key names) live in the machine files.
+base = true
+
 scripts = [
-  "solaar-no-autostart",
   "remove-firefox-flatpak",
   "dotfiles-bootstrap",
   "dotfiles-pull",
@@ -7,20 +10,17 @@ scripts = [
   "asdf-tools",
   "asdf-default-packages",
   "dotfiles-ssh-remote",
-  "setup-ssh fedora",
   "setup-git",
   "download-fonts",
   "setup-completions",
   "link-jetbrains-launchers-linux",
   "remove-shadowed-rpms",
-  "setup-libvirt",
 ]
 
 [pm]
 setup-dnf = "dnf"
 vlc = "dnf"
 okular = "dnf"
-solaar = "dnf"
 konsole = "dnf"
 dbus-devel = "dnf"
 dnf-plugins-core = "dnf"
@@ -44,7 +44,6 @@ gdbm-devel = "dnf"
 ncurses-devel = "dnf"
 perl-FindBin = "dnf"
 development-tools-group = "dnf"
-virtualization = "dnf"
 kitty = "dnf"
 code = "dnf"
 antigravity = "dnf"
