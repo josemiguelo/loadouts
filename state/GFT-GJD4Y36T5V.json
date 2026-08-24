@@ -4,8 +4,8 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.4.0",
-  "updatedAt": "2026-08-24T20:13:39.205852Z",
+  "toolVersion": "0.5.0",
+  "updatedAt": "2026-08-24T21:04:34.235400Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -105,17 +105,22 @@
     }
   },
   "scripts": {
-    "chezmoi-init": {
+    "dotfiles-bootstrap": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
     },
-    "chezmoi-update": {
-      "status": "pending",
+    "dotfiles-pull": {
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
-    "chezmoi-dotfiles-remote": {
+    "dotfiles-apply": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "dotfiles-ssh-remote": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
