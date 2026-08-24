@@ -1,8 +1,9 @@
 #!/bin/sh
-# Dotfiles maintenance: pull + apply (`chezmoi update`). The check is real
-# drift truth — `chezmoi verify` hashes actual files against the target
-# state; on drift it lists what differs (`chezmoi status`) as the detail.
-# Modes: `check` / `install` (default).
+# Dotfiles convergence, LOCAL-ONLY: make the actual files match the local
+# source's target state (`chezmoi apply`). The check is the same truth —
+# `chezmoi verify` hashes actual files against the target state; on drift it
+# lists what differs (`chezmoi status`) as the detail. Remote freshness is
+# dotfiles-pull's separate concern. Modes: `check` / `install` (default).
 set -eu
 
 SOURCE="$HOME/.local/share/chezmoi"
@@ -25,4 +26,4 @@ fi
 # --no-tty: on a conflict (file modified outside chezmoi) fail with the
 # reason instead of prompting — a prompt would hang under maintain's
 # captured output. Resolve with `chezmoi diff`, then rerun.
-chezmoi update --verbose --no-tty
+chezmoi apply --verbose --no-tty

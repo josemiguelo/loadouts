@@ -1,0 +1,33 @@
+# The dotfiles checkout should push/pull over ssh.
+[scripts.dotfiles-ssh-remote]
+description = "point the chezmoi checkout at the ssh dotfiles remote"
+after = ["scripts.dotfiles-bootstrap"]
+run = "git -C $HOME/.local/share/chezmoi remote set-url origin git@github.com:josemiguelo/.dotfiles.git"
+check = "test \"$(git -C $HOME/.local/share/chezmoi remote get-url origin 2>/dev/null)\" = git@github.com:josemiguelo/.dotfiles.git"
+
+# Bootstrap: first-time clone + apply. Never appears in the maintain picker;
+# setup-new-machine runs it exactly once (the check gates every later run).
+[scripts.dotfiles-bootstrap]
+description = "first-time dotfiles bootstrap: clone + apply"
+file = "scripts/maintain/dotfiles-bootstrap.sh"
+check = "test -d $HOME/.local/share/chezmoi"
+after = ["programs.chezmoi"]
+modes = ["setup"]
+
+# Remote freshness: is the local source behind origin? (throttled fetch,
+# fail-soft offline). Converge = pull only; applying is dotfiles-apply's job.
+[scripts.dotfiles-pull]
+description = "pull dotfiles source when behind its origin"
+file = "scripts/maintain/dotfiles-pull.sh"
+check = "file:scripts/maintain/dotfiles-pull.sh check"
+after = ["scripts.dotfiles-bootstrap"]
+modes = ["maintain"]
+
+# Local convergence: actual files match the local source's target state.
+# Ordered after dotfiles-pull so one maintain run pulls, then applies.
+[scripts.dotfiles-apply]
+description = "apply dotfiles: local files match the target state"
+file = "scripts/maintain/dotfiles-apply.sh"
+check = "file:scripts/maintain/dotfiles-apply.sh check"
+after = ["scripts.dotfiles-bootstrap", "scripts.dotfiles-pull"]
+modes = ["maintain"]

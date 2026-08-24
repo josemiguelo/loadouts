@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "fedora",
   "arch": "x86_64",
-  "toolVersion": "0.3.0",
-  "updatedAt": "2026-08-24T17:59:03.743189808Z",
+  "toolVersion": "0.3.1",
+  "updatedAt": "2026-08-24T20:06:49.227723387Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -305,11 +305,6 @@
     }
   },
   "scripts": {
-    "upgrade-loadout": {
-      "status": "done",
-      "lastRun": "2026-08-24T15:54:44.117895346Z",
-      "exitCode": 0
-    },
     "solaar-no-autostart": {
       "status": "done",
       "lastRun": "2026-08-22T00:47:41.469082789Z",
@@ -320,12 +315,17 @@
       "lastRun": "2026-08-22T00:47:41.504257503Z",
       "exitCode": 1
     },
-    "chezmoi-init": {
+    "dotfiles-bootstrap": {
       "status": "done",
-      "lastRun": "2026-08-22T00:47:41.999568790Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
-    "chezmoi-update": {
+    "dotfiles-pull": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "dotfiles-apply": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
@@ -340,10 +340,10 @@
       "lastRun": "2026-08-22T00:47:51.330381507Z",
       "exitCode": 0
     },
-    "chezmoi-dotfiles-remote": {
+    "dotfiles-ssh-remote": {
       "status": "done",
-      "lastRun": "2026-08-22T00:47:58.630321169Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "setup-ssh": {
       "status": "done",

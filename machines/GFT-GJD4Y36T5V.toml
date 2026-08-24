@@ -1,7 +1,8 @@
 scripts = [
-  "chezmoi-init",
-  "chezmoi-update",
-  "chezmoi-dotfiles-remote",
+  "dotfiles-bootstrap",
+  "dotfiles-pull",
+  "dotfiles-apply",
+  "dotfiles-ssh-remote",
   "asdf-tools",
   "asdf-default-packages",
   "setup-git",

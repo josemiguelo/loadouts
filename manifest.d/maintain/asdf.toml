@@ -2,7 +2,7 @@
 description = "asdf plugins and tool builds from ~/.tool-versions"
 file = "scripts/maintain/asdf-tools.sh"
 check = "file:scripts/maintain/asdf-tools.sh check"
-after = ["programs.asdf", "scripts.chezmoi-init"]
+after = ["programs.asdf", "scripts.dotfiles-bootstrap"]
 
 # asdf only seeds default packages into NEWLY built versions; this backfills
 # ~/.default-npm-packages and ~/.default-gems into every existing version.
