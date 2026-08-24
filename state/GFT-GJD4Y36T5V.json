@@ -4,8 +4,8 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.2.0",
-  "updatedAt": "2026-08-19T03:35:38.276753Z",
+  "toolVersion": "0.4.0",
+  "updatedAt": "2026-08-24T19:12:53.918001Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -110,6 +110,11 @@
       "lastRun": null,
       "exitCode": null
     },
+    "chezmoi-update": {
+      "status": "pending",
+      "lastRun": null,
+      "exitCode": null
+    },
     "chezmoi-dotfiles-remote": {
       "status": "done",
       "lastRun": null,
@@ -117,6 +122,11 @@
     },
     "asdf-tools": {
       "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "asdf-default-packages": {
+      "status": "pending",
       "lastRun": null,
       "exitCode": null
     },
