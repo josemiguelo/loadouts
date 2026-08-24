@@ -4,7 +4,7 @@ My [loadout](https://github.com/josemiguelo/loadout) config repo: each
 machine's loadout — what it should have installed, how to install it, and
 (in `state/`) what it actually has.
 
-Requires loadout >= 0.3.0 (`min-tool-version` in `manifest.toml`).
+Requires loadout >= 0.3.1 (`min-tool-version` in `manifest.toml`).
 
 ## Daily use
 
