@@ -1,4 +1,0 @@
-[scripts.upgrade-loadout]
-description = "keep the loadout binary at the repo's min-tool-version floor"
-file = "scripts/maintain/upgrade-loadout.sh"
-check = "file:scripts/maintain/upgrade-loadout.sh check"

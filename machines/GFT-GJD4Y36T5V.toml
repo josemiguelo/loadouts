@@ -1,5 +1,4 @@
 scripts = [
-  "upgrade-loadout",
   "chezmoi-init",
   "chezmoi-update",
   "chezmoi-dotfiles-remote",
