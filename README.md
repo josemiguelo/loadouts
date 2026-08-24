@@ -36,7 +36,7 @@ $ git clone <this repo> ~/.config/machines
 $ cp machines/macbook-fedora-kde.toml machines/$(hostname).toml   # then edit:
 #   - map every program this machine should have to one of its install keys
 #   - opt into the scripts it needs (top-level scripts = [...] list)
-$ loadout --repo ~/.config/machines setup
+$ loadout --repo ~/.config/machines setup-new-machine
 $ loadout --repo ~/.config/machines sync
 ```
 
