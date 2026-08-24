@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.5.0",
-  "updatedAt": "2026-08-24T20:42:08.181954467Z",
+  "updatedAt": "2026-08-24T21:53:24.859797680Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -114,6 +114,10 @@
     "vim-enhanced": {
       "status": "installed",
       "version": "9.2.920"
+    },
+    "workmux": {
+      "status": "installed",
+      "version": "0.1.246"
     },
     "yazi": {
       "status": "installed",

@@ -1,0 +1,6 @@
+[programs.workmux]
+description = "git worktrees + tmux windows for parallel agent sessions"
+depends-on = ["tmux"]
+
+[programs.workmux.install.brew]
+command = "brew install raine/workmux/workmux"
