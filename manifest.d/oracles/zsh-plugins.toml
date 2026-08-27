@@ -1,0 +1,3 @@
+# Are the antidote bundle clones behind their GitHub tips?
+[outdated.zsh-plugins]
+command = "file:scripts/outdated/zsh-plugins.sh"

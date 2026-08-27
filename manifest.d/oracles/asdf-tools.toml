@@ -1,0 +1,3 @@
+# Are the runtime pins in ~/.tool-versions behind their upstream releases?
+[outdated.asdf-tools]
+command = "file:scripts/outdated/asdf-tools.sh"
