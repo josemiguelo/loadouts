@@ -1,0 +1,3 @@
+# Are the asdf plugin pins in ~/.plugin-versions behind their GitHub repos?
+[outdated.asdf-plugins]
+command = "file:scripts/outdated/asdf-plugins.sh"

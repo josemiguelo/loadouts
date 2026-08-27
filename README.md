@@ -24,11 +24,14 @@ Both `manifest.d/` and `scripts/` are split by responsibility:
 
 - `manifest.d/install/` — `[programs.*]` fragments (by category); `install/00_setup-dnf.toml`
   sorts first so dnf is configured before anything installs. `manifest.d/maintain/` —
-  `[scripts.*]` fragments, one per maintenance concern. `00_installers.toml` (shared
+  `[scripts.*]` fragments, one per maintenance concern. `manifest.d/oracles/` —
+  `[outdated.*]` custom oracles, one per concern: repo-global questions about the
+  outside world, not part of any machine's loadout. `00_installers.toml` (shared
   mechanics) stays at the root.
 - `scripts/install/` — files run by program install variants (their check is the pm
   database or a version command). `scripts/maintain/` — the opt-in `[scripts.*]` files
-  (each has its own check, inline or two-mode).
+  (each has its own check, inline or two-mode). `scripts/outdated/` — oracle
+  implementations.
 
 ## New machine
 
