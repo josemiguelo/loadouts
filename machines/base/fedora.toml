@@ -6,6 +6,7 @@ scripts = [
   "remove-firefox-flatpak",
   "dotfiles-bootstrap",
   "dotfiles-pull",
+  "dotfiles-push",
   "dotfiles-apply",
   "asdf-tools",
   "asdf-default-packages",

@@ -4,6 +4,7 @@ base = true
 scripts = [
   "dotfiles-bootstrap",
   "dotfiles-pull",
+  "dotfiles-push",
   "dotfiles-apply",
   "dotfiles-ssh-remote",
   "asdf-tools",

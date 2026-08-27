@@ -31,3 +31,12 @@ file = "scripts/maintain/dotfiles-apply.sh"
 check = "file:scripts/maintain/dotfiles-apply.sh check"
 after = ["scripts.dotfiles-bootstrap", "scripts.dotfiles-pull"]
 modes = ["maintain"]
+
+# Outbound freshness: local edits/commits origin hasn't seen. Ordered after
+# dotfiles-pull so one maintain run pulls (rebasing the view) before pushing.
+[scripts.dotfiles-push]
+description = "push dotfiles source when ahead of its origin"
+file = "scripts/maintain/dotfiles-push.sh"
+check = "file:scripts/maintain/dotfiles-push.sh check"
+after = ["scripts.dotfiles-bootstrap", "scripts.dotfiles-pull"]
+modes = ["maintain"]

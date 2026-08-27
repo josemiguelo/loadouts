@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "fedora",
   "arch": "x86_64",
-  "toolVersion": "0.5.0",
-  "updatedAt": "2026-08-24T21:53:24.859797680Z",
+  "toolVersion": "0.6.0",
+  "updatedAt": "2026-08-27T21:49:49.150344313Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -320,6 +320,11 @@
       "exitCode": null
     },
     "dotfiles-pull": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "dotfiles-push": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
