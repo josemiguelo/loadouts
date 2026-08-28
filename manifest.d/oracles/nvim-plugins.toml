@@ -1,0 +1,4 @@
+# Are the lazy.nvim plugin pins (lazy-lock.json = the local clones' HEADs)
+# behind their GitHub tips?
+[outdated.nvim-plugins]
+command = "file:scripts/outdated/nvim-plugins.sh"
