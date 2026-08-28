@@ -4,8 +4,8 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.5.0",
-  "updatedAt": "2026-08-24T21:04:34.235400Z",
+  "toolVersion": "0.6.0",
+  "updatedAt": "2026-08-28T17:17:51.833499Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -83,6 +83,10 @@
       "status": "installed",
       "version": "0.26.12"
     },
+    "workmux": {
+      "status": "missing",
+      "version": null
+    },
     "yazi": {
       "status": "installed",
       "version": "26.8.15"
@@ -111,6 +115,11 @@
       "exitCode": null
     },
     "dotfiles-pull": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "dotfiles-push": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
