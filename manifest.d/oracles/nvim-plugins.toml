@@ -1,4 +1,6 @@
-# Are the lazy.nvim plugin pins (lazy-lock.json = the local clones' HEADs)
-# behind their GitHub tips?
+# Which lazy.nvim plugins does Lazy itself consider outdated? Asks Lazy via a
+# headless nvim (honours each plugin's version/tag/commit/branch/pin) rather
+# than a raw HEAD-vs-default-branch diff, which false-flagged every semver-
+# pinned plugin. See scripts/outdated/nvim-plugins.{sh,lua}.
 [outdated.nvim-plugins]
 command = "file:scripts/outdated/nvim-plugins.sh"
