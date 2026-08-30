@@ -5,7 +5,7 @@
   "distro": null,
   "arch": "arm64",
   "toolVersion": "0.6.0",
-  "updatedAt": "2026-08-28T17:17:51.833499Z",
+  "updatedAt": "2026-08-30T19:17:07.753785Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -84,8 +84,8 @@
       "version": "0.26.12"
     },
     "workmux": {
-      "status": "missing",
-      "version": null
+      "status": "installed",
+      "version": "0.1.250"
     },
     "yazi": {
       "status": "installed",
@@ -121,8 +121,8 @@
     },
     "dotfiles-push": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-08-30T19:17:01.696908Z",
+      "exitCode": 0
     },
     "dotfiles-apply": {
       "status": "done",
