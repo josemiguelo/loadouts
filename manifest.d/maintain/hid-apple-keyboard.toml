@@ -1,0 +1,8 @@
+# MacBookPro16,1 internal keyboard: Fn/Ctrl and Alt/Super swaps, and the
+# fnmode that keeps Fn+arrows working alongside the touchbar. Checks the
+# modprobe.d file AND the live module parameters — a stale initramfs can
+# keep the two disagreeing.
+[scripts.hid-apple-keyboard]
+description = "internal keyboard fn/ctrl swap and fnmode"
+file = "scripts/maintain/hid-apple-keyboard.sh"
+check = "file:scripts/maintain/hid-apple-keyboard.sh check"

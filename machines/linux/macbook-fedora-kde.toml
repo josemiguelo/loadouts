@@ -4,6 +4,7 @@ scripts = [
   "solaar-no-autostart",
   "setup-ssh fedora",
   "setup-libvirt",
+  "hid-apple-keyboard",
 ]
 
 [pm]

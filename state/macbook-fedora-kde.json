@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.6.0",
-  "updatedAt": "2026-08-27T21:49:49.150344313Z",
+  "updatedAt": "2026-09-02T17:38:12.549402539Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -45,7 +45,7 @@
     },
     "fzf": {
       "status": "installed",
-      "version": "0.74.2"
+      "version": "0.74.3"
     },
     "git-delta": {
       "status": "installed",
@@ -57,7 +57,7 @@
     },
     "google-cloud-cli": {
       "status": "installed",
-      "version": "580.0.0"
+      "version": "583.0.0"
     },
     "jumpkwapp": {
       "status": "installed",
@@ -113,7 +113,7 @@
     },
     "vim-enhanced": {
       "status": "installed",
-      "version": "9.2.920"
+      "version": "9.2.967"
     },
     "workmux": {
       "status": "installed",
@@ -137,7 +137,7 @@
     },
     "code": {
       "status": "installed",
-      "version": "1.133.0"
+      "version": "1.135.0"
     },
     "antigravity": {
       "status": "installed",
@@ -161,7 +161,7 @@
     },
     "gcc": {
       "status": "installed",
-      "version": "16.1.1"
+      "version": "16.2.1"
     },
     "autoconf": {
       "status": "installed",
@@ -173,7 +173,7 @@
     },
     "rust": {
       "status": "installed",
-      "version": "1.97.1"
+      "version": "1.98.0"
     },
     "findutils": {
       "status": "installed",
@@ -201,7 +201,7 @@
     },
     "openssl-devel": {
       "status": "installed",
-      "version": "3.5.7"
+      "version": "3.5.8"
     },
     "xz-devel": {
       "status": "installed",
@@ -261,15 +261,15 @@
     },
     "slack": {
       "status": "installed",
-      "version": "4.51.180"
+      "version": "4.51.191"
     },
     "teams-for-linux": {
       "status": "installed",
-      "version": "2.14.1"
+      "version": "2.18.1"
     },
     "1password": {
       "status": "installed",
-      "version": "8.12.32"
+      "version": "8.12.34"
     },
     "anydesk": {
       "status": "installed",
@@ -277,7 +277,7 @@
     },
     "firefox": {
       "status": "installed",
-      "version": "153.0.3"
+      "version": "154.0"
     },
     "flathub-remote": {
       "status": "installed",
@@ -285,11 +285,11 @@
     },
     "google-chrome-stable": {
       "status": "installed",
-      "version": "151.0.7922.137"
+      "version": "152.0.7977.75"
     },
     "okular": {
       "status": "installed",
-      "version": "26.04.3"
+      "version": "26.08.0"
     },
     "scrcpy": {
       "status": "installed",
@@ -301,11 +301,11 @@
     },
     "kitty": {
       "status": "installed",
-      "version": "0.47.1"
+      "version": "0.48.2"
     },
     "konsole": {
       "status": "installed",
-      "version": "26.04.3"
+      "version": "26.08.0"
     }
   },
   "scripts": {
@@ -320,7 +320,7 @@
       "exitCode": null
     },
     "dotfiles-pull": {
-      "status": "done",
+      "status": "pending",
       "lastRun": null,
       "exitCode": null
     },
@@ -388,6 +388,11 @@
       "status": "done",
       "lastRun": "2026-08-22T00:48:02.655128871Z",
       "exitCode": 0
+    },
+    "hid-apple-keyboard": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     }
   }
 }
