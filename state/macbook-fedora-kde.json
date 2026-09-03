@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.6.0",
-  "updatedAt": "2026-09-02T18:05:37.548947548Z",
+  "updatedAt": "2026-09-03T00:40:34.639240726Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -330,7 +330,7 @@
       "exitCode": null
     },
     "dotfiles-apply": {
-      "status": "pending",
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
@@ -390,6 +390,11 @@
       "exitCode": 0
     },
     "hid-apple-keyboard": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "fan-curve": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

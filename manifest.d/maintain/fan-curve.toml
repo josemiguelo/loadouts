@@ -1,0 +1,6 @@
+# t2fanrd reads /etc/t2fand.conf, which no package owns — this script is the
+# only record of the intended fan curve. Content must match exactly.
+[scripts.fan-curve]
+description = "t2fanrd fan curve in /etc/t2fand.conf"
+file = "scripts/maintain/fan-curve.sh"
+check = "file:scripts/maintain/fan-curve.sh check"
