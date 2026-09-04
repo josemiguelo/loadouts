@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.6.0",
-  "updatedAt": "2026-09-03T00:40:34.639240726Z",
+  "updatedAt": "2026-09-04T02:02:03.510672435Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -137,7 +137,7 @@
     },
     "code": {
       "status": "installed",
-      "version": "1.135.0"
+      "version": "1.136.1"
     },
     "antigravity": {
       "status": "installed",
@@ -261,7 +261,7 @@
     },
     "slack": {
       "status": "installed",
-      "version": "4.51.191"
+      "version": "4.52.155"
     },
     "teams-for-linux": {
       "status": "installed",
@@ -277,7 +277,7 @@
     },
     "firefox": {
       "status": "installed",
-      "version": "154.0"
+      "version": "155.0"
     },
     "flathub-remote": {
       "status": "installed",
@@ -285,7 +285,7 @@
     },
     "google-chrome-stable": {
       "status": "installed",
-      "version": "152.0.7977.75"
+      "version": "152.0.7977.82"
     },
     "okular": {
       "status": "installed",
@@ -398,6 +398,11 @@
       "status": "done",
       "lastRun": null,
       "exitCode": null
+    },
+    "boot-clock": {
+      "status": "done",
+      "lastRun": "2026-09-04T01:23:07.039520753Z",
+      "exitCode": 0
     }
   }
 }
