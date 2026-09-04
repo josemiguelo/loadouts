@@ -1,0 +1,8 @@
+# T2 Macs keep their real clock in the EC, reachable only through the ACPI
+# TAD's _SRT — the kernel's normal RTC writeback goes to the legacy CMOS
+# view and is discarded, so the clock was never set and every boot started
+# in 1970. Sets it, and installs a shutdown hook to keep it true.
+[scripts.boot-clock]
+description = "keep the EC hardware clock set (T2 Mac)"
+file = "scripts/maintain/boot-clock.sh"
+check = "file:scripts/maintain/boot-clock.sh check"

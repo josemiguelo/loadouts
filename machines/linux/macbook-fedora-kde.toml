@@ -6,6 +6,7 @@ scripts = [
   "setup-libvirt",
   "hid-apple-keyboard",
   "fan-curve",
+  "boot-clock",
 ]
 
 [pm]
