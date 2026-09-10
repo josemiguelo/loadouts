@@ -26,8 +26,9 @@ Both `manifest.d/` and `scripts/` are split by responsibility:
   sorts first so dnf is configured before anything installs. `manifest.d/maintain/` —
   `[scripts.*]` fragments, one per maintenance concern. `manifest.d/oracles/` —
   `[outdated.*]` custom oracles, one per concern: repo-global questions about the
-  outside world, not part of any machine's loadout. `00_installers.toml` (shared
-  mechanics) stays at the root.
+  outside world, not part of any machine's loadout. Install *mechanics* (dnf,
+  brew, brew-cask, flatpak) are not here at all: they ship with loadout — see
+  `loadout installers`, and `loadout installers --eject` to take them over.
 - `scripts/install/` — files run by program install variants (their check is the pm
   database or a version command). `scripts/maintain/` — the opt-in `[scripts.*]` files
   (each has its own check, inline or two-mode). `scripts/outdated/` — oracle
