@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.6.0",
-  "updatedAt": "2026-09-09T02:30:39.057800494Z",
+  "updatedAt": "2026-09-10T02:36:27.116495755Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -265,7 +265,7 @@
     },
     "teams-for-linux": {
       "status": "installed",
-      "version": "2.18.1"
+      "version": "2.20.0"
     },
     "1password": {
       "status": "installed",
