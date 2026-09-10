@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "fedora",
   "arch": "x86_64",
-  "toolVersion": "0.6.0",
-  "updatedAt": "2026-09-10T02:36:27.116495755Z",
+  "toolVersion": "0.8.0",
+  "updatedAt": "2026-09-10T20:30:51.509783039Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
