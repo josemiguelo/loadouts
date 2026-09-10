@@ -30,7 +30,9 @@ Both `manifest.d/` and `scripts/` are split by responsibility:
   brew, brew-cask, flatpak) are not here at all: they ship with loadout — see
   `loadout installers`, and `loadout installers --eject` to take them over.
 - `scripts/install/` — files run by program install variants (their check is the pm
-  database or a version command). `scripts/maintain/` — the opt-in `[scripts.*]` files
+  database or a version command); `scripts/install/repos/` holds vendor `.repo`
+  files, data rather than code, fed to loadout's `dnf-repo` installer via
+  `with.repofile`. `scripts/maintain/` — the opt-in `[scripts.*]` files
   (each has its own check, inline or two-mode). `scripts/outdated/` — oracle
   implementations.
 

@@ -1,5 +1,6 @@
 [programs.google-cloud-cli]
 description = "Google Cloud CLI"
 
-[programs.google-cloud-cli.install.dnf]
-command = "file:scripts/install/install-gcloud-fedora.sh"
+[programs.google-cloud-cli.install.dnf-repo]
+[programs.google-cloud-cli.install.dnf-repo.with]
+repofile = "scripts/install/repos/google-cloud-cli.repo"

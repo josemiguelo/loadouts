@@ -1,19 +1,25 @@
 [programs.code]
 description = "Visual Studio Code"
 
-[programs.code.install.dnf]
-command = "file:scripts/install/install-vscode-fedora.sh"
+[programs.code.install.dnf-repo]
+[programs.code.install.dnf-repo.with]
+repofile = "scripts/install/repos/vscode.repo"
 
 [programs.antigravity]
 description = "Antigravity IDE"
 
-[programs.antigravity.install.dnf]
-command = "file:scripts/install/install-antigravity-fedora.sh"
+[programs.antigravity.install.dnf-repo]
+[programs.antigravity.install.dnf-repo.with]
+repofile = "scripts/install/repos/antigravity.repo"
 
 # Sublime versions are build numbers (e.g. 4192), not dotted versions.
+# The vendor publishes a per-arch .repo file; $(uname -m) is expanded by the
+# shell that runs the install command.
 [programs.sublime-text]
 description = "Sublime Text editor"
-
-[programs.sublime-text.install.dnf]
-command = "file:scripts/install/install-sublime-fedora.sh"
 regex = "([0-9]+)"
+
+[programs.sublime-text.install.dnf-repo]
+regex = "([0-9]+)"
+[programs.sublime-text.install.dnf-repo.with]
+repofile = "https://download.sublimetext.com/rpm/stable/$(uname -m)/sublime-text.repo"

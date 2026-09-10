@@ -1,11 +1,14 @@
 # Terminal emulators.
 
+# kitty on Fedora comes from the solopasha COPR (fresher than the distro
+# package); the copr enable step is the dnf-copr mechanism's, not a script's.
 [programs.kitty]
 description = "kitty terminal emulator"
 depends-on = ["dnf-plugins-core"]
 
-[programs.kitty.install.dnf]
-command = "file:scripts/install/install-kitty-fedora.sh"
+[programs.kitty.install.dnf-copr]
+[programs.kitty.install.dnf-copr.with]
+copr = "solopasha/kitty"
 
 [programs.konsole]
 description = "KDE terminal emulator"

@@ -1,5 +1,6 @@
 [programs.slack]
 description = "Slack desktop app"
 
-[programs.slack.install.dnf]
-command = "file:scripts/install/install-slack-fedora.sh"
+[programs.slack.install.dnf-repo]
+[programs.slack.install.dnf-repo.with]
+repofile = "scripts/install/repos/slack.repo"
