@@ -4,8 +4,8 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.6.0",
-  "updatedAt": "2026-08-30T19:17:07.753785Z",
+  "toolVersion": "0.9.1",
+  "updatedAt": "2026-09-11T21:34:55.137905Z",
   "programs": {
     "asdf": {
       "status": "installed",
