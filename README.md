@@ -38,7 +38,13 @@ Both `manifest.d/` and `scripts/` are split by responsibility:
 
 ## New machine
 
+This repo declares `min-tool-version = "0.9.1"` (it leans on loadout's
+built-in installers), so the binary comes first — an older one refuses the
+whole repo with `run: loadout upgrade`.
+
 ```console
+$ curl -fsSL https://raw.githubusercontent.com/josemiguelo/loadout/master/install.sh | sh
+$ loadout upgrade                       # if loadout is already installed
 $ git clone <this repo> ~/.config/loadouts
 $ cp machines/macbook-fedora-kde.toml machines/$(hostname).toml   # then edit:
 #   - map every program this machine should have to one of its install keys
