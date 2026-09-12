@@ -4,5 +4,5 @@
 # isn't cloned on this machine.
 set -eu
 GCB_NAME='echo antidote' \
-  exec sh "$(dirname "$0")/git-clones-behind.sh" \
+  exec sh "$(dirname "$0")/git-clones-behind.sh" "$@" \
     "$HOME/.local/share/mattmc3/antidote"

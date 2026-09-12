@@ -5,7 +5,27 @@
 # whose HEAD is behind (a clone provably ahead-or-equal prints nothing) — name is derived per caller via GCB_NAME (a shell
 # snippet evaluated with $dir set). Shallow clones still compare shas; the
 # count is omitted when history can't provide it.
+#
+# `update <name> <dir>...` is the other half (loadout calls it per row): fast
+# -forward the ONE clone whose derived name matches, leaving the rest alone.
+# A clone that can't fast-forward fails loudly rather than rewriting history.
 set -eu
+
+if [ "${1:-}" = "update" ]; then
+  shift
+  want=${1:?usage: git-clones-behind.sh update <name> <dir>...}
+  shift
+  for dir in "$@"; do
+    [ -d "$dir/.git" ] || continue
+    name=$(eval "$GCB_NAME")
+    [ "$name" = "$want" ] || continue
+    echo "updating $name ($dir)"
+    git -C "$dir" pull --ff-only
+    exit $?
+  done
+  echo "no clone named '$want' here" >&2
+  exit 1
+fi
 
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT

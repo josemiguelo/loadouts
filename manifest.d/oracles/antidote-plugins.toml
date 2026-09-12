@@ -1,3 +1,4 @@
 # Are the antidote bundle clones behind their GitHub tips?
 [outdated.antidote-plugins]
 command = "file:scripts/outdated/antidote-plugins.sh"
+upgrade = "file:scripts/outdated/antidote-plugins.sh update {item}"

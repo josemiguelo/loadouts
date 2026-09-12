@@ -6,10 +6,36 @@
 # clone can compute it. Silent when current, offline, or the file doesn't
 # exist (oracle contract: only outdated items speak). Remotes probed in
 # parallel.
+#
+# `update <plugin>` is the other half (loadout calls it per row): move that
+# plugin's pin to its remote tip and refresh the installed plugin. One plugin
+# per call — a pin is a line of its own, nothing is shared with the next.
 set -eu
 
 PINS="$HOME/.plugin-versions"
 [ -f "$PINS" ] || exit 0
+
+if [ "${1:-}" = "update" ]; then
+  plugin=${2:?usage: asdf-plugins.sh update <plugin>}
+  url=$(awk -v p="$plugin" '$1 == p { print $2 }' "$PINS")
+  [ -n "$url" ] || { echo "no pin for '$plugin' in $PINS" >&2; exit 1; }
+  tip=$(git ls-remote "$url" HEAD | awk '{print $1}')
+  [ -n "$tip" ] || { echo "could not reach $url" >&2; exit 1; }
+
+  # Rewrite that line only, keeping the file's column alignment.
+  tmp=$(mktemp)
+  awk -v p="$plugin" -v tip="$tip" '
+    $1 == p { printf "%-41s %-57s %s\n", $1, $2, tip; next }
+    { print }
+  ' "$PINS" > "$tmp" && mv "$tmp" "$PINS"
+  echo "$plugin pinned to $tip"
+
+  # Bring the installed plugin in line with the new pin when asdf has it.
+  if command -v asdf >/dev/null 2>&1 && [ -d "$HOME/.asdf/plugins/$plugin" ]; then
+    asdf plugin update "$plugin"
+  fi
+  exit 0
+fi
 
 TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT

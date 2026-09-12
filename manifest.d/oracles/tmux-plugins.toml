@@ -1,3 +1,4 @@
 # Are the tmux plugin clones behind their GitHub tips?
 [outdated.tmux-plugins]
 command = "file:scripts/outdated/tmux-plugins.sh"
+upgrade = "file:scripts/outdated/tmux-plugins.sh update {item}"

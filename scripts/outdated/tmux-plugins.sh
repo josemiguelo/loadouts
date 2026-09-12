@@ -5,4 +5,4 @@
 set -eu
 # name = dir basename minus tpack's trailing hash suffix
 GCB_NAME='basename "$dir" | sed "s/-[0-9a-f]\{12\}$//"' \
-  exec sh "$(dirname "$0")/git-clones-behind.sh" "$HOME/.config/tmux/plugins"/*/
+  exec sh "$(dirname "$0")/git-clones-behind.sh" "$@" "$HOME/.config/tmux/plugins"/*/

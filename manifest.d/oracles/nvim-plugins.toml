@@ -4,3 +4,4 @@
 # pinned plugin. See scripts/outdated/nvim-plugins.{sh,lua}.
 [outdated.nvim-plugins]
 command = "file:scripts/outdated/nvim-plugins.sh"
+upgrade = "file:scripts/outdated/nvim-plugins.sh update {item}"

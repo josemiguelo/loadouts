@@ -1,3 +1,4 @@
 # Is the antidote clone itself behind its GitHub tip?
 [outdated.antidote]
 command = "file:scripts/outdated/antidote.sh"
+upgrade = "file:scripts/outdated/antidote.sh update {item}"
