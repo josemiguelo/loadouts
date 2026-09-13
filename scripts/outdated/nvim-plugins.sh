@@ -22,13 +22,8 @@ set -eu
 command -v nvim >/dev/null 2>&1 || exit 0
 [ -d "$HOME/.local/share/nvim/lazy/lazy.nvim" ] || exit 0
 
-# `update <plugin>` is the other half (loadout calls it per row): Lazy owns
-# the lockfile and the version/tag/commit pins, so let it do the update
-# rather than touching clones behind its back.
-if [ "${1:-}" = "update" ]; then
-  plugin=${2:?usage: nvim-plugins.sh update <plugin>}
-  exec nvim --headless -n "+Lazy! update $plugin" +qa
-fi
+# Deliberately NO update mode: Lazy owns the lockfile and the pins, and
+# updating plugins is done from inside nvim. loadout only reports.
 
 fail() {
   # A visible row in the outdated table: item, current, candidate, note.
