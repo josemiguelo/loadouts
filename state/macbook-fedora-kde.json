@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "fedora",
   "arch": "x86_64",
-  "toolVersion": "0.8.0",
-  "updatedAt": "2026-09-10T20:30:51.509783039Z",
+  "toolVersion": "0.10.0",
+  "updatedAt": "2026-09-13T03:13:39.750870016Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -13,15 +13,15 @@
     },
     "asdf": {
       "status": "installed",
-      "version": "0.18.0"
+      "version": "0.20.0"
     },
     "atuin": {
       "status": "installed",
-      "version": "18.19.0"
+      "version": "18.22.0"
     },
     "awscli": {
       "status": "installed",
-      "version": "2.36.25"
+      "version": "2.36.44"
     },
     "bat": {
       "status": "installed",
@@ -33,7 +33,7 @@
     },
     "chezmoi": {
       "status": "installed",
-      "version": "2.72.0"
+      "version": "2.72.1"
     },
     "curl": {
       "status": "installed",
@@ -41,7 +41,7 @@
     },
     "fd": {
       "status": "installed",
-      "version": "10.4.2"
+      "version": "10.5.0"
     },
     "fzf": {
       "status": "installed",
@@ -57,7 +57,7 @@
     },
     "google-cloud-cli": {
       "status": "installed",
-      "version": "583.0.0"
+      "version": "584.0.0"
     },
     "jumpkwapp": {
       "status": "installed",
@@ -73,7 +73,7 @@
     },
     "lazygit": {
       "status": "installed",
-      "version": "0.64.1"
+      "version": "0.65.0"
     },
     "ngrok": {
       "status": "installed",
@@ -81,7 +81,7 @@
     },
     "opencode": {
       "status": "installed",
-      "version": "1.18.18"
+      "version": "1.18.30"
     },
     "ripgrep": {
       "status": "installed",
@@ -97,7 +97,7 @@
     },
     "tpack": {
       "status": "installed",
-      "version": "2.0.4"
+      "version": "2.0.6"
     },
     "trash-cli": {
       "status": "installed",
@@ -105,7 +105,7 @@
     },
     "tree-sitter-cli": {
       "status": "installed",
-      "version": "0.26.12"
+      "version": "0.27.0"
     },
     "ublue-os-tap": {
       "status": "installed",
@@ -113,19 +113,19 @@
     },
     "vim-enhanced": {
       "status": "installed",
-      "version": "9.2.967"
+      "version": "9.2.1061"
     },
     "workmux": {
       "status": "installed",
-      "version": "0.1.246"
+      "version": "0.1.262"
     },
     "yazi": {
       "status": "installed",
-      "version": "26.8.15"
+      "version": "26.9.1"
     },
     "yq": {
       "status": "installed",
-      "version": "4.53.3"
+      "version": "4.53.6"
     },
     "zoxide": {
       "status": "installed",
@@ -137,7 +137,7 @@
     },
     "code": {
       "status": "installed",
-      "version": "1.136.1"
+      "version": "1.137.0"
     },
     "antigravity": {
       "status": "installed",
@@ -149,7 +149,7 @@
     },
     "jetbrains-toolbox": {
       "status": "installed",
-      "version": "3.6.4.86641"
+      "version": "3.7.2.87231"
     },
     "dnf-plugins-core": {
       "status": "installed",
@@ -173,7 +173,7 @@
     },
     "rust": {
       "status": "installed",
-      "version": "1.98.0"
+      "version": "1.98.1"
     },
     "findutils": {
       "status": "installed",
@@ -265,11 +265,11 @@
     },
     "teams-for-linux": {
       "status": "installed",
-      "version": "2.20.0"
+      "version": "2.20.1"
     },
     "1password": {
       "status": "installed",
-      "version": "8.12.34"
+      "version": "8.12.36"
     },
     "anydesk": {
       "status": "installed",
@@ -285,7 +285,7 @@
     },
     "google-chrome-stable": {
       "status": "installed",
-      "version": "152.0.7977.82"
+      "version": "153.0.8010.36"
     },
     "okular": {
       "status": "installed",
@@ -321,7 +321,7 @@
     },
     "dotfiles-pull": {
       "status": "done",
-      "lastRun": "2026-09-02T18:04:23.729938028Z",
+      "lastRun": "2026-09-11T17:41:44.320386965Z",
       "exitCode": 0
     },
     "dotfiles-push": {
@@ -330,7 +330,7 @@
       "exitCode": null
     },
     "dotfiles-apply": {
-      "status": "done",
+      "status": "pending",
       "lastRun": null,
       "exitCode": null
     },

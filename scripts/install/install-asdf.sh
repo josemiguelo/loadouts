@@ -2,7 +2,9 @@
 # asdf installed as a plain binary from its GitHub release.
 set -eu
 
-ASDF_VERSION="0.18.0"
+# The pinned release for a fresh machine; the asdf oracle's update mode
+# passes the latest one instead (scripts/outdated/asdf.sh).
+ASDF_VERSION="${1:-0.18.0}"
 BIN_DIR="$HOME/.local/bin"
 ASDF_DATA_DIR="$HOME/.asdf"
 
