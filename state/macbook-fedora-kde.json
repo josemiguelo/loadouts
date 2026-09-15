@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.11.0",
-  "updatedAt": "2026-09-15T13:27:35.322355156Z",
+  "updatedAt": "2026-09-15T15:35:52.181848800Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -400,9 +400,9 @@
       "exitCode": 0
     },
     "dotfiles-push": {
-      "status": "pending",
-      "lastRun": null,
-      "exitCode": null
+      "status": "done",
+      "lastRun": "2026-09-15T15:31:05.168133459Z",
+      "exitCode": 1
     },
     "dotfiles-apply": {
       "status": "done",
@@ -430,7 +430,7 @@
       "exitCode": null
     },
     "tmux-plugins": {
-      "status": "pending",
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
