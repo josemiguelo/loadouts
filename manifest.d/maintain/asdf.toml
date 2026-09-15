@@ -1,8 +1,17 @@
+# Plugins first — exactly the commits ~/.plugin-versions pins — then the
+# tool builds that need them. Two verdicts: a pin moved elsewhere shows up
+# as "plugin behind its pin", not as a rebuild of every tool.
+[scripts.asdf-plugins]
+description = "asdf plugins at the commits ~/.plugin-versions pins"
+file = "scripts/maintain/asdf-plugins.sh"
+check = "file:scripts/maintain/asdf-plugins.sh check"
+after = ["programs.asdf", "scripts.dotfiles-bootstrap", "scripts.dotfiles-apply"]
+
 [scripts.asdf-tools]
-description = "asdf plugins and tool builds from ~/.tool-versions"
+description = "asdf tool builds from ~/.tool-versions"
 file = "scripts/maintain/asdf-tools.sh"
 check = "file:scripts/maintain/asdf-tools.sh check"
-after = ["programs.asdf", "scripts.dotfiles-bootstrap", "scripts.dotfiles-apply"]
+after = ["scripts.asdf-plugins"]
 
 # asdf only seeds default packages into NEWLY built versions; this backfills
 # ~/.default-npm-packages and ~/.default-gems into every existing version.

@@ -1,7 +1,8 @@
 #!/bin/sh
-# asdf plugins + tool builds: plugin-manager, then everything ~/.tool-versions
-# declares (the file comes from the chezmoi dotfiles). The check verifies that
-# EVERY version listed there is actually installed.
+# asdf tool builds: everything ~/.tool-versions declares (the file comes from
+# the chezmoi dotfiles). The check verifies that EVERY version listed there is
+# actually installed. The plugins that build them are asdf-plugins.sh's job,
+# ordered before this.
 # Modes: `check` / `install` (default).
 set -eu
 export PATH="$HOME/.local/bin:$PATH"
@@ -10,10 +11,6 @@ TOOL_VERSIONS="$HOME/.tool-versions"
 
 check() {
   [ -f "$TOOL_VERSIONS" ] || { echo "~/.tool-versions not found" >&2; exit 1; }
-  asdf plugin list 2>/dev/null | grep -q '^asdf-plugin-manager$' || {
-    echo "missing plugin: asdf-plugin-manager"
-    exit 1
-  }
   status=0
   while read -r plugin versions; do
     [ -n "$plugin" ] || continue
@@ -29,18 +26,9 @@ check() {
 }
 
 install_all() {
-  # asdf-plugin-manager reads ./.plugin-versions and asdf reads .tool-versions
-  # from the cwd — both live in $HOME (chezmoi), not the config repo.
+  # asdf reads .tool-versions from the cwd — $HOME (chezmoi), not the repo.
   cd "$HOME"
-  if asdf plugin list 2>/dev/null | grep -q '^asdf-plugin-manager$'; then
-    echo "asdf-plugin-manager already installed"
-  else
-    asdf plugin add asdf-plugin-manager https://github.com/asdf-community/asdf-plugin-manager.git
-    asdf install asdf-plugin-manager 1.5.0 # sync this version with asdf config files
-  fi
-
   if [ -f "$TOOL_VERSIONS" ]; then
-    "$HOME/.asdf/shims/asdf-plugin-manager" add-all
     export CFLAGS="-std=gnu11" # for building python
     asdf install
   else

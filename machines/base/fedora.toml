@@ -8,6 +8,7 @@ scripts = [
   "dotfiles-pull",
   "dotfiles-push",
   "dotfiles-apply",
+  "asdf-plugins",
   "asdf-tools",
   "asdf-default-packages",
   "dotfiles-ssh-remote",
