@@ -48,8 +48,10 @@ while read -r plugin url pin _; do
   (
     # The config is the list: a pinned plugin with no clone is a row of its
     # own, before any question about its remote.
+    # A GitHub URL in the pin file gives loadout a page to open (K).
+    gh=$(printf '%s' "$url" | sed -n 's#^\(git@github\.com:\|https://github\.com/\)\([^/]*/[^/]*\)$#https://github.com/\2#p' | sed 's#\.git$##')
     if [ ! -d "$HOME/.asdf/plugins/$plugin/.git" ]; then
-      printf '%s - %.9s not installed\n' "$plugin" "$pin" > "$TMP/$plugin"
+      printf '%s - %.9s not installed %s\n' "$plugin" "$pin" "$gh" > "$TMP/$plugin"
       exit 0
     fi
     tip=$(git ls-remote "$url" HEAD 2>/dev/null | awk '{print $1}')
@@ -61,6 +63,7 @@ while read -r plugin url pin _; do
           git -C "$dir" rev-list --count "$pin..FETCH_HEAD" 2>/dev/null) || behind=""
         [ -n "$behind" ] && note="$behind commit(s) behind"
       fi
+      [ -n "$gh" ] && note="$note $gh/compare/$(printf %.9s "$pin")...$(printf %.9s "$tip")"
       printf '%s %.9s %.9s %s\n' "$plugin" "$pin" "$tip" "$note" > "$TMP/$plugin"
     fi
   ) &

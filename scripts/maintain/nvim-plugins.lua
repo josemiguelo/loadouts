@@ -86,7 +86,14 @@ local function outdated()
       if ok_count and type(n) == "number" and n > 0 then
         note = string.format(" %d commit(s)", n)
       end
-      lines[#lines + 1] = string.format("%s %s %s%s", name, label(from), label(up.to), note)
+      -- The compare page for the two commits, like Lazy's own K.
+      local link = ""
+      local url = plugin.url or ""
+      local gh = url:match("^https://github%.com/([^/]+/[^/]+)$") or url:match("^git@github%.com:([^/]+/[^/]+)$")
+      if gh and up.from.commit and up.to.commit then
+        link = string.format(" https://github.com/%s/compare/%s...%s", gh:gsub("%.git$", ""), up.from.commit:sub(1, 9), up.to.commit:sub(1, 9))
+      end
+      lines[#lines + 1] = string.format("%s %s %s%s%s", name, label(from), label(up.to), note, link)
     end
   end
   return lines

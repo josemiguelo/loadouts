@@ -41,7 +41,7 @@ for repo in $(declared); do
     dirs="$dirs $CLONES/$repo/"
   else
     tip=$(git ls-remote "https://github.com/$repo" HEAD 2>/dev/null | cut -c1-9)
-    printf '%s - %s not installed\n' "$repo" "${tip:-?}"
+    printf '%s - %s not installed https://github.com/%s\n' "$repo" "${tip:-?}" "$repo"
   fi
 done
 # shellcheck disable=SC2086
