@@ -14,7 +14,13 @@ set -eu
 ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
 BUNDLES="$ZDOTDIR/.zplugins"
 ANTIDOTE="${XDG_DATA_HOME:-$HOME/.local/share}/mattmc3/antidote"
-CLONES="${XDG_CACHE_HOME:-$HOME/.cache}/antidote"
+# Where antidote actually clones — ask antidote, never guess. The XDG path is
+# only Linux's default; on macOS it clones into ~/Library/Caches/antidote, and
+# guessing reported every installed bundle as "not installed" forever (the
+# clone was never where we looked, so no reinstall could ever clear the row).
+CLONES="${ANTIDOTE_HOME:-}"
+[ -n "$CLONES" ] || CLONES=$(zsh -fc "source '$ANTIDOTE/antidote.zsh' && antidote home" 2>/dev/null)
+[ -n "$CLONES" ] || { echo "cannot ask antidote where it clones: $ANTIDOTE/antidote.zsh" >&2; exit 1; }
 GCB="$(dirname "$0")/git-clones-behind.sh"
 # name = owner/repo, the last two path segments of the clone dir
 export GCB_NAME='printf "%s/%s" "$(basename "$(dirname "$dir")")" "$(basename "$dir")"'

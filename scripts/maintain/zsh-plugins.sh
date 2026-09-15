@@ -10,9 +10,16 @@ set -eu
 
 ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
 BUNDLES="$ZDOTDIR/.zplugins"
-# Same clones the antidote / antidote-plugins oracles walk (scripts/outdated/).
+# Same clones the antidote / antidote-plugins oracles walk (scripts/outdated/),
+# and found the same way: ask antidote, never guess. The XDG path is only
+# Linux's default — on macOS antidote clones into ~/Library/Caches/antidote,
+# so guessing called every installed bundle missing and left this script
+# permanently pending: `antidote bundle` had nothing to do, and the check
+# still failed after it ran.
 ANTIDOTE="${XDG_DATA_HOME:-$HOME/.local/share}/mattmc3/antidote"
-CLONES="${XDG_CACHE_HOME:-$HOME/.cache}/antidote"
+CLONES="${ANTIDOTE_HOME:-}"
+[ -n "$CLONES" ] || CLONES=$(zsh -fc "source '$ANTIDOTE/antidote.zsh' && antidote home" 2>/dev/null)
+[ -n "$CLONES" ] || { echo "cannot ask antidote where it clones: $ANTIDOTE/antidote.zsh" >&2; exit 1; }
 
 # One "<owner/repo>" per remote bundle, comments and local entries dropped.
 declared() {
