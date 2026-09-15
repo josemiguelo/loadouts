@@ -4,7 +4,7 @@ My [loadout](https://github.com/josemiguelo/loadout) config repo: each
 machine's loadout — what it should have installed, how to install it, and
 (in `state/`) what it actually has.
 
-Requires loadout >= 0.11.1 (`min-tool-version` in `manifest.toml`).
+Requires loadout >= 0.12.0 (`min-tool-version` in `manifest.toml`).
 
 ## Daily use
 
@@ -38,7 +38,7 @@ Both `manifest.d/` and `scripts/` are split by responsibility:
 
 ## New machine
 
-This repo declares `min-tool-version = "0.11.1"` (it leans on loadout's
+This repo declares `min-tool-version = "0.12.0"` (it leans on loadout's
 built-in installers and the home screen's pane), so the binary comes first —
 an older one refuses the whole repo with `run: loadout self-upgrade`.
 
