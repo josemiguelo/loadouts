@@ -1,6 +1,6 @@
 # Which lazy.nvim plugins does Lazy itself consider outdated? Asks Lazy via a
 # headless nvim (honours each plugin's version/tag/commit/branch/pin) rather
 # than a raw HEAD-vs-default-branch diff, which false-flagged every semver-
-# pinned plugin. See scripts/outdated/nvim-plugins.{sh,lua}.
+# pinned plugin. One script with the maintain check: scripts/maintain/nvim-plugins.{sh,lua}.
 [outdated.nvim-plugins]
-command = "file:scripts/outdated/nvim-plugins.sh"
+command = "file:scripts/maintain/nvim-plugins.sh outdated"

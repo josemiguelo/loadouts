@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "fedora",
   "arch": "x86_64",
-  "toolVersion": "0.10.1",
-  "updatedAt": "2026-09-15T03:01:37.547687667Z",
+  "toolVersion": "0.11.0",
+  "updatedAt": "2026-09-15T13:27:35.322355156Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -405,7 +405,12 @@
       "exitCode": null
     },
     "dotfiles-apply": {
-      "status": "pending",
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "asdf-plugins": {
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
@@ -418,6 +423,21 @@
       "status": "done",
       "lastRun": "2026-08-22T00:47:51.330381507Z",
       "exitCode": 0
+    },
+    "nvim-plugins": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "tmux-plugins": {
+      "status": "pending",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "zsh-plugins": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-ssh-remote": {
       "status": "done",

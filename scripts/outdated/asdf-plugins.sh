@@ -30,8 +30,10 @@ if [ "${1:-}" = "update" ]; then
   ' "$PINS" > "$tmp" && mv "$tmp" "$PINS"
   echo "$plugin pinned to $tip"
 
-  # Bring the installed plugin in line with the new pin when asdf has it.
-  if command -v asdf >/dev/null 2>&1 && [ -d "$HOME/.asdf/plugins/$plugin" ]; then
+  # Bring the installed plugin in line with the new pin — adding it first
+  # when it isn't here at all (a "not installed" row).
+  if command -v asdf >/dev/null 2>&1; then
+    [ -d "$HOME/.asdf/plugins/$plugin" ] || asdf plugin add "$plugin" "$url"
     asdf plugin update "$plugin"
   fi
   exit 0
@@ -44,6 +46,12 @@ while read -r plugin url pin _; do
   [ -n "$plugin" ] || continue
   case "$plugin" in \#*) continue ;; esac
   (
+    # The config is the list: a pinned plugin with no clone is a row of its
+    # own, before any question about its remote.
+    if [ ! -d "$HOME/.asdf/plugins/$plugin/.git" ]; then
+      printf '%s - %.9s not installed\n' "$plugin" "$pin" > "$TMP/$plugin"
+      exit 0
+    fi
     tip=$(git ls-remote "$url" HEAD 2>/dev/null | awk '{print $1}')
     if [ -n "$tip" ] && [ "$tip" != "$pin" ]; then
       note=""
