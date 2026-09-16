@@ -1,4 +1,4 @@
--- Loaded by nvim-plugins.sh under `nvim --headless`, in one of two modes
+-- Loaded by nvim-plugins.sh under `nvim --headless`, in one of three modes
 -- ($LOADOUT_NVIM_MODE), writing to $LOADOUT_NVIM_OUT and ending with a lone
 -- `__LOADOUT_NVIM_OK__` sentinel — the shell treats its ABSENCE (crash,
 -- timeout, Lua error) as a failure, so a broken run can never read as
@@ -20,6 +20,13 @@
 --             Lazy would move. In headless mode Lazy's background checker
 --             never starts, so _.updates is nil until this run fills it —
 --             no stale positives.
+--
+--   update    move ONE plugin ($LOADOUT_NVIM_ITEM) to its target, Lazy's own
+--             update, which rewrites lazy-lock.json. Prints
+--             "<name> <from> -> <to>". Errors unless the clone actually
+--             moved: an unknown name, a plugin that is only in the lockfile,
+--             a failed fetch and a pin that holds all leave the commit where
+--             it was, and Lazy reports none of them as a Lua error.
 local OK = "__LOADOUT_NVIM_OK__"
 local ERR = "__LOADOUT_NVIM_ERR__"
 local out_path = vim.env.LOADOUT_NVIM_OUT
@@ -57,20 +64,20 @@ local function check()
   return lines
 end
 
+-- Prefer a human-friendly ref (semver/tag) over a bare sha.
+local function label(gi)
+  if not gi then return "?" end
+  if gi.version then return tostring(gi.version) end
+  if gi.tag then return gi.tag end
+  return (gi.commit or "?"):sub(1, 9)
+end
+
 local function outdated()
   local Config = require("lazy.core.config")
   if not Config.plugins then error("lazy.core.config has no plugins table") end
   local Git = require("lazy.manage.git")
   local Manage = require("lazy.manage")
   Manage.check({ show = false }):wait()
-
-  -- Prefer a human-friendly ref (semver/tag) over a bare sha.
-  local function label(gi)
-    if not gi then return "?" end
-    if gi.version then return tostring(gi.version) end
-    if gi.tag then return gi.tag end
-    return (gi.commit or "?"):sub(1, 9)
-  end
 
   local names = vim.tbl_keys(Config.plugins)
   table.sort(names)
@@ -99,7 +106,49 @@ local function outdated()
   return lines
 end
 
-local ok, result = pcall(mode == "outdated" and outdated or check)
+-- Reasons a user reads in loadout's pane: no Lua file and line in front.
+local function refuse(msg)
+  error(msg, 0)
+end
+
+local function update()
+  local name = vim.env.LOADOUT_NVIM_ITEM
+  if not name or name == "" then refuse("no plugin name given") end
+  local Config = require("lazy.core.config")
+  if not Config.plugins then refuse("lazy.core.config has no plugins table") end
+  -- Lazy resolves a name it doesn't know to nil and then updates nothing, so
+  -- ask the spec ourselves. The lockfile is not the spec: a plugin that is
+  -- only locked has nothing to move.
+  local plugin = Config.plugins[name]
+  if not plugin then refuse("no plugin named '" .. name .. "' in the lazy spec") end
+  if not plugin.url then refuse(name .. " is a local plugin; nothing to fetch") end
+  if not plugin._.installed then refuse(name .. " is not cloned; run the nvim-plugins script first") end
+
+  local Git = require("lazy.manage.git")
+  local before = Git.info(plugin.dir, true)
+  require("lazy.manage").update({ plugins = { name }, show = false, wait = true })
+
+  -- Lazy logs a failed fetch or checkout on the plugin's tasks; only a Lua
+  -- error reaches the pcall below.
+  local errors = {}
+  for _, task in ipairs(plugin._.tasks or {}) do
+    if task:has_errors() then
+      local out = vim.trim(task:output(vim.log.levels.ERROR))
+      errors[#errors + 1] = out ~= "" and out or (task.name .. " failed")
+    end
+  end
+  if #errors > 0 then refuse(table.concat(errors, "; ")) end
+
+  local after = Git.info(plugin.dir, true)
+  if not after then refuse("no git clone at " .. plugin.dir .. " after updating") end
+  if before and before.commit == after.commit then
+    refuse(string.format("%s did not move (still %s)", name, label(before)))
+  end
+  return { string.format("%s %s -> %s", name, label(before), label(after)) }
+end
+
+local modes = { check = check, outdated = outdated, update = update }
+local ok, result = pcall(modes[mode] or check)
 if ok then
   local body = table.concat(result, "\n")
   if #result > 0 then body = body .. "\n" end

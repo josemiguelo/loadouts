@@ -2,5 +2,10 @@
 # headless nvim (honours each plugin's version/tag/commit/branch/pin) rather
 # than a raw HEAD-vs-default-branch diff, which false-flagged every semver-
 # pinned plugin. One script with the maintain check: scripts/maintain/nvim-plugins.{sh,lua}.
+# One plugin per row, because Lazy's update is per plugin and a plugin that
+# fails to fetch must not take the others with it. The update runs through Lazy
+# too, so the lockfile keeps a single writer — re-add it to the dotfiles source
+# afterwards (dotfiles-apply says so).
 [outdated.nvim-plugins]
 command = "file:scripts/maintain/nvim-plugins.sh outdated"
+upgrade = "file:scripts/maintain/nvim-plugins.sh update {item}"
