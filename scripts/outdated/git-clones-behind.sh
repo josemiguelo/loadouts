@@ -32,9 +32,12 @@ TMP=$(mktemp -d)
 trap 'rm -rf "$TMP"' EXIT
 
 # https://github.com/owner/repo for a GitHub origin (ssh or https), else nothing.
+# -E, because `\|` is a GNU sed extension: BSD sed (macOS) reads it as a
+# literal pipe, so this matched nothing there and every row on the mac
+# silently lost the page loadout offers under K.
 github_of() {
   git -C "$1" remote get-url origin 2>/dev/null \
-    | sed -n 's#^\(git@github\.com:\|https://github\.com/\)\([^/]*/[^/]*\)$#https://github.com/\2#p' \
+    | sed -nE 's#^(git@github\.com:|https://github\.com/)([^/]*/[^/]*)$#https://github.com/\2#p' \
     | sed 's#\.git$##'
 }
 

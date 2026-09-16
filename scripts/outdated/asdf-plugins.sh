@@ -49,7 +49,9 @@ while read -r plugin url pin _; do
     # The config is the list: a pinned plugin with no clone is a row of its
     # own, before any question about its remote.
     # A GitHub URL in the pin file gives loadout a page to open (K).
-    gh=$(printf '%s' "$url" | sed -n 's#^\(git@github\.com:\|https://github\.com/\)\([^/]*/[^/]*\)$#https://github.com/\2#p' | sed 's#\.git$##')
+    # -E, because `\|` is a GNU sed extension: BSD sed (macOS) reads it as a
+    # literal pipe, matched nothing, and every row silently lost its page.
+    gh=$(printf '%s' "$url" | sed -nE 's#^(git@github\.com:|https://github\.com/)([^/]*/[^/]*)$#https://github.com/\2#p' | sed 's#\.git$##')
     if [ ! -d "$HOME/.asdf/plugins/$plugin/.git" ]; then
       printf '%s - %.9s not installed %s\n' "$plugin" "$pin" "$gh" > "$TMP/$plugin"
       exit 0
