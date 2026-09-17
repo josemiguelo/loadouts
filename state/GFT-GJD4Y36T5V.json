@@ -4,8 +4,8 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.12.1",
-  "updatedAt": "2026-09-16T20:22:17.234166Z",
+  "toolVersion": "0.13.0",
+  "updatedAt": "2026-09-17T17:53:34.130598Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -150,7 +150,7 @@
       "exitCode": 0
     },
     "dotfiles-apply": {
-      "status": "pending",
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
