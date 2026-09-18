@@ -21,6 +21,7 @@ scripts = [
 [pm]
 awscli = "brew"
 fzf = "brew"
+gh = "brew"
 scrcpy = "brew"
 atuin = "brew"
 bat = "brew"
