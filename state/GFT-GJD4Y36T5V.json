@@ -5,7 +5,7 @@
   "distro": null,
   "arch": "arm64",
   "toolVersion": "0.13.0",
-  "updatedAt": "2026-09-18T17:15:48.650374Z",
+  "updatedAt": "2026-09-18T17:17:29.769658Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -53,8 +53,8 @@
       "reason": null
     },
     "gh": {
-      "status": "missing",
-      "version": null,
+      "status": "installed",
+      "version": "2.101.0",
       "reason": null
     },
     "git-delta": {
