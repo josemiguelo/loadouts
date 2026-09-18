@@ -1,0 +1,11 @@
+# claude.ai/install.sh installs Claude Code as a self-updating binary
+# (claude update checks/installs new releases); not managed by a package manager.
+[programs.claude]
+description = "Claude Code CLI"
+
+[programs.claude.version]
+command = "claude --version 2>/dev/null || $HOME/.local/bin/claude --version"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[programs.claude.install.script]
+command = "curl -fsSL https://claude.ai/install.sh | bash"

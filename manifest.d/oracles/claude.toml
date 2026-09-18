@@ -1,0 +1,4 @@
+# Is the claude binary itself behind the latest published Claude Code release?
+[outdated.claude]
+command = "file:scripts/outdated/claude.sh"
+upgrade = "file:scripts/outdated/claude.sh update {item}"

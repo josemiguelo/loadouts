@@ -5,7 +5,7 @@
   "distro": null,
   "arch": "arm64",
   "toolVersion": "0.13.0",
-  "updatedAt": "2026-09-17T17:53:34.130598Z",
+  "updatedAt": "2026-09-18T17:10:02.257420Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -35,6 +35,11 @@
     "chezmoi": {
       "status": "installed",
       "version": "2.72.2",
+      "reason": null
+    },
+    "claude": {
+      "status": "installed",
+      "version": "2.1.276",
       "reason": null
     },
     "fd": {
