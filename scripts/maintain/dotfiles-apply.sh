@@ -5,6 +5,9 @@
 # lists what differs (`chezmoi status`) as the detail. Remote freshness is
 # dotfiles-pull's separate concern. Modes: `check` / `install` (default).
 set -eu
+# chezmoi is a brew program: only an interactive zsh has brew on PATH, and
+# the converge runs from whatever shell the desktop opened (bash, first).
+export PATH="$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$PATH"
 
 SOURCE="$HOME/.local/share/chezmoi"
 MODE="${1:-install}"

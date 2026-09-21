@@ -4,6 +4,9 @@
 # files that are actually wrong — a blanket `chown -R ~/.local` walked ~100k
 # files to change nothing. Day-to-day convergence is chezmoi-update.sh.
 set -eu
+# chezmoi is a brew program: only an interactive zsh has brew on PATH, and
+# the converge runs from whatever shell the desktop opened (bash, first).
+export PATH="$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$PATH"
 
 # Repair-only ownership fix: sudo only when something is actually root-owned.
 if [ -n "$(find "$HOME/.local" ! -user "$USER" 2>/dev/null | head -1)" ]; then
