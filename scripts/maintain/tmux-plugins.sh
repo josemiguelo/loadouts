@@ -9,7 +9,9 @@ export PATH="$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$
 
 CONF="${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
 # Same dirs the tmux-plugins oracle walks (scripts/outdated/tmux-plugins.sh).
-CLONES="${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins"
+# tpack clones under XDG_DATA_HOME (~/.local/share/tmux/plugins); older
+# setups kept them next to tmux.conf. Walk both.
+CLONES="${XDG_DATA_HOME:-$HOME/.local/share}/tmux/plugins ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins"
 
 # One "<owner/repo>" per declared plugin, comments dropped.
 declared() {
@@ -24,8 +26,10 @@ check() {
     name=${repo##*/}
     # tpack names the clone <repo>-<12-hex-hash>.
     found=0
-    for dir in "$CLONES/$name"-*/; do
-      [ -d "$dir/.git" ] && { found=1; break; }
+    for base in $CLONES; do
+      for dir in "$base/$name"-*/; do
+        [ -d "$dir/.git" ] && { found=1; break 2; }
+      done
     done
     if [ "$found" = 0 ]; then
       echo "missing plugin: $repo"

@@ -12,7 +12,9 @@ set -eu
 export PATH="$HOME/.local/bin:/home/linuxbrew/.linuxbrew/bin:/opt/homebrew/bin:$PATH"
 
 CONF="${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf"
-CLONES="${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins"
+# tpack clones under XDG_DATA_HOME (~/.local/share/tmux/plugins); older
+# setups kept them next to tmux.conf. Walk both.
+CLONES="${XDG_DATA_HOME:-$HOME/.local/share}/tmux/plugins ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/plugins"
 GCB="$(dirname "$0")/git-clones-behind.sh"
 # tpack names the clone <repo>-<12-hex-hash>; the row is named <repo>.
 export GCB_NAME='basename "$dir" | sed "s/-[0-9a-f]\{12\}$//"'
@@ -24,8 +26,10 @@ declared() {
 }
 
 clone_of() {
-  for dir in "$CLONES/${1##*/}"-*/; do
-    [ -d "$dir/.git" ] && { printf '%s\n' "$dir"; return 0; }
+  for base in $CLONES; do
+    for dir in "$base/${1##*/}"-*/; do
+      [ -d "$dir/.git" ] && { printf '%s\n' "$dir"; return 0; }
+    done
   done
   return 1
 }
