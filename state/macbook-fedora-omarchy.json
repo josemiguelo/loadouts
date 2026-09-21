@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.13.1",
-  "updatedAt": "2026-09-21T16:24:25.291064033Z",
+  "updatedAt": "2026-09-21T16:38:30.628443587Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -335,7 +335,7 @@
       "exitCode": 0
     },
     "dotfiles-push": {
-      "status": "pending",
+      "status": "done",
       "lastRun": "2026-09-15T15:31:05.168133459Z",
       "exitCode": 1
     },
