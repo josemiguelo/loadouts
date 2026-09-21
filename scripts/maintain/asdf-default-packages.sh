@@ -7,7 +7,11 @@
 # One `npm ls` / `gem list` query per tool version (not per package) — the
 # per-package form made the check take minutes.
 set -eu
-export PATH="$HOME/.local/bin:$PATH"
+# asdf's shims first: npm/gem must be asdf's, so ASDF_*_VERSION picks the
+# version. Without them a desktop's own node (omedora ships one via mise)
+# answers to `npm` and the packages land in the wrong runtime; `gem` is
+# simply not found. Only an interactive zsh has the shims on PATH.
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$HOME/.local/bin:$PATH"
 
 TOOL_VERSIONS="$HOME/.tool-versions"
 MODE="${1:-install}"
