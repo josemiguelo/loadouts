@@ -1,0 +1,7 @@
+# omedora only: omarchy-theme-set-tmux repaints the live tmux server with the
+# omarchy theme on every theme switch, while tmux here follows kitty's palette.
+[scripts.omarchy-tmux-theme]
+description = "tmux server free of omarchy's theme overrides"
+file = "scripts/maintain/omarchy-tmux-theme.sh"
+check = "file:scripts/maintain/omarchy-tmux-theme.sh check"
+after = ["programs.tmux"]

@@ -2,7 +2,9 @@ extends = "fedora"
 
 scripts = [
   "omarchy-default-terminal",
+  "omarchy-default-browser",
   "omarchy-xwaylandvideobridge",
+  "omarchy-tmux-theme",
   "selinux-sleep-hook",
   "solaar-no-autostart",
   "setup-ssh fedora",

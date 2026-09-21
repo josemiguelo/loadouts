@@ -1,0 +1,6 @@
+# omedora only: firefox as the browser every omarchy keybinding and menu opens.
+[scripts.omarchy-default-browser]
+description = "firefox as omarchy's default browser"
+file = "scripts/maintain/omarchy-default-browser.sh"
+check = "file:scripts/maintain/omarchy-default-browser.sh check"
+after = ["programs.firefox"]
