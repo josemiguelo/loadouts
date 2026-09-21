@@ -5,7 +5,9 @@
 # default (install) mode on converge, fetching only what's missing.
 set -eu
 
-DIR="${ZDOTDIR:-$HOME}/completions"
+# ZDOTDIR is exported by ~/.zshenv; from bash (a desktop's default shell before
+# default-shell has run) it is unset, so fall back to the same directory.
+DIR="${ZDOTDIR:-$HOME/.config/zsh}/completions"
 
 # name (installed as _name)  |  source url
 COMPLETIONS="

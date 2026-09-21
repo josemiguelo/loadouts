@@ -1,0 +1,17 @@
+# Homebrew must exist and be writable by the login user before anything
+# installs with brew. Homebrew is single-owner: a prefix installed by another
+# account fails every `brew install` with a permissions error, so this
+# reclaims it. The 01_ prefix at the manifest.d root sorts it right after
+# setup-dnf and before every brew-mapped program (declaration order is
+# fragment-path order for programs with no dependency edges).
+#
+# PATH is deliberately not touched here: brew reaches interactive shells via
+# the zsh brew plugin in the dotfiles, never via /etc/profile.d.
+[programs.setup-brew]
+description = "Homebrew installed at /home/linuxbrew and owned by the login user"
+depends-on = ["curl", "git", "gcc", "procps-ng"]
+
+[programs.setup-brew.install.script]
+command = "file:scripts/install/setup-brew.sh install"
+check = "file:scripts/install/setup-brew.sh check && echo ready"
+regex = "(ready)"

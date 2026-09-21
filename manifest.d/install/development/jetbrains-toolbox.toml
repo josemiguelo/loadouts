@@ -1,11 +1,12 @@
-# The linux cask lives in the ublue-os tap (see ublue-os-tap.toml).
 [programs.jetbrains-toolbox]
 description = "JetBrains Toolbox"
-depends-on = ["ublue-os-tap"]
 
-[programs.jetbrains-toolbox.install.brew-linux]
-installer = "brew-cask"
-pkg = "jetbrains-toolbox-linux"
+# Linux: per-user install from JetBrains' release feed (see the script for
+# why not the ublue-os cask). Version = the build the script recorded.
+[programs.jetbrains-toolbox.install.script]
+command = "file:scripts/install/install-jetbrains-toolbox.sh install"
+check = "file:scripts/install/install-jetbrains-toolbox.sh check"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
 
 [programs.jetbrains-toolbox.install.brew-macos]
 installer = "brew-cask"

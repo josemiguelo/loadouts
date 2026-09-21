@@ -1,0 +1,18 @@
+# The brew mechanisms, replacing loadout's built-ins of the same name so brew
+# is reached by absolute path (scripts/install/brew.sh) instead of a PATH
+# probe: on a fresh machine programs converge before the dotfiles that put
+# brew on PATH. Everything else (upgrade, oracle, regex) matches the built-in
+# — compare with `loadout installers brew`.
+[installers.brew]
+install = "sh scripts/install/brew.sh install {pkg}"
+upgrade = "sh scripts/install/brew.sh upgrade"
+check = "sh scripts/install/brew.sh list --versions {pkg}"
+outdated-all = "HOMEBREW_NO_AUTO_UPDATE=1 sh scripts/install/brew.sh outdated --verbose | awk '{n=$1; sub(/.*[/]/, \"\", n); v=$NF; gsub(/[()]/, \"\", v); print n, v}'"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+
+[installers.brew-cask]
+install = "sh scripts/install/brew.sh install --cask {pkg}"
+upgrade = "sh scripts/install/brew.sh upgrade --cask"
+check = "sh scripts/install/brew.sh list --cask --versions {pkg}"
+outdated-all = "HOMEBREW_NO_AUTO_UPDATE=1 sh scripts/install/brew.sh outdated --cask --verbose | awk '{n=$1; sub(/.*[/]/, \"\", n); v=$NF; gsub(/[()]/, \"\", v); print n, v}'"
+regex = "([0-9]+\\.[0-9][0-9.]*)"

@@ -1,2 +1,4 @@
+# brew on macOS; on omedora tmux is a base package, mapped to dnf there so the
+# workmux dependency resolves without brew installing a second copy.
 [programs.tmux]
-via = ["brew"]
+via = ["brew", "dnf"]

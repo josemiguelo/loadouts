@@ -9,7 +9,3 @@ depends-on = ["dnf-plugins-core"]
 [programs.kitty.install.dnf-copr]
 [programs.kitty.install.dnf-copr.with]
 copr = "solopasha/kitty"
-
-[programs.konsole]
-description = "KDE terminal emulator"
-via = ["dnf"]

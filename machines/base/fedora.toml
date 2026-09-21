@@ -8,6 +8,7 @@ scripts = [
   "dotfiles-pull",
   "dotfiles-push",
   "dotfiles-apply",
+  "default-shell",
   "asdf-plugins",
   "asdf-tools",
   "asdf-default-packages",
@@ -19,14 +20,13 @@ scripts = [
   "download-fonts",
   "setup-completions",
   "link-jetbrains-launchers-linux",
-  "remove-shadowed-rpms",
 ]
 
 [pm]
 setup-dnf = "dnf"
+setup-brew = "script"
+brew-taps = "script"
 vlc = "dnf"
-okular = "dnf"
-konsole = "dnf"
 dbus-devel = "dnf"
 dnf-plugins-core = "dnf"
 zlib-devel = "dnf"
@@ -61,35 +61,19 @@ teams-for-linux = "dnf-repo"
 sublime-text = "dnf-repo"
 yq = "brew"
 awscli = "brew"
-fzf = "dnf"
-gh = "brew"
 scrcpy = "dnf"
 atuin = "brew"
-btop = "brew"
-bat = "brew"
-ripgrep = "brew"
-zoxide = "brew"
 chezmoi = "brew"
-fd = "brew"
 trash-cli = "brew"
-tree-sitter-cli = "brew"
-tmux = "brew"
 workmux = "brew"
 git-delta = "brew"
-lazygit = "brew"
-lazydocker = "brew"
-starship = "brew"
 yazi = "brew"
 tpack = "brew-cask"
-opencode = "brew"
-jetbrains-toolbox = "brew-linux"
-ublue-os-tap = "brew"
+jetbrains-toolbox = "script"
 flathub-remote = "flatpak"
 obsidian = "flatpak"
 asdf = "script"
 ngrok = "script"
-jumpkwapp = "script"
-claude = "script"
 just = "dnf"
 vim-enhanced = "dnf"
 curl = "dnf"

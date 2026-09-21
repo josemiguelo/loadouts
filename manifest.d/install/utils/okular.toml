@@ -1,3 +1,0 @@
-[programs.okular]
-via = ["dnf"]
-description = "KDE document viewer"

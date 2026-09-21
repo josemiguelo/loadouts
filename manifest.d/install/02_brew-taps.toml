@@ -1,0 +1,10 @@
+# Taps before anything that installs from one: 02_ sorts right after
+# setup-brew, and the programs that need a tap depend on this explicitly.
+[programs.brew-taps]
+description = "third-party Homebrew taps, tapped and trusted for this user"
+depends-on = ["setup-brew"]
+
+[programs.brew-taps.install.script]
+command = "file:scripts/install/brew-taps.sh install"
+check = "file:scripts/install/brew-taps.sh check && echo trusted"
+regex = "(trusted)"

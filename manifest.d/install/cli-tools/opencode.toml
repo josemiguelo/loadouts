@@ -2,4 +2,4 @@
 description = "opencode agent"
 
 [programs.opencode.install.brew]
-command = "brew install anomalyco/tap/opencode"
+command = "sh scripts/install/brew.sh install anomalyco/tap/opencode"

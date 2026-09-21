@@ -11,6 +11,16 @@ if [ -n "$(find "$HOME/.local" ! -user "$USER" 2>/dev/null | head -1)" ]; then
   find "$HOME/.local" ! -user "$USER" -print0 | xargs -0 -r sudo chown "$USER:$(id -gn)"
 fi
 
+# A desktop that pre-seeds its own Neovim config (omedora builds one on first
+# login) must not survive underneath ours: chezmoi only overwrites the files it
+# manages, and the leftovers (plugin/, lua/plugins/) still auto-load. First
+# bootstrap only — once a source exists the config is ours.
+NVIM="$HOME/.config/nvim"
+if [ -d "$NVIM" ] && [ ! -d "$HOME/.local/share/chezmoi" ]; then
+  echo "moving pre-existing $NVIM aside"
+  mv "$NVIM" "$NVIM.pre-chezmoi.$(date +%Y%m%d-%H%M%S)"
+fi
+
 # --no-tty: fail with the reason instead of prompting (a prompt would hang
 # under captured output).
 chezmoi init --apply --verbose --no-tty https://github.com/josemiguelo/.dotfiles.git

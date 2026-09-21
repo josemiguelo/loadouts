@@ -1,4 +1,5 @@
 [scripts.setup-ssh]
 description = "machine ssh key and agent auto-add config"
 file = "scripts/maintain/setup-ssh.sh"
-check = "test -f $HOME/.ssh/$1 && grep -q 'AddKeysToAgent yes' $HOME/.ssh/config"
+# The agent-unit clause is Linux-only; uname short-circuits it on macOS.
+check = "test -f $HOME/.ssh/$1 && grep -q 'AddKeysToAgent yes' $HOME/.ssh/config && { test \"$(uname -s)\" != Linux || systemctl --user -q is-enabled ssh-agent.socket; }"

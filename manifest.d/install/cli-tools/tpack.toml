@@ -2,6 +2,7 @@
 # cask, so brew-cask mechanics observe it.
 [programs.tpack]
 description = "tmux package manager"
+depends-on = ["brew-taps"]
 
 [programs.tpack.install.brew-cask]
-command = "brew install tmuxpack/tpack/tpack"
+command = "sh scripts/install/brew.sh install tmuxpack/tpack/tpack"

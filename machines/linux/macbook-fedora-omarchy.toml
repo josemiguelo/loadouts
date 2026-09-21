@@ -1,6 +1,8 @@
 extends = "fedora"
 
 scripts = [
+  "omarchy-default-terminal",
+  "omarchy-xwaylandvideobridge",
   "solaar-no-autostart",
   "setup-ssh fedora",
   "setup-libvirt",
@@ -10,5 +12,7 @@ scripts = [
 ]
 
 [pm]
+# omedora base package; mapped so workmux (brew) can depend on it.
+tmux = "dnf"
 solaar = "dnf"
 virtualization = "dnf"

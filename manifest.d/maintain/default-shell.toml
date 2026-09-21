@@ -1,0 +1,8 @@
+# The login shell flips only once zsh exists and the dotfiles that configure
+# it (~/.zshenv -> ZDOTDIR) are in place, so the first zsh login is never a
+# bare one. Takes effect on the next login.
+[scripts.default-shell]
+description = "login shell set to zsh"
+file = "scripts/maintain/default-shell.sh"
+check = "file:scripts/maintain/default-shell.sh check"
+after = ["programs.zsh", "scripts.dotfiles-apply"]

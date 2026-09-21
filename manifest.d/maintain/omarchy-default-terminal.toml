@@ -1,0 +1,6 @@
+# omedora only: kitty as the terminal every omarchy keybinding and menu opens.
+[scripts.omarchy-default-terminal]
+description = "kitty as omarchy's default terminal"
+file = "scripts/maintain/omarchy-default-terminal.sh"
+check = "file:scripts/maintain/omarchy-default-terminal.sh check"
+after = ["programs.kitty"]

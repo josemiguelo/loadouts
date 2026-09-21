@@ -1,8 +1,0 @@
-[programs.ublue-os-tap]
-description = "ublue-os homebrew tap (tapped and trusted)"
-
-[programs.ublue-os-tap.install.brew]
-command = "brew tap ublue-os/tap && brew trust ublue-os/tap"
-check = "taps=$(brew tap) && printf '%s\\n' \"$taps\" | grep -x ublue-os/tap"
-regex = "(ublue-os/tap)"
-probe = "brew"

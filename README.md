@@ -46,7 +46,7 @@ an older one refuses the whole repo with `run: loadout self-upgrade`.
 $ curl -fsSL https://raw.githubusercontent.com/josemiguelo/loadout/master/install.sh | sh
 $ loadout upgrade                       # if loadout is already installed
 $ git clone <this repo> ~/.config/loadouts
-$ cp machines/macbook-fedora-kde.toml machines/$(hostname).toml   # then edit:
+$ cp machines/linux/macbook-fedora-omarchy.toml machines/linux/$(hostname).toml   # then edit:
 #   - map every program this machine should have to one of its install keys
 #   - opt into the scripts it needs (top-level scripts = [...] list)
 $ loadout --repo ~/.config/loadouts setup-new-machine
