@@ -1,0 +1,6 @@
+# omedora on Fedora: its system-sleep hook trips a policy gap in
+# systemd_sleep_t (AVC + notification on every suspend). Harmless, but noisy.
+[scripts.selinux-sleep-hook]
+description = "SELinux: let systemd-sleep run its hooks quietly"
+file = "scripts/maintain/selinux-sleep-hook.sh"
+check = "file:scripts/maintain/selinux-sleep-hook.sh check"
