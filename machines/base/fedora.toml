@@ -9,6 +9,7 @@ scripts = [
   "dotfiles-push",
   "dotfiles-apply",
   "default-shell",
+  "user-environment",
   "asdf-plugins",
   "asdf-tools",
   "asdf-default-packages",

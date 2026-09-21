@@ -1,0 +1,6 @@
+# Linux only (systemd user manager); mapped from the fedora base.
+[scripts.user-environment]
+description = "systemd user environment matches ~/.config/environment.d"
+file = "scripts/maintain/user-environment.sh"
+check = "file:scripts/maintain/user-environment.sh check"
+after = ["scripts.dotfiles-bootstrap", "scripts.dotfiles-apply"]
