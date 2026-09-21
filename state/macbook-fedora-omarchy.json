@@ -5,7 +5,7 @@
   "distro": "fedora",
   "arch": "x86_64",
   "toolVersion": "0.13.1",
-  "updatedAt": "2026-09-21T23:25:21.549089240Z",
+  "updatedAt": "2026-09-21T23:35:17.975441400Z",
   "programs": {
     "setup-dnf": {
       "status": "installed",
@@ -13,8 +13,8 @@
       "reason": null
     },
     "setup-brew": {
-      "status": "missing",
-      "version": null,
+      "status": "installed",
+      "version": "ready",
       "reason": null
     },
     "brew-taps": {
@@ -321,8 +321,8 @@
   "scripts": {
     "remove-firefox-flatpak": {
       "status": "done",
-      "lastRun": "2026-09-15T01:20:53.406352576Z",
-      "exitCode": 1
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-bootstrap": {
       "status": "done",
@@ -331,23 +331,23 @@
     },
     "dotfiles-pull": {
       "status": "done",
-      "lastRun": "2026-09-15T01:20:55.960460290Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-push": {
-      "status": "pending",
-      "lastRun": "2026-09-15T15:31:05.168133459Z",
-      "exitCode": 1
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-apply": {
-      "status": "done",
+      "status": "pending",
       "lastRun": null,
       "exitCode": null
     },
     "default-shell": {
       "status": "done",
-      "lastRun": "2026-09-21T15:12:59.443990842Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "user-environment": {
       "status": "done",
@@ -356,18 +356,18 @@
     },
     "asdf-plugins": {
       "status": "done",
-      "lastRun": "2026-09-21T15:13:28.437305884Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "asdf-tools": {
       "status": "done",
-      "lastRun": "2026-09-21T15:36:24.033232628Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "asdf-default-packages": {
       "status": "done",
-      "lastRun": "2026-09-21T15:36:26.849846807Z",
-      "exitCode": 127
+      "lastRun": null,
+      "exitCode": null
     },
     "nvim-plugins": {
       "status": "done",
@@ -376,78 +376,78 @@
     },
     "tmux-plugins": {
       "status": "done",
-      "lastRun": "2026-09-21T16:04:33.670179395Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "zsh-plugins": {
       "status": "done",
-      "lastRun": "2026-09-21T15:36:28.474574103Z",
-      "exitCode": 127
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-ssh-remote": {
       "status": "done",
-      "lastRun": "2026-09-21T15:33:59.813570318Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "setup-git": {
       "status": "done",
-      "lastRun": "2026-09-21T15:33:59.825768970Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "download-fonts": {
       "status": "done",
-      "lastRun": "2026-09-21T15:34:04.446392703Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "setup-completions": {
       "status": "done",
-      "lastRun": "2026-09-21T15:34:04.810801238Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "link-jetbrains-launchers-linux": {
       "status": "done",
-      "lastRun": "2026-08-22T00:48:01.813662938Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "omarchy-default-terminal": {
       "status": "done",
-      "lastRun": "2026-09-21T15:34:05.202185746Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "omarchy-default-browser": {
-      "status": "done",
-      "lastRun": "2026-09-21T22:33:30.873815774Z",
-      "exitCode": 0
+      "status": "pending",
+      "lastRun": null,
+      "exitCode": null
     },
     "omarchy-xwaylandvideobridge": {
       "status": "done",
-      "lastRun": "2026-09-21T16:04:34.349484821Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "omarchy-tmux-theme": {
       "status": "done",
-      "lastRun": "2026-09-21T23:25:17.115586078Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "selinux-sleep-hook": {
       "status": "done",
-      "lastRun": "2026-09-21T17:06:30.050556938Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "solaar-no-autostart": {
       "status": "done",
-      "lastRun": "2026-09-14T21:21:05.259072809Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "setup-ssh": {
       "status": "done",
-      "lastRun": "2026-09-21T16:24:15.560364511Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "setup-libvirt": {
       "status": "done",
-      "lastRun": "2026-09-21T15:34:52.171809397Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
     "hid-apple-keyboard": {
       "status": "done",
@@ -461,8 +461,8 @@
     },
     "boot-clock": {
       "status": "done",
-      "lastRun": "2026-09-04T01:23:07.039520753Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     }
   }
 }
