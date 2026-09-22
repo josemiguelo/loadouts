@@ -4,8 +4,8 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.13.0",
-  "updatedAt": "2026-09-18T17:17:29.769658Z",
+  "toolVersion": "0.13.1",
+  "updatedAt": "2026-09-22T20:57:29.825215Z",
   "programs": {
     "asdf": {
       "status": "installed",
@@ -39,7 +39,7 @@
     },
     "claude": {
       "status": "installed",
-      "version": "2.1.276",
+      "version": "2.1.280",
       "reason": null
     },
     "fd": {
@@ -155,7 +155,7 @@
       "exitCode": null
     },
     "dotfiles-push": {
-      "status": "done",
+      "status": "pending",
       "lastRun": "2026-08-30T19:17:01.696908Z",
       "exitCode": 0
     },
