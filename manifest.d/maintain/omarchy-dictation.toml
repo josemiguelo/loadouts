@@ -1,0 +1,9 @@
+# Omarchy only: Voxtype dictation through Omarchy's own installer, which
+# asks before its ~150MB model download — run it from a terminal.
+[scripts.omarchy-dictation]
+description = "Voxtype dictation, set up by Omarchy's installer"
+file = "scripts/maintain/omarchy-dictation.sh"
+check = "file:scripts/maintain/omarchy-dictation.sh check"
+after = ["programs.voxtype", "programs.wtype"]
+# The installer adds its packages with omarchy pkg add (sudo inside).
+sudo = true

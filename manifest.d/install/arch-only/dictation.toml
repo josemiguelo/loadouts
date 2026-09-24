@@ -1,0 +1,12 @@
+# Voxtype push-to-talk dictation, the packages Omarchy's own dictation
+# installer (omarchy-voxtype-install) adds: voxtype-bin from the [omarchy]
+# repo, and wtype, which types the text into the focused window.
+[programs.voxtype]
+description = "Voxtype push-to-talk dictation"
+
+[programs.voxtype.install.omarchy-pkg]
+pkg = "voxtype-bin"
+
+[programs.wtype]
+description = "xdotool type for Wayland (voxtype's typing backend)"
+via = ["omarchy-pkg"]
