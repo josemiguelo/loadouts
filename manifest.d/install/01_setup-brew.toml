@@ -15,3 +15,6 @@ depends-on = ["curl", "git", "gcc", "procps-ng"]
 command = "file:scripts/install/setup-brew.sh install"
 check = "file:scripts/install/setup-brew.sh check && echo ready"
 regex = "(ready)"
+# Homebrew's installer runs sudo itself (to create /home/linuxbrew), and the
+# script's reclaim step runs `sudo chown`: neither shows in the command.
+sudo = true

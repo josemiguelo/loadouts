@@ -14,5 +14,5 @@ for b in "$(command -v brew 2>/dev/null || true)" \
   fi
 done
 
-echo "brew is not installed (setup-brew installs it on Fedora)" >&2
+echo "brew is not installed (setup-brew installs it on Linux)" >&2
 exit 1

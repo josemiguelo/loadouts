@@ -6,3 +6,5 @@ description = "login shell set to zsh"
 file = "scripts/maintain/default-shell.sh"
 check = "file:scripts/maintain/default-shell.sh check"
 after = ["programs.zsh", "scripts.dotfiles-apply"]
+# usermod/chsh run through sudo inside the script.
+sudo = true
