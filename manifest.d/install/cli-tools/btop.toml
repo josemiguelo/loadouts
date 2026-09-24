@@ -1,2 +1,2 @@
 [programs.btop]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

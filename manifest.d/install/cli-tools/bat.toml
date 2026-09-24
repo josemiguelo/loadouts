@@ -1,2 +1,2 @@
 [programs.bat]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

@@ -1,2 +1,2 @@
 [programs.fd]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

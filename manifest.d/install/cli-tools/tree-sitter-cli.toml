@@ -1,2 +1,2 @@
 [programs.tree-sitter-cli]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

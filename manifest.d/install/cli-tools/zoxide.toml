@@ -1,2 +1,2 @@
 [programs.zoxide]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

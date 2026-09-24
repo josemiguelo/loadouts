@@ -1,2 +1,2 @@
 [programs.lazydocker]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

@@ -1,2 +1,2 @@
 [programs.starship]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

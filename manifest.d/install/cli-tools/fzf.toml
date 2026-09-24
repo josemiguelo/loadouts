@@ -1,2 +1,2 @@
 [programs.fzf]
-via = ["brew", "dnf"]
+via = ["brew", "dnf", "omarchy-pkg"]
