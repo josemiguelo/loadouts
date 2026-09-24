@@ -1,0 +1,11 @@
+# MacBookPro16,1 internal keyboard on Arch/Omarchy: the same Fn/Ctrl and
+# Alt/Super swaps and fnmode as hid-apple-keyboard (Fedora), with the boot
+# image rebuilt through Limine (limine-mkinitcpio) instead of dracut. Checks
+# the modprobe.d file AND the live module parameters — a stale initramfs can
+# keep the two disagreeing.
+[scripts.hid-apple-keyboard-arch]
+description = "internal keyboard fn/ctrl swap and fnmode (Arch)"
+file = "scripts/maintain/hid-apple-keyboard-arch.sh"
+check = "file:scripts/maintain/hid-apple-keyboard-arch.sh check"
+# tee into /etc and /sys, and limine-mkinitcpio, all through sudo.
+sudo = true

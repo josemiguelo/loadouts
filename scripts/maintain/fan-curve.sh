@@ -4,7 +4,8 @@
 # The t2fanrd rpm ships no config at all — it reads the original Python
 # daemon's path, /etc/t2fand.conf, and writes a default there if absent. So
 # this file is entirely ours; keeping it in the repo is the only record of
-# what the fan curve is supposed to be.
+# what the fan curve is supposed to be. (On Omarchy the installer writes its
+# own linear 55-75 default there once, at install; this replaces it.)
 #
 # low/high are the ends of the ramp: below low_temp the fan sits at its
 # hardware minimum, above high_temp at its maximum. The min/max RPM come from
