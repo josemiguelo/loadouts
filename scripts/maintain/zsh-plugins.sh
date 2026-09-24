@@ -10,16 +10,22 @@ set -eu
 
 ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
 BUNDLES="$ZDOTDIR/.zplugins"
-# Same clones the antidote / antidote-plugins oracles walk (scripts/outdated/),
-# and found the same way: ask antidote, never guess. The XDG path is only
-# Linux's default — on macOS antidote clones into ~/Library/Caches/antidote,
-# so guessing called every installed bundle missing and left this script
-# permanently pending: `antidote bundle` had nothing to do, and the check
-# still failed after it ran.
 ANTIDOTE="${XDG_DATA_HOME:-$HOME/.local/share}/mattmc3/antidote"
-CLONES="${ANTIDOTE_HOME:-}"
-[ -n "$CLONES" ] || CLONES=$(zsh -fc "source '$ANTIDOTE/antidote.zsh' && antidote home" 2>/dev/null)
-[ -n "$CLONES" ] || { echo "cannot ask antidote where it clones: $ANTIDOTE/antidote.zsh" >&2; exit 1; }
+
+# "<owner/repo> <clone dir>" per declared bundle, "-" for one not cloned. The
+# same clones the antidote-plugins oracle walks, found the same way: ask
+# antidote (`antidote path`), never guess. Its home differs per OS (macOS:
+# ~/Library/Caches/antidote) and its layout per version (2.x nests clones
+# under github.com/), and each guess once left this check pending forever
+# with every bundle in place. Needs antidote itself — callers check first.
+bundle_paths() {
+  # shellcheck disable=SC2046
+  ANTIDOTE="$ANTIDOTE" zsh -fc '
+    source "$ANTIDOTE/antidote.zsh" || exit 1
+    for r in "$@"; do
+      p=$(antidote path "$r" 2>/dev/null) && print -r -- "$r $p" || print -r -- "$r -"
+    done' zsh $(declared)
+}
 
 # One "<owner/repo>" per remote bundle, comments and local entries dropped.
 declared() {
@@ -29,12 +35,12 @@ declared() {
 
 check() {
   [ -f "$BUNDLES" ] || { echo ".zplugins not found" >&2; exit 1; }
-  status=0
-  [ -d "$ANTIDOTE/.git" ] || { echo "missing: antidote itself ($ANTIDOTE)"; status=1; }
-  for repo in $(declared); do
-    [ -d "$CLONES/$repo/.git" ] || { echo "missing bundle: $repo"; status=1; }
-  done
-  exit $status
+  # Without antidote there's nothing to ask about its bundles.
+  [ -d "$ANTIDOTE/.git" ] || { echo "missing: antidote itself ($ANTIDOTE)"; exit 1; }
+  missing=$(bundle_paths | awk '$2 == "-" { print $1 }')
+  [ -z "$missing" ] && exit 0
+  for repo in $missing; do echo "missing bundle: $repo"; done
+  exit 1
 }
 
 install_all() {
