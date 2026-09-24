@@ -1,0 +1,10 @@
+# Omarchy only: Voxtype's Vulkan build instead of the CPU one, then the
+# service restarted onto it. Omarchy's installer attempts the switch without
+# sudo and lets it fail.
+[scripts.omarchy-dictation-gpu]
+description = "Voxtype dictation on the GPU (Vulkan)"
+file = "scripts/maintain/omarchy-dictation-gpu.sh"
+check = "file:scripts/maintain/omarchy-dictation-gpu.sh check"
+after = ["scripts.omarchy-dictation"]
+# `voxtype setup gpu --enable` swaps /usr/bin/voxtype through sudo.
+sudo = true
