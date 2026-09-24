@@ -3,6 +3,9 @@
 # keys may not exist yet on a virgin machine). Ownership repair touches ONLY
 # files that are actually wrong — a blanket `chown -R ~/.local` walked ~100k
 # files to change nothing. Day-to-day convergence is chezmoi-update.sh.
+#
+# $1 (optional): the dotfiles branch this machine follows, from its opt-in
+# ("dotfiles-bootstrap mise"); without it, the repo's default branch.
 set -eu
 # chezmoi is a brew program: only an interactive zsh has brew on PATH, and
 # the converge runs from whatever shell the desktop opened (bash, first).
@@ -26,4 +29,4 @@ fi
 
 # --no-tty: fail with the reason instead of prompting (a prompt would hang
 # under captured output).
-chezmoi init --apply --verbose --no-tty https://github.com/josemiguelo/.dotfiles.git
+chezmoi init --apply --verbose --no-tty ${1:+--branch "$1"} https://github.com/josemiguelo/.dotfiles.git

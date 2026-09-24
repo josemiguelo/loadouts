@@ -13,6 +13,8 @@ file = "scripts/maintain/dotfiles-bootstrap.sh"
 check = "test -d $HOME/.local/share/chezmoi"
 after = ["programs.chezmoi"]
 modes = ["setup"]
+# Repairs ~/.local ownership with sudo when something there is root-owned.
+sudo = true
 
 # Remote freshness: is the local source behind origin? (throttled fetch,
 # fail-soft offline). Converge = pull only; applying is dotfiles-apply's job.
