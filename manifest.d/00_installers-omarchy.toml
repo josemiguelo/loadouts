@@ -1,0 +1,22 @@
+# Arch packages the Omarchy way: `omarchy pkg add` (pacman -S --needed, then a
+# pacman -Q verification of its own) instead of a bare pacman install.
+#
+# upgrade is `omarchy update -y`, not pacman -Syu: Omarchy's alpm hook
+# (00-omarchy-update-guard.hook) refuses direct system upgrades, and the
+# update also runs Omarchy's migrations. -y skips the opening confirmation;
+# the orphan and reboot questions still ask on a terminal.
+#
+# Both commands call sudo from inside, where loadout's home screen can't see
+# it; `sudo = true` makes it ask for the password up front.
+#
+# The oracle matches loadout's built-in pacman: checkupdates syncs a private
+# copy of the databases, which here track Omarchy's pinned mirror snapshot —
+# exactly what `omarchy update` would bring.
+[installers.omarchy-pkg]
+probe = "omarchy"
+install = "omarchy pkg add {pkg}"
+upgrade = "omarchy update -y"
+check = "pacman -Q {pkg}"
+outdated-all = "checkupdates --nocolor | awk '$3 == \"->\" {print $1, $4}'"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+sudo = true
