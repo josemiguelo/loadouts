@@ -19,6 +19,9 @@ scripts = [
   "omarchy-tmux-theme",
   "nvim-plugins",
   "omarchy-default-terminal",
+  "omarchy-default-agent claude",
+  "omarchy-dictation",
+  "omarchy-dictation-gpu",
 ]
 
 [pm]
@@ -39,3 +42,5 @@ tpack = "brew-cask"
 workmux = "brew"
 mise = "omarchy-pkg"
 kitty = "omarchy-pkg"
+voxtype = "omarchy-pkg"
+wtype = "omarchy-pkg"
