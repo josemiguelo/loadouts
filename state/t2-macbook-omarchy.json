@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.0",
-  "updatedAt": "2026-09-24T23:08:32.439429233Z",
+  "updatedAt": "2026-09-24T23:43:28.778088316Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -42,6 +42,21 @@
       "version": "18.21.0",
       "reason": null
     },
+    "awscli": {
+      "status": "installed",
+      "version": "2.37.2",
+      "reason": null
+    },
+    "bat": {
+      "status": "installed",
+      "version": "0.26.1",
+      "reason": null
+    },
+    "btop": {
+      "status": "installed",
+      "version": "1.4.7",
+      "reason": null
+    },
     "chezmoi": {
       "status": "installed",
       "version": "2.72.1",
@@ -50,6 +65,16 @@
     "curl": {
       "status": "installed",
       "version": "8.22.0",
+      "reason": null
+    },
+    "fd": {
+      "status": "installed",
+      "version": "10.5.0",
+      "reason": null
+    },
+    "fzf": {
+      "status": "installed",
+      "version": "0.74.3",
       "reason": null
     },
     "git-delta": {
@@ -62,9 +87,44 @@
       "version": "2.55.0",
       "reason": null
     },
+    "google-cloud-cli": {
+      "status": "installed",
+      "version": "586.0.0",
+      "reason": null
+    },
+    "just": {
+      "status": "installed",
+      "version": "1.58.0",
+      "reason": null
+    },
+    "lazydocker": {
+      "status": "installed",
+      "version": "0.25.2",
+      "reason": null
+    },
+    "lazygit": {
+      "status": "installed",
+      "version": "0.65.0",
+      "reason": null
+    },
     "mise": {
       "status": "installed",
       "version": "2026.9.12",
+      "reason": null
+    },
+    "ngrok": {
+      "status": "installed",
+      "version": "3.39.11",
+      "reason": null
+    },
+    "ripgrep": {
+      "status": "installed",
+      "version": "15.2.0",
+      "reason": null
+    },
+    "starship": {
+      "status": "installed",
+      "version": "1.26.0",
       "reason": null
     },
     "tmux": {
@@ -77,6 +137,21 @@
       "version": "2.0.6",
       "reason": null
     },
+    "trash-cli": {
+      "status": "installed",
+      "version": "0.26.9.14",
+      "reason": null
+    },
+    "tree-sitter-cli": {
+      "status": "installed",
+      "version": "0.26.9",
+      "reason": null
+    },
+    "vim-enhanced": {
+      "status": "installed",
+      "version": "9.2.1100",
+      "reason": null
+    },
     "workmux": {
       "status": "installed",
       "version": "0.1.266",
@@ -85,6 +160,16 @@
     "yazi": {
       "status": "installed",
       "version": "26.9.1",
+      "reason": null
+    },
+    "yq": {
+      "status": "installed",
+      "version": "4.53.6",
+      "reason": null
+    },
+    "zoxide": {
+      "status": "installed",
+      "version": "0.10.0",
       "reason": null
     },
     "zsh": {
@@ -116,13 +201,13 @@
     },
     "dotfiles-pull": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-09-24T23:38:37.576328078Z",
+      "exitCode": 0
     },
     "dotfiles-apply": {
-      "status": "pending",
-      "lastRun": null,
-      "exitCode": null
+      "status": "done",
+      "lastRun": "2026-09-24T23:38:50.263228817Z",
+      "exitCode": 1
     },
     "dotfiles-push": {
       "status": "done",
