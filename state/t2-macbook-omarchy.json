@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "machine": "t2-macbook-omarchy",
+  "os": "linux",
+  "distro": "omarchy",
+  "arch": "x86_64",
+  "toolVersion": "0.16.0",
+  "updatedAt": "2026-09-24T22:38:08.727197819Z",
+  "programs": {
+    "setup-brew": {
+      "status": "installed",
+      "version": "ready",
+      "reason": null
+    },
+    "brew-taps": {
+      "status": "installed",
+      "version": "trusted",
+      "reason": null
+    },
+    "t2fanrd": {
+      "status": "installed",
+      "version": "16.48",
+      "reason": null
+    },
+    "ttf-firacode-nerd": {
+      "status": "installed",
+      "version": "3.5.1",
+      "reason": null
+    },
+    "atuin": {
+      "status": "installed",
+      "version": "18.21.0",
+      "reason": null
+    },
+    "chezmoi": {
+      "status": "installed",
+      "version": "2.72.1",
+      "reason": null
+    },
+    "curl": {
+      "status": "installed",
+      "version": "8.22.0",
+      "reason": null
+    },
+    "git-delta": {
+      "status": "installed",
+      "version": "0.19.2",
+      "reason": null
+    },
+    "git": {
+      "status": "installed",
+      "version": "2.55.0",
+      "reason": null
+    },
+    "mise": {
+      "status": "installed",
+      "version": "2026.9.12",
+      "reason": null
+    },
+    "tmux": {
+      "status": "installed",
+      "version": "3.7",
+      "reason": null
+    },
+    "tpack": {
+      "status": "installed",
+      "version": "2.0.6",
+      "reason": null
+    },
+    "workmux": {
+      "status": "installed",
+      "version": "0.1.266",
+      "reason": null
+    },
+    "yazi": {
+      "status": "installed",
+      "version": "26.9.1",
+      "reason": null
+    },
+    "zsh": {
+      "status": "installed",
+      "version": "5.9.2",
+      "reason": null
+    },
+    "gcc": {
+      "status": "installed",
+      "version": "16.2.1",
+      "reason": null
+    },
+    "procps-ng": {
+      "status": "installed",
+      "version": "4.0.7",
+      "reason": null
+    },
+    "kitty": {
+      "status": "installed",
+      "version": "0.48.2",
+      "reason": null
+    }
+  },
+  "scripts": {
+    "default-shell": {
+      "status": "done",
+      "lastRun": "2026-09-24T21:41:23.076231984Z",
+      "exitCode": 0
+    },
+    "dotfiles-pull": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "dotfiles-apply": {
+      "status": "pending",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "dotfiles-push": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "dotfiles-ssh-remote": {
+      "status": "done",
+      "lastRun": "2026-09-24T21:49:22.059595241Z",
+      "exitCode": 0
+    },
+    "zsh-plugins": {
+      "status": "done",
+      "lastRun": "2026-09-24T21:53:48.410405491Z",
+      "exitCode": 0
+    },
+    "setup-git": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:03:06.585287649Z",
+      "exitCode": 0
+    },
+    "mise-tools": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:11:14.276492597Z",
+      "exitCode": 0
+    },
+    "mise-default-packages": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:14:02.546834449Z",
+      "exitCode": 0
+    },
+    "setup-completions": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:14:19.907576977Z",
+      "exitCode": 0
+    },
+    "tmux-plugins": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:14:38.797923897Z",
+      "exitCode": 0
+    },
+    "omarchy-tmux-theme": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "nvim-plugins": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-default-terminal": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:38:06.422974541Z",
+      "exitCode": 0
+    },
+    "dotfiles-bootstrap": {
+      "status": "done",
+      "lastRun": "2026-09-24T21:34:49.667693031Z",
+      "exitCode": 0
+    },
+    "setup-ssh": {
+      "status": "done",
+      "lastRun": "2026-09-24T21:47:00.328052260Z",
+      "exitCode": 0
+    },
+    "hid-apple-keyboard-arch": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:30:55.045447220Z",
+      "exitCode": 0
+    },
+    "fan-curve": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:30:55.830204428Z",
+      "exitCode": 0
+    }
+  }
+}
