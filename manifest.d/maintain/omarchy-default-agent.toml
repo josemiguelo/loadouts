@@ -1,0 +1,8 @@
+# Omarchy only: the coding agent Omarchy's keybinding and menu launch, named
+# by the machine's opt-in ("omarchy-default-agent claude"). The agent comes
+# from mise (the dotfiles' config), hence after mise-tools.
+[scripts.omarchy-default-agent]
+description = "Omarchy's default coding agent"
+file = "scripts/maintain/omarchy-default-agent.sh"
+check = "test \"$(omarchy default agent)\" = \"$1\""
+after = ["scripts.mise-tools"]
