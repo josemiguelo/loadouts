@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.0",
-  "updatedAt": "2026-09-24T22:38:08.727197819Z",
+  "updatedAt": "2026-09-24T23:08:32.439429233Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -15,6 +15,16 @@
     "brew-taps": {
       "status": "installed",
       "version": "trusted",
+      "reason": null
+    },
+    "voxtype": {
+      "status": "installed",
+      "version": "1.0.1",
+      "reason": null
+    },
+    "wtype": {
+      "status": "installed",
+      "version": "0.4",
       "reason": null
     },
     "t2fanrd": {
@@ -168,6 +178,21 @@
       "status": "done",
       "lastRun": "2026-09-24T22:38:06.422974541Z",
       "exitCode": 0
+    },
+    "omarchy-default-agent": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:56:28.366933220Z",
+      "exitCode": 0
+    },
+    "omarchy-dictation": {
+      "status": "done",
+      "lastRun": "2026-09-24T22:56:44.274446366Z",
+      "exitCode": 1
+    },
+    "omarchy-dictation-gpu": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-bootstrap": {
       "status": "done",
