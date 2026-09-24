@@ -1,4 +1,5 @@
-# brew on macOS; on omedora tmux is a base package, mapped to dnf there so the
-# workmux dependency resolves without brew installing a second copy.
+# brew on macOS; on omedora and Omarchy tmux is a base package, mapped to the
+# system package manager there so the workmux dependency resolves without brew
+# installing a second copy.
 [programs.tmux]
-via = ["brew", "dnf"]
+via = ["brew", "dnf", "omarchy-pkg"]

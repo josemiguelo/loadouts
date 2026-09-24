@@ -1,2 +1,2 @@
 [programs.git-delta]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

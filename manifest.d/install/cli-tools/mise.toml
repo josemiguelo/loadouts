@@ -1,0 +1,8 @@
+# mise, the tool-version manager (its tools live in the dotfiles'
+# ~/.config/mise/config.toml). On Omarchy it's Omarchy's own mise-bin from the
+# [omarchy] repo, which runs ahead of Arch's extra/mise.
+[programs.mise]
+description = "mise tool-version manager"
+
+[programs.mise.install.omarchy-pkg]
+pkg = "mise-bin"

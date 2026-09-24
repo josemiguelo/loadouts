@@ -11,7 +11,7 @@ check = "dnf group list --installed 2>/dev/null | grep '^development-tools '"
 regex = "(development-tools)"
 
 [programs.gcc]
-via = ["dnf"]
+via = ["dnf", "omarchy-pkg"]
 
 [programs.autoconf]
 via = ["dnf"]
@@ -79,4 +79,4 @@ via = ["dnf"]
 via = ["dnf"]
 
 [programs.procps-ng]
-via = ["dnf"]
+via = ["dnf", "omarchy-pkg"]

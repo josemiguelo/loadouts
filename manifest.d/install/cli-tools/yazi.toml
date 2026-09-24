@@ -1,2 +1,2 @@
 [programs.yazi]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]

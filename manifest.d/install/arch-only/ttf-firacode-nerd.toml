@@ -1,0 +1,6 @@
+# FiraCode Nerd Font from the Arch repos — the families kitty's font_family
+# names (FiraCode Nerd Font Mono). Fedora and macOS get the same fonts from
+# the download-fonts script instead.
+[programs.ttf-firacode-nerd]
+description = "FiraCode Nerd Font"
+via = ["omarchy-pkg"]

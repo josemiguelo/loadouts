@@ -1,2 +1,2 @@
 [programs.git]
-via = ["dnf"]
+via = ["dnf", "omarchy-pkg"]

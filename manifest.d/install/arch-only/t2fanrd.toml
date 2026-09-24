@@ -1,0 +1,6 @@
+# The T2 fan daemon (arch-mact2 repo; Omarchy's T2 install step installs and
+# enables it). Tracked so the fan curve's daemon is part of the loadout, not
+# an installer side effect.
+[programs.t2fanrd]
+description = "T2 Mac fan control daemon"
+via = ["omarchy-pkg"]

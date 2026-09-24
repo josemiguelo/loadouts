@@ -1,2 +1,2 @@
 [programs.zsh]
-via = ["dnf"]
+via = ["dnf", "omarchy-pkg"]

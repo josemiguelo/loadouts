@@ -1,2 +1,2 @@
 [programs.curl]
-via = ["dnf"]
+via = ["dnf", "omarchy-pkg"]

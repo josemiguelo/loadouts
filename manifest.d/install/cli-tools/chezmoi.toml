@@ -1,2 +1,2 @@
 [programs.chezmoi]
-via = ["brew"]
+via = ["brew", "omarchy-pkg"]
