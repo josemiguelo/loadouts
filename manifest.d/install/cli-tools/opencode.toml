@@ -1,5 +1,0 @@
-[programs.opencode]
-description = "opencode agent"
-
-[programs.opencode.install.brew]
-command = "sh scripts/install/brew.sh install anomalyco/tap/opencode"

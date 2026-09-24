@@ -1,0 +1,5 @@
+# OpenAI's Codex CLI. Homebrew ships it as a cask; on Omarchy it comes from
+# mise (the dotfiles' ~/.config/mise/config.toml), so it isn't mapped there.
+[programs.codex]
+description = "OpenAI Codex CLI"
+via = ["brew-cask"]
