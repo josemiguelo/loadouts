@@ -4,3 +4,8 @@ description = "Google Cloud CLI"
 [programs.google-cloud-cli.install.dnf-repo]
 [programs.google-cloud-cli.install.dnf-repo.with]
 repofile = "scripts/install/repos/google-cloud-cli.repo"
+
+# Homebrew's cask (gcloud-cli, formerly google-cloud-sdk) downloads the
+# Linux tarball on Linux; on Arch the CLI is AUR-only.
+[programs.google-cloud-cli.install.brew-cask]
+pkg = "gcloud-cli"

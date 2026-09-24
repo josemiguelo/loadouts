@@ -1,2 +1,2 @@
 [programs.just]
-via = ["dnf"]
+via = ["brew", "dnf"]

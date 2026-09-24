@@ -1,2 +1,7 @@
+# Fedora's full vim is vim-enhanced (vim-minimal is the stub); Homebrew's
+# formula is just vim.
 [programs.vim-enhanced]
 via = ["dnf"]
+
+[programs.vim-enhanced.install.brew]
+pkg = "vim"
