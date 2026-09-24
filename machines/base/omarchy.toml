@@ -1,0 +1,41 @@
+# Shared truth for every Omarchy machine. System packages install through
+# Omarchy's own commands; brew only carries tools with no trustworthy Arch
+# package (tpack, workmux — their authors' own taps). Host-specifics
+# (hardware, ssh key names) live in the machine files.
+base = true
+
+scripts = [
+  "default-shell",
+  "dotfiles-pull",
+  "dotfiles-apply",
+  "dotfiles-push",
+  "dotfiles-ssh-remote",
+  "zsh-plugins",
+  "setup-git",
+  "mise-tools",
+  "mise-default-packages",
+  "setup-completions",
+  "tmux-plugins",
+  "omarchy-tmux-theme",
+  "nvim-plugins",
+  "omarchy-default-terminal",
+]
+
+[pm]
+zsh = "omarchy-pkg"
+chezmoi = "omarchy-pkg"
+git-delta = "omarchy-pkg"
+atuin = "omarchy-pkg"
+yazi = "omarchy-pkg"
+ttf-firacode-nerd = "omarchy-pkg"
+tmux = "omarchy-pkg"
+curl = "omarchy-pkg"
+git = "omarchy-pkg"
+gcc = "omarchy-pkg"
+procps-ng = "omarchy-pkg"
+setup-brew = "script"
+brew-taps = "script"
+tpack = "brew-cask"
+workmux = "brew"
+mise = "omarchy-pkg"
+kitty = "omarchy-pkg"
