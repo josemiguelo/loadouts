@@ -1,11 +1,15 @@
 # Terminal emulators.
 
 # kitty on Fedora comes from the solopasha COPR (fresher than the distro
-# package); the copr enable step is the dnf-copr mechanism's, not a script's.
+# package); the copr enable step is the dnf-copr mechanism's, not a script's,
+# and only that variant needs dnf-plugins-core. On Omarchy it's the Arch
+# package, through Omarchy's own `omarchy pkg add`.
 [programs.kitty]
 description = "kitty terminal emulator"
-depends-on = ["dnf-plugins-core"]
 
 [programs.kitty.install.dnf-copr]
+depends-on = ["dnf-plugins-core"]
 [programs.kitty.install.dnf-copr.with]
 copr = "solopasha/kitty"
+
+[programs.kitty.install.omarchy-pkg]
