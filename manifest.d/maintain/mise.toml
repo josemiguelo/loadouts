@@ -1,0 +1,16 @@
+# Tools first — exactly the versions ~/.config/mise/config.toml pins — then
+# the default packages inside them. The config comes from the dotfiles, so
+# both wait for them.
+[scripts.mise-tools]
+description = "mise tools at the versions ~/.config/mise/config.toml pins"
+file = "scripts/maintain/mise-tools.sh"
+check = "file:scripts/maintain/mise-tools.sh check"
+after = ["programs.mise", "scripts.dotfiles-bootstrap", "scripts.dotfiles-apply"]
+
+# mise only seeds default packages into versions it installs from then on;
+# this backfills ~/.default-npm-packages and ~/.default-gems into every one.
+[scripts.mise-default-packages]
+description = "default npm/gem packages in every mise node/ruby version"
+file = "scripts/maintain/mise-default-packages.sh"
+check = "file:scripts/maintain/mise-default-packages.sh check"
+after = ["scripts.mise-tools"]

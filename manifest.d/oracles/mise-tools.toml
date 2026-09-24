@@ -1,0 +1,4 @@
+# Are the pins in ~/.config/mise/config.toml behind their upstream releases?
+[outdated.mise-tools]
+command = "file:scripts/outdated/mise-tools.sh"
+upgrade = "file:scripts/outdated/mise-tools.sh update {item}"
