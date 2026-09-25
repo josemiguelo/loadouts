@@ -3,3 +3,6 @@ description = "Firefox browser"
 
 [programs.firefox.install.dnf]
 command = "file:scripts/install/install-firefox-fedora.sh"
+
+# Arch's package; the omarchy-firefox script adds Omarchy's browser setup.
+[programs.firefox.install.omarchy-pkg]

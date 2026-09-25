@@ -1,0 +1,9 @@
+# Omarchy only: Firefox through Omarchy's browser installer (its policy
+# and Wayland session setting).
+[scripts.omarchy-firefox]
+description = "Firefox, set up by Omarchy's browser installer"
+file = "scripts/maintain/omarchy-firefox.sh"
+check = "file:scripts/maintain/omarchy-firefox.sh check"
+after = ["programs.firefox"]
+# omarchy pkg add and the distribution policy go through sudo.
+sudo = true

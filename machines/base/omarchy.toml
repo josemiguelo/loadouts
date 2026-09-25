@@ -22,6 +22,8 @@ scripts = [
   "omarchy-default-agent claude",
   "omarchy-dictation",
   "omarchy-dictation-gpu",
+  "omarchy-1password",
+  "omarchy-firefox",
 ]
 
 [pm]
@@ -51,6 +53,9 @@ mise = "omarchy-pkg"
 kitty = "omarchy-pkg"
 voxtype = "omarchy-pkg"
 wtype = "omarchy-pkg"
+1password = "omarchy-pkg"
+1password-cli = "omarchy-pkg"
+firefox = "omarchy-pkg"
 bat = "omarchy-pkg"
 fd = "omarchy-pkg"
 fzf = "omarchy-pkg"
