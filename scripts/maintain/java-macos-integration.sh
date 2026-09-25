@@ -32,9 +32,10 @@ wanted() {
 }
 
 # Entries in $JVM that are ours: the entry itself, or its Contents, links
-# into mise's or asdf's installs.
+# into mise's or asdf's installs. Every entry, not only *.jdk: asdf-java
+# named its links without the suffix (adoptopenjdk-21.0.6+7.0.LTS).
 ours() {
-  for e in "$JVM"/*.jdk; do
+  for e in "$JVM"/*; do
     [ -e "$e" ] || [ -L "$e" ] || continue
     t=$(readlink "$e" 2>/dev/null || readlink "$e/Contents" 2>/dev/null || true)
     case "$t" in "$MISE_JAVA"/* | "$HOME/.asdf/"*) echo "$e" ;; esac
