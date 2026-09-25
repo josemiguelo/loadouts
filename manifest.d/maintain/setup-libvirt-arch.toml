@@ -1,0 +1,9 @@
+# Arch: libvirtd running, the user in the libvirt group, the default NAT
+# network autostarting. The Fedora one (setup-libvirt) used the kvm group.
+[scripts.setup-libvirt-arch]
+description = "libvirtd enabled and the libvirt group joined (Arch)"
+file = "scripts/maintain/setup-libvirt-arch.sh"
+check = "file:scripts/maintain/setup-libvirt-arch.sh check"
+after = ["programs.libvirt", "programs.qemu-desktop", "programs.dnsmasq"]
+# systemctl enable, usermod and virsh on the system connection use sudo.
+sudo = true

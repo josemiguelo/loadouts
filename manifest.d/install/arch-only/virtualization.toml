@@ -1,0 +1,39 @@
+# KVM/QEMU with virt-manager on Arch — what Fedora's "virtualization" dnf
+# group installed (mandatory: virt-install; default: virt-manager,
+# virt-viewer, qemu-kvm, libvirt-daemon-kvm, libvirt-daemon-config-network),
+# one package each; Arch's libvirt is daemon, client and default network in
+# one. dnsmasq is libvirt's default NAT/DHCP;
+# the NAT's firewall side needs iptables-nft, which Arch's iptables package
+# already provides. edk2-ovmf (UEFI guests) and swtpm (TPM, Windows 11) are
+# optional deps of libvirt the Fedora group installed too.
+[programs.libvirt]
+description = "libvirt virtualization daemon and tools"
+via = ["omarchy-pkg"]
+
+[programs.qemu-desktop]
+description = "QEMU/KVM for desktop guests"
+via = ["omarchy-pkg"]
+
+[programs.virt-manager]
+description = "virt-manager GUI"
+via = ["omarchy-pkg"]
+
+[programs.virt-install]
+description = "virt-install, command-line VM creation"
+via = ["omarchy-pkg"]
+
+[programs.virt-viewer]
+description = "virt-viewer, a guest's graphical console"
+via = ["omarchy-pkg"]
+
+[programs.dnsmasq]
+description = "DNS/DHCP for libvirt's default NAT network"
+via = ["omarchy-pkg"]
+
+[programs.edk2-ovmf]
+description = "UEFI firmware for guests"
+via = ["omarchy-pkg"]
+
+[programs.swtpm]
+description = "TPM emulator for guests"
+via = ["omarchy-pkg"]

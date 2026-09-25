@@ -1,0 +1,10 @@
+# Omarchy's ufw lets libvirt's default NAT network (virbr0) through: DHCP/DNS
+# to the host and routed guest traffic, as explicit commented rules the way
+# Omarchy allows Docker's DNS.
+[scripts.ufw-libvirt]
+description = "ufw allows libvirt's default NAT network (virbr0)"
+file = "scripts/maintain/ufw-libvirt.sh"
+check = "file:scripts/maintain/ufw-libvirt.sh check"
+after = ["scripts.setup-libvirt-arch"]
+# ufw rule changes go through sudo.
+sudo = true
