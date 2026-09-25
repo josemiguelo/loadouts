@@ -31,13 +31,16 @@ wanted() {
   done
 }
 
-# Entries in $JVM that are ours: the entry itself, or its Contents, links
-# into mise's or asdf's installs. Every entry, not only *.jdk: asdf-java
-# named its links without the suffix (adoptopenjdk-21.0.6+7.0.LTS).
+# Entries in $JVM that are ours: the entry itself, its Contents, or its
+# Contents/Home links into mise's or asdf's installs. Every entry, not only
+# *.jdk: asdf-java's are stubs named without the suffix
+# (adoptopenjdk-21.0.6+7.0.LTS/Contents/{Info.plist,MacOS,Home ->
+# ~/.asdf/installs/java/…}), which break once ~/.asdf is gone.
 ours() {
   for e in "$JVM"/*; do
     [ -e "$e" ] || [ -L "$e" ] || continue
-    t=$(readlink "$e" 2>/dev/null || readlink "$e/Contents" 2>/dev/null || true)
+    t=$(readlink "$e" 2>/dev/null || readlink "$e/Contents" 2>/dev/null ||
+      readlink "$e/Contents/Home" 2>/dev/null || true)
     case "$t" in "$MISE_JAVA"/* | "$HOME/.asdf/"*) echo "$e" ;; esac
   done
 }
