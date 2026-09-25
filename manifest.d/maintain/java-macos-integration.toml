@@ -1,0 +1,10 @@
+# macOS: mise's JDKs registered in /Library/Java/JavaVirtualMachines, as
+# asdf-java's macOS integration did; also clears asdf's leftover entries.
+[scripts.java-macos-integration]
+description = "mise's JDKs registered with macOS (java_home)"
+file = "scripts/maintain/java-macos-integration.sh"
+check = "file:scripts/maintain/java-macos-integration.sh check"
+os = ["macos"]
+after = ["scripts.mise-tools"]
+# mkdir/ln/rm in /Library go through sudo.
+sudo = true
