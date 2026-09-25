@@ -20,3 +20,20 @@ check = "pacman -Q {pkg}"
 outdated-all = "checkupdates --nocolor | awk '$3 == \"->\" {print $1, $4}'"
 regex = "([0-9]+\\.[0-9][0-9.]*)"
 sudo = true
+
+# AUR packages the Omarchy way: `omarchy pkg add`'s AUR sibling (yay, then a
+# pacman -Q verification). The AUR is community build recipes, not
+# Omarchy's repo — each program mapped here is one the user approved.
+#
+# upgrade is the same `omarchy update -y` as omarchy-pkg, on purpose: one
+# command, so loadout runs it once for both, and Omarchy's update already
+# upgrades AUR packages (omarchy-update-aur-pkgs). The oracle is yay's own
+# AUR check, "<pkg> <installed> -> <candidate>" like checkupdates.
+[installers.omarchy-aur]
+probe = "omarchy"
+install = "omarchy pkg aur add {pkg}"
+upgrade = "omarchy update -y"
+check = "pacman -Q {pkg}"
+outdated-all = "yay -Qua 2>/dev/null | awk '$3 == \"->\" {print $1, $4}'"
+regex = "([0-9]+\\.[0-9][0-9.]*)"
+sudo = true
