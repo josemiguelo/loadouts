@@ -1,6 +1,6 @@
 #!/bin/sh
 # Internal keyboard behaviour on the MacBookPro16,1 (T2) — the Arch/Omarchy
-# version of hid-apple-keyboard.sh; same keyboard, same wanted behaviour:
+# version of t2-hid-apple-keyboard.sh; same keyboard, same wanted behaviour:
 #
 #   swap_fn_leftctrl=1  bottom-left corner key acts as Ctrl; the key labelled
 #                       "control" becomes Fn (and so toggles the touchbar

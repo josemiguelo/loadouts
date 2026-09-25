@@ -5,8 +5,9 @@ scripts = [
   # the key `gh auth login` generated and uploaded (GitHub: "t2-macbook-omarchy")
   "setup-ssh id_ed25519",
   # MacBookPro16,1 (T2) hardware
-  "hid-apple-keyboard-arch",
-  "fan-curve",
+  "t2-hid-apple-keyboard-arch",
+  "t2-fan-curve",
+  "t2-boot-clock",
   # Logitech receiver/mouse manager, without its session autostart.
   "solaar-no-autostart",
   # KVM/QEMU with virt-manager
