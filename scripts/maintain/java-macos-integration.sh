@@ -20,8 +20,15 @@ cd "$HOME"
 
 # "<entry> <Contents target>" for every JDK the config pins that mise has
 # installed. A build without Contents/ (not a macOS bundle) can't register.
+# If mise can't answer, stop: an empty answer would make every registration
+# look stale, and install would remove them all.
+LISTED=$(mise ls --global java 2>&1) || {
+  echo "mise couldn't list the configured java versions:" >&2
+  printf '%s\n' "$LISTED" >&2
+  exit 1
+}
 wanted() {
-  mise ls --global java 2>/dev/null | awk '$3 != "(missing)" { print $2 }' | while read -r v; do
+  printf '%s\n' "$LISTED" | awk '$1 == "java" && $3 != "(missing)" { print $2 }' | while read -r v; do
     dir=$(mise where "java@$v" 2>/dev/null) || continue
     if [ -d "$dir/Contents" ]; then
       printf '%s %s\n' "$JVM/mise-$v.jdk" "$dir/Contents"
