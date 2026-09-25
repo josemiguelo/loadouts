@@ -21,7 +21,9 @@
 # behind chezmoi's back, so nothing is lost) until the new lock is re-added to
 # the dotfiles source. Same hand-off as the asdf pin oracles.
 set -eu
-export PATH="$HOME/.local/bin:$HOME/.asdf/shims:$PATH"
+# mise's shims, for the neovim the mise config pins (nightly) when this runs
+# outside a shell that activated mise.
+export PATH="$HOME/.local/bin:${MISE_DATA_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/mise}/shims:$PATH"
 
 LOCK="${XDG_CONFIG_HOME:-$HOME/.config}/nvim/lazy-lock.json"
 LUA="$(cd "$(dirname "$0")" && pwd)/nvim-plugins.lua"
