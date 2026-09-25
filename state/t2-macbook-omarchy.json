@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "omarchy",
   "arch": "x86_64",
-  "toolVersion": "0.16.0",
-  "updatedAt": "2026-09-25T13:54:56.051817346Z",
+  "toolVersion": "0.16.1",
+  "updatedAt": "2026-09-25T16:27:19.588980860Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -35,6 +35,46 @@
     "ttf-firacode-nerd": {
       "status": "installed",
       "version": "3.5.1",
+      "reason": null
+    },
+    "libvirt": {
+      "status": "installed",
+      "version": "12.7.0",
+      "reason": null
+    },
+    "qemu-desktop": {
+      "status": "installed",
+      "version": "11.1.1",
+      "reason": null
+    },
+    "virt-manager": {
+      "status": "installed",
+      "version": "5.1.0",
+      "reason": null
+    },
+    "virt-install": {
+      "status": "installed",
+      "version": "5.1.0",
+      "reason": null
+    },
+    "virt-viewer": {
+      "status": "installed",
+      "version": "11.0",
+      "reason": null
+    },
+    "dnsmasq": {
+      "status": "installed",
+      "version": "2.93",
+      "reason": null
+    },
+    "edk2-ovmf": {
+      "status": "installed",
+      "version": null,
+      "reason": null
+    },
+    "swtpm": {
+      "status": "installed",
+      "version": "0.10.1",
       "reason": null
     },
     "atuin": {
@@ -177,6 +217,26 @@
       "version": "5.9.2",
       "reason": null
     },
+    "code": {
+      "status": "installed",
+      "version": "1.138.0",
+      "reason": null
+    },
+    "antigravity": {
+      "status": "installed",
+      "version": "2.5.5",
+      "reason": null
+    },
+    "sublime-text": {
+      "status": "installed",
+      "version": "4.4213",
+      "reason": null
+    },
+    "jetbrains-toolbox": {
+      "status": "installed",
+      "version": "3.8.1.88030",
+      "reason": null
+    },
     "gcc": {
       "status": "installed",
       "version": "16.2.1",
@@ -185,6 +245,26 @@
     "procps-ng": {
       "status": "installed",
       "version": "4.0.7",
+      "reason": null
+    },
+    "vlc": {
+      "status": "installed",
+      "version": "3.0.23",
+      "reason": null
+    },
+    "obsidian": {
+      "status": "installed",
+      "version": "1.13.7",
+      "reason": null
+    },
+    "slack": {
+      "status": "installed",
+      "version": "4.52.162",
+      "reason": null
+    },
+    "teams-for-linux": {
+      "status": "installed",
+      "version": "2.22.0",
       "reason": null
     },
     "1password": {
@@ -197,9 +277,29 @@
       "version": "2.39.0",
       "reason": null
     },
+    "anydesk": {
+      "status": "installed",
+      "version": "8.1.0",
+      "reason": null
+    },
     "firefox": {
       "status": "installed",
       "version": "155.0.1",
+      "reason": null
+    },
+    "google-chrome-stable": {
+      "status": "installed",
+      "version": "154.0.8037.57",
+      "reason": null
+    },
+    "scrcpy": {
+      "status": "installed",
+      "version": "4.1",
+      "reason": null
+    },
+    "solaar": {
+      "status": "installed",
+      "version": "1.1.20",
       "reason": null
     },
     "kitty": {
@@ -216,13 +316,13 @@
     },
     "dotfiles-pull": {
       "status": "done",
-      "lastRun": "2026-09-24T23:38:37.576328078Z",
+      "lastRun": "2026-09-25T15:11:22.233389182Z",
       "exitCode": 0
     },
     "dotfiles-apply": {
       "status": "done",
-      "lastRun": "2026-09-24T23:38:50.263228817Z",
-      "exitCode": 1
+      "lastRun": "2026-09-25T15:11:24.775257457Z",
+      "exitCode": 0
     },
     "dotfiles-push": {
       "status": "done",
@@ -309,6 +409,21 @@
       "lastRun": "2026-09-25T13:54:53.521529407Z",
       "exitCode": 0
     },
+    "omarchy-vscode": {
+      "status": "done",
+      "lastRun": "2026-09-25T16:19:29.665523124Z",
+      "exitCode": 0
+    },
+    "link-jetbrains-launchers-linux": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-chrome": {
+      "status": "done",
+      "lastRun": "2026-09-25T16:19:30.162469868Z",
+      "exitCode": 0
+    },
     "dotfiles-bootstrap": {
       "status": "done",
       "lastRun": "2026-09-24T21:34:49.667693031Z",
@@ -328,6 +443,21 @@
       "status": "done",
       "lastRun": "2026-09-24T22:30:55.830204428Z",
       "exitCode": 0
+    },
+    "solaar-no-autostart": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "setup-libvirt-arch": {
+      "status": "done",
+      "lastRun": "2026-09-25T16:19:32.606443947Z",
+      "exitCode": 0
+    },
+    "ufw-libvirt": {
+      "status": "pending",
+      "lastRun": null,
+      "exitCode": null
     }
   }
 }
