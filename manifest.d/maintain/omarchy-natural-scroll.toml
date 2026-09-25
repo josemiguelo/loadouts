@@ -1,0 +1,6 @@
+# Natural (inverse) touchpad scrolling, set in Omarchy's personal-overrides
+# file (~/.config/hypr/input.lua) over its default of natural_scroll = false.
+[scripts.omarchy-natural-scroll]
+description = "natural (inverse) touchpad scrolling"
+file = "scripts/maintain/omarchy-natural-scroll.sh"
+check = "file:scripts/maintain/omarchy-natural-scroll.sh check"

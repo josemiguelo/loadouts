@@ -28,6 +28,7 @@ scripts = [
   "omarchy-vscode",
   "link-jetbrains-launchers-linux",
   "omarchy-chrome",
+  "omarchy-natural-scroll",
 ]
 
 [pm]

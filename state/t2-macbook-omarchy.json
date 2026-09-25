@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "omarchy",
   "arch": "x86_64",
-  "toolVersion": "0.16.1",
-  "updatedAt": "2026-09-25T19:49:37.921315193Z",
+  "toolVersion": "0.16.2",
+  "updatedAt": "2026-09-25T20:25:08.718949825Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -423,6 +423,11 @@
       "status": "done",
       "lastRun": "2026-09-25T16:19:30.162469868Z",
       "exitCode": 0
+    },
+    "omarchy-natural-scroll": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-bootstrap": {
       "status": "done",
