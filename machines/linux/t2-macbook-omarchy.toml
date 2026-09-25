@@ -7,7 +7,21 @@ scripts = [
   # MacBookPro16,1 (T2) hardware
   "hid-apple-keyboard-arch",
   "fan-curve",
+  # Logitech receiver/mouse manager, without its session autostart.
+  "solaar-no-autostart",
+  # KVM/QEMU with virt-manager
+  "setup-libvirt-arch",
+  "ufw-libvirt",
 ]
 
 [pm]
 t2fanrd = "omarchy-pkg"
+solaar = "omarchy-pkg"
+libvirt = "omarchy-pkg"
+qemu-desktop = "omarchy-pkg"
+virt-manager = "omarchy-pkg"
+virt-install = "omarchy-pkg"
+virt-viewer = "omarchy-pkg"
+dnsmasq = "omarchy-pkg"
+edk2-ovmf = "omarchy-pkg"
+swtpm = "omarchy-pkg"
