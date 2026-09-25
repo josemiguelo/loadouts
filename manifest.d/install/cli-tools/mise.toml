@@ -6,3 +6,5 @@ description = "mise tool-version manager"
 
 [programs.mise.install.omarchy-pkg]
 pkg = "mise-bin"
+
+[programs.mise.install.brew]
