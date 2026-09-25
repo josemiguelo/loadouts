@@ -1,8 +1,8 @@
 #!/bin/sh
 # Custom `loadout outdated` oracle: are the pins in ~/.config/mise/config.toml
-# behind upstream WITHIN THEIR MAJOR? Same rules as asdf-tools.sh: only each
-# tool's primary (first) pin, compared against its own major line — ruby
-# 3.4.8 against 3.x, never 4.x; java's "major" is its vendor+major
+# behind upstream WITHIN THEIR MAJOR? Only each tool's primary (first) pin,
+# compared against its own major line — ruby 3.4.8 against 3.x, never 4.x;
+# java's "major" is its vendor+major
 # (temurin-21). Crossing a major is a decision, not an update. Moving targets
 # (latest, nightly, stable) stay silent — `omarchy update` / `mise up` move
 # the "latest" ones.

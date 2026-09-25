@@ -19,7 +19,7 @@
 # `update` moves the pin in the lockfile chezmoi APPLIES, not the one it keeps:
 # dotfiles-apply reports the drift (it refuses to overwrite a file changed
 # behind chezmoi's back, so nothing is lost) until the new lock is re-added to
-# the dotfiles source. Same hand-off as the asdf pin oracles.
+# the dotfiles source. Same hand-off as the mise-tools oracle.
 set -eu
 # mise's shims, for the neovim the mise config pins (nightly) when this runs
 # outside a shell that activated mise.

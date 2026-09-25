@@ -2,7 +2,7 @@
 # Custom `loadout outdated` oracle: is the claude binary itself behind the
 # latest published Claude Code release? claude.ai/install.sh installs it as
 # a plain self-updating binary (see manifest.d/install/cli-tools/claude.toml),
-# so no package manager knows about it — same shape as the asdf oracle.
+# so no package manager knows about it.
 # `claude update` does the actual upgrade in place, so no re-install needed.
 #
 #   claude.sh                print `claude <current> <latest>` when behind, else nothing

@@ -2,8 +2,7 @@
 # Default packages (~/.default-npm-packages and ~/.default-gems) present in
 # EVERY node and ruby version ~/.config/mise/config.toml pins. mise only seeds
 # them into versions it installs from then on, so packages added later need
-# this backfill into the versions that already exist. The mise counterpart
-# of asdf-default-packages.sh.
+# this backfill into the versions that already exist.
 # Modes: `check` / `install` (default).
 # One `npm ls` / `gem list` query per tool version (not per package), run
 # concurrently up front — npm boots a node each.

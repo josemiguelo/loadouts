@@ -1,5 +1,5 @@
 # Fedora toolchain batch: the Development Tools group and the build
-# libraries used by asdf/pyenv/ruby builds — related, installed together.
+# libraries language-runtime builds need — related, installed together.
 
 [programs.development-tools-group]
 description = "dnf Development Tools group"

@@ -1,8 +1,8 @@
 #!/bin/sh
 # mise tools: every version ~/.config/mise/config.toml pins (the file comes
 # from the chezmoi dotfiles; the mise-tools oracle moves its pins) is
-# installed. The mise counterpart of asdf-tools.sh — no plugin step, mise
-# resolves every tool from its own registry.
+# installed. No plugin step: mise resolves every tool from its own
+# registry.
 # Modes: `check` / `install` (default).
 set -eu
 command -v mise >/dev/null 2>&1 || { echo "mise not found" >&2; exit 1; }

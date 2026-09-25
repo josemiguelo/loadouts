@@ -1,15 +1,15 @@
 # Plugin clones, each judged against its own configuration file: the disk
-# must match what the dotfiles declare. Where the file pins commits (asdf's
-# .plugin-versions, nvim's lazy-lock.json) the clone must sit on them; where
-# it only lists names (tmux.conf, .zplugins) presence is the truth, and
-# whether a clone is behind its remote is the matching oracle's question.
-# asdf's pair lives in asdf.toml.
+# must match what the dotfiles declare. Where the file pins commits (nvim's
+# lazy-lock.json) the clone must sit on them; where it only lists names
+# (tmux.conf, .zplugins) presence is the truth, and whether a clone is behind
+# its remote is the matching oracle's question.
 
 [scripts.nvim-plugins]
 description = "lazy.nvim plugins at the commits lazy-lock.json locks"
 file = "scripts/maintain/nvim-plugins.sh"
 check = "file:scripts/maintain/nvim-plugins.sh check"
-after = ["scripts.asdf-tools", "scripts.dotfiles-apply"]
+# neovim itself (nightly) comes from mise.
+after = ["scripts.mise-tools", "scripts.dotfiles-apply"]
 
 [scripts.tmux-plugins]
 description = "tmux plugins tmux.conf declares"

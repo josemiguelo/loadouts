@@ -1,4 +1,0 @@
-# Is the asdf binary itself behind its latest GitHub release?
-[outdated.asdf]
-command = "file:scripts/outdated/asdf.sh"
-upgrade = "file:scripts/outdated/asdf.sh update {item}"

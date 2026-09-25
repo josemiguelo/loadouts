@@ -10,9 +10,6 @@ scripts = [
   "dotfiles-apply",
   "default-shell",
   "user-environment",
-  "asdf-plugins",
-  "asdf-tools",
-  "asdf-default-packages",
   "nvim-plugins",
   "tmux-plugins",
   "zsh-plugins",
@@ -73,7 +70,6 @@ tpack = "brew-cask"
 jetbrains-toolbox = "script"
 flathub-remote = "flatpak"
 obsidian = "flatpak"
-asdf = "script"
 ngrok = "script"
 just = "dnf"
 vim-enhanced = "dnf"
