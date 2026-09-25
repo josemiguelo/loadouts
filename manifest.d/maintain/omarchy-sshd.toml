@@ -1,0 +1,9 @@
+# SSH access through Omarchy's own setup (sshd, a rate-limited ufw rule,
+# key-only logins), with authorized_keys mirroring the GitHub user named by
+# the machine's opt-in ("omarchy-sshd josemiguelo").
+[scripts.omarchy-sshd]
+description = "sshd with key-only logins for the GitHub user's keys"
+file = "scripts/maintain/omarchy-sshd.sh"
+check = "file:scripts/maintain/omarchy-sshd.sh check \"$1\""
+# sshd, ufw and the sshd_config.d drop-in go through sudo.
+sudo = true

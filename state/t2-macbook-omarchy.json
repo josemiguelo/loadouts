@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.1",
-  "updatedAt": "2026-09-25T16:54:21.295679112Z",
+  "updatedAt": "2026-09-25T19:49:37.921315193Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -462,6 +462,11 @@
     "ufw-libvirt": {
       "status": "done",
       "lastRun": "2026-09-25T16:30:14.424297969Z",
+      "exitCode": 0
+    },
+    "omarchy-sshd": {
+      "status": "done",
+      "lastRun": "2026-09-25T19:21:20.773982458Z",
       "exitCode": 0
     }
   }

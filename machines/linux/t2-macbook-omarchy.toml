@@ -13,6 +13,8 @@ scripts = [
   # KVM/QEMU with virt-manager
   "setup-libvirt-arch",
   "ufw-libvirt",
+  # key-only SSH for the keys on GitHub (mirrored: deleting one there revokes it)
+  "omarchy-sshd josemiguelo",
 ]
 
 [pm]
