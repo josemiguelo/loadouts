@@ -1,7 +1,8 @@
 # Omarchy only: omarchy-theme-set-tmux repaints the live tmux server with the
 # omarchy theme on every theme switch, while tmux here follows kitty's palette.
+# Installs a theme-set hook that undoes it after each switch.
 [scripts.omarchy-tmux-theme]
-description = "tmux server free of omarchy's theme overrides"
+description = "tmux keeps kitty's palette across omarchy theme switches"
 file = "scripts/maintain/omarchy-tmux-theme.sh"
 check = "file:scripts/maintain/omarchy-tmux-theme.sh check"
 after = ["programs.tmux"]

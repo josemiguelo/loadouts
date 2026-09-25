@@ -6,9 +6,29 @@
 # palette instead, so afterwards pane content stops matching the status line
 # and kitty's tabs, goes opaque (an explicit bg defeats background_opacity),
 # and panes opened later disagree with older ones. The dotfiles pin the
-# globals; only a running server can be observed and reset, so no server
-# passes. Modes: `check` (server untouched?) / `install` (reset it).
+# globals for a reload; a running server is reset here, and — because every
+# later theme switch repaints it again — by an Omarchy theme-set hook this
+# installs: omarchy-theme-set runs ~/.config/omarchy/hooks/theme-set.d/*
+# after omarchy-theme-set-tmux has finished, and the hook calls `reset`.
+# Modes: `check` (hook in place, server untouched?) / `install` (hook +
+# reset) / `reset` (the server only — what the hook runs).
 set -eu
+
+HOOK=$HOME/.config/omarchy/hooks/theme-set.d/tmux-follows-kitty
+SELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
+
+hook_body() {
+  cat <<HOOK_EOF
+# Managed by loadout (omarchy-tmux-theme): undo omarchy-theme-set-tmux's
+# window-style/cursor/pane colours so tmux keeps kitty's palette and
+# background_opacity. Runs after every theme switch.
+sh '$SELF' reset
+HOOK_EOF
+}
+
+hook_current() {
+  [ -f "$HOOK" ] && [ "$(cat "$HOOK")" = "$(hook_body)" ]
+}
 
 tmux_running() {
   tmux list-sessions >/dev/null 2>&1
@@ -42,13 +62,21 @@ reset_panes() {
 
 case "${1:-install}" in
   check)
+    hook_current || exit 1
     tmux_running || exit 0
     globals_clean && panes_clean
     ;;
   install)
+    mkdir -p "$(dirname "$HOOK")"
+    hook_body > "$HOOK"
     tmux_running || exit 0
     reset_globals
     reset_panes
     ;;
-  *) echo "usage: $0 [check|install]" >&2; exit 2 ;;
+  reset)
+    tmux_running || exit 0
+    reset_globals
+    reset_panes
+    ;;
+  *) echo "usage: $0 [check|install|reset]" >&2; exit 2 ;;
 esac
