@@ -1,8 +1,7 @@
 extends = "omarchy"
 
 scripts = [
-  # "mise" is the dotfiles branch this machine clones, until it lands on master.
-  "dotfiles-bootstrap mise",
+  "dotfiles-bootstrap",
   # the key `gh auth login` generated and uploaded (GitHub: "t2-macbook-omarchy")
   "setup-ssh id_ed25519",
   # MacBookPro16,1 (T2) hardware
