@@ -5,7 +5,7 @@
   "distro": null,
   "arch": "arm64",
   "toolVersion": "0.16.1",
-  "updatedAt": "2026-09-25T14:33:46.268479Z",
+  "updatedAt": "2026-09-25T16:35:26.480234Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -165,7 +165,7 @@
       "exitCode": null
     },
     "dotfiles-push": {
-      "status": "pending",
+      "status": "done",
       "lastRun": "2026-08-30T19:17:01.696908Z",
       "exitCode": 0
     },
@@ -181,8 +181,8 @@
     },
     "mise-tools": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-09-25T15:15:31.536908Z",
+      "exitCode": 0
     },
     "mise-default-packages": {
       "status": "done",
