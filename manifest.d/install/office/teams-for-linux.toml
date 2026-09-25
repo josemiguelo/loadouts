@@ -5,3 +5,8 @@ description = "Microsoft Teams client"
 [programs.teams-for-linux.install.dnf-repo]
 [programs.teams-for-linux.install.dnf-repo.with]
 repofile = "https://repo.teamsforlinux.de/rpm/teams-for-linux.repo"
+
+# Arch: the AUR's prebuilt release (-bin); the source package rebuilds
+# Electron from scratch.
+[programs.teams-for-linux.install.omarchy-aur]
+pkg = "teams-for-linux-bin"

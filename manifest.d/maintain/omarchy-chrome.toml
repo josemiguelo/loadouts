@@ -1,0 +1,9 @@
+# Omarchy only: Chrome through Omarchy's browser installer (policy, flags,
+# helpers, theme).
+[scripts.omarchy-chrome]
+description = "Google Chrome, set up by Omarchy's browser installer"
+file = "scripts/maintain/omarchy-chrome.sh"
+check = "file:scripts/maintain/omarchy-chrome.sh check"
+after = ["programs.google-chrome-stable"]
+# omarchy pkg aur add and the policy directory go through sudo.
+sudo = true

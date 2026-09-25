@@ -3,3 +3,9 @@ description = "Google Chrome browser"
 
 [programs.google-chrome-stable.install.dnf]
 command = "file:scripts/install/install-chrome-fedora.sh"
+
+# Arch: the AUR's google-chrome (Google's own build, repackaged) — the
+# package Omarchy's `omarchy install browser chrome` adds; the omarchy-chrome
+# script runs that installer for Omarchy's policy, flags and theme.
+[programs.google-chrome-stable.install.omarchy-aur]
+pkg = "google-chrome"
