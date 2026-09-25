@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.0",
-  "updatedAt": "2026-09-25T01:30:28.753995906Z",
+  "updatedAt": "2026-09-25T13:54:56.051817346Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -188,19 +188,19 @@
       "reason": null
     },
     "1password": {
-      "status": "missing",
-      "version": null,
-      "reason": "error: package '1password' was not found"
+      "status": "installed",
+      "version": "8.12.36",
+      "reason": null
     },
     "1password-cli": {
-      "status": "missing",
-      "version": null,
-      "reason": "error: package '1password-cli' was not found"
+      "status": "installed",
+      "version": "2.39.0",
+      "reason": null
     },
     "firefox": {
-      "status": "missing",
-      "version": null,
-      "reason": "error: package 'firefox' was not found"
+      "status": "installed",
+      "version": "155.0.1",
+      "reason": null
     },
     "kitty": {
       "status": "installed",
@@ -266,8 +266,8 @@
     },
     "omarchy-tmux-theme": {
       "status": "done",
-      "lastRun": null,
-      "exitCode": null
+      "lastRun": "2026-09-25T13:54:52.845435380Z",
+      "exitCode": 0
     },
     "nvim-plugins": {
       "status": "done",
@@ -295,14 +295,19 @@
       "exitCode": null
     },
     "omarchy-1password": {
-      "status": "pending",
-      "lastRun": null,
-      "exitCode": null
+      "status": "done",
+      "lastRun": "2026-09-25T13:54:53.101932428Z",
+      "exitCode": 0
     },
     "omarchy-firefox": {
-      "status": "pending",
-      "lastRun": null,
-      "exitCode": null
+      "status": "done",
+      "lastRun": "2026-09-25T13:54:53.186515993Z",
+      "exitCode": 0
+    },
+    "omarchy-default-browser-arch": {
+      "status": "done",
+      "lastRun": "2026-09-25T13:54:53.521529407Z",
+      "exitCode": 0
     },
     "dotfiles-bootstrap": {
       "status": "done",
