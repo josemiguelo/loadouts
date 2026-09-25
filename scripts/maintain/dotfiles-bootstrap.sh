@@ -17,7 +17,7 @@ if [ -n "$(find "$HOME/.local" ! -user "$USER" 2>/dev/null | head -1)" ]; then
   find "$HOME/.local" ! -user "$USER" -print0 | xargs -0 -r sudo chown "$USER:$(id -gn)"
 fi
 
-# A desktop that pre-seeds its own Neovim config (omedora builds one on first
+# A desktop that pre-seeds its own Neovim config (Omarchy installs one on first
 # login) must not survive underneath ours: chezmoi only overwrites the files it
 # manages, and the leftovers (plugin/, lua/plugins/) still auto-load. First
 # bootstrap only — once a source exists the config is ours.

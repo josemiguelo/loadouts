@@ -1,5 +1,5 @@
 #!/bin/sh
-# omedora launches terminals through xdg-terminal-exec; omarchy-default-terminal
+# Omarchy launches terminals through xdg-terminal-exec; omarchy-default-terminal
 # writes the preference file (~/.config/xdg-terminals.list) it reads.
 # Modes: `check` (kitty already first?) / `install` (default).
 set -eu

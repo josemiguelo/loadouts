@@ -1,6 +1,0 @@
-# omedora only: KDE's xwaylandvideobridge autostarts in every session and
-# Hyprland has no rule to hide it. Kept (X11 screen sharing) but invisible.
-[scripts.omarchy-xwaylandvideobridge]
-description = "hide xwaylandvideobridge under Hyprland"
-file = "scripts/maintain/omarchy-xwaylandvideobridge.sh"
-check = "file:scripts/maintain/omarchy-xwaylandvideobridge.sh check"

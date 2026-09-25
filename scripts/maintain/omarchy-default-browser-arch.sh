@@ -1,9 +1,8 @@
 #!/bin/sh
 # Omarchy's default browser (xdg-settings default-web-browser, which Omarchy's
 # launchers and every XDG handler use), set the native way: `omarchy default
-# browser <name>`. The Arch version of omarchy-default-browser: Arch's
-# packages already use the desktop ids Omarchy expects, so none of the
-# Fedora alias is needed — that alias would hide the real launcher here.
+# browser <name>`. Arch's packages already use the desktop ids Omarchy
+# expects, so no desktop-id alias is needed.
 # usage: omarchy-default-browser-arch.sh <browser>
 set -eu
 BROWSER_NAME=${1:?usage: omarchy-default-browser-arch.sh <browser>}

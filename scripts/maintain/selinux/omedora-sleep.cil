@@ -1,8 +1,0 @@
-; systemd-sleep spawns the hooks in /usr/lib/systemd/system-sleep through
-; systemd's exec helper, which looks up /proc/sys/fs (nr_open) before exec.
-; Fedora's targeted policy (selinux-policy-targeted 44.8) does not grant
-; systemd_sleep_t that lookup, so every hook exec logs an AVC and
-; setroubleshoot notifies on each suspend/resume. Stock Fedora ships no such
-; hook; omedora-settings ships unmount-fuse. The lookup is only an fd-limit
-; hint (the hook still runs), so this is the whole fix: one search permission.
-(allow systemd_sleep_t sysctl_fs_t (dir (search)))

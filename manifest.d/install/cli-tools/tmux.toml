@@ -1,4 +1,4 @@
-# brew on macOS; on omedora and Omarchy tmux is a base package, mapped to the
+# brew on macOS; on Omarchy tmux is a base package, mapped to the
 # system package manager there so the workmux dependency resolves without brew
 # installing a second copy.
 [programs.tmux]
