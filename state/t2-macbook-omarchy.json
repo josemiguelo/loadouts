@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.1",
-  "updatedAt": "2026-09-25T16:27:19.588980860Z",
+  "updatedAt": "2026-09-25T16:54:21.295679112Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -434,15 +434,20 @@
       "lastRun": "2026-09-24T21:47:00.328052260Z",
       "exitCode": 0
     },
-    "hid-apple-keyboard-arch": {
+    "t2-hid-apple-keyboard-arch": {
       "status": "done",
-      "lastRun": "2026-09-24T22:30:55.045447220Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
-    "fan-curve": {
+    "t2-fan-curve": {
       "status": "done",
-      "lastRun": "2026-09-24T22:30:55.830204428Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
+    },
+    "t2-boot-clock": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "solaar-no-autostart": {
       "status": "done",
@@ -455,9 +460,9 @@
       "exitCode": 0
     },
     "ufw-libvirt": {
-      "status": "pending",
-      "lastRun": null,
-      "exitCode": null
+      "status": "done",
+      "lastRun": "2026-09-25T16:30:14.424297969Z",
+      "exitCode": 0
     }
   }
 }
