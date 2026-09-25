@@ -4,12 +4,17 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.13.1",
-  "updatedAt": "2026-09-22T20:57:29.825215Z",
+  "toolVersion": "0.16.1",
+  "updatedAt": "2026-09-25T14:33:46.268479Z",
   "programs": {
-    "asdf": {
+    "setup-brew": {
       "status": "installed",
-      "version": "0.20.0",
+      "version": "7.0.6",
+      "reason": null
+    },
+    "brew-taps": {
+      "status": "installed",
+      "version": "trusted",
       "reason": null
     },
     "atuin": {
@@ -39,7 +44,12 @@
     },
     "claude": {
       "status": "installed",
-      "version": "2.1.280",
+      "version": "2.1.282",
+      "reason": null
+    },
+    "codex": {
+      "status": "installed",
+      "version": "0.156.1",
       "reason": null
     },
     "fd": {
@@ -72,14 +82,14 @@
       "version": "0.65.1",
       "reason": null
     },
+    "mise": {
+      "status": "installed",
+      "version": "2026.9.13",
+      "reason": null
+    },
     "ngrok": {
       "status": "installed",
       "version": "3.22.0",
-      "reason": null
-    },
-    "opencode": {
-      "status": "installed",
-      "version": "1.3.0",
       "reason": null
     },
     "ripgrep": {
@@ -169,19 +179,19 @@
       "lastRun": null,
       "exitCode": null
     },
-    "asdf-plugins": {
+    "mise-tools": {
       "status": "done",
-      "lastRun": "2026-09-15T22:32:43.270807Z",
-      "exitCode": 0
+      "lastRun": null,
+      "exitCode": null
     },
-    "asdf-tools": {
+    "mise-default-packages": {
       "status": "done",
-      "lastRun": "2026-09-15T22:49:53.244692Z",
-      "exitCode": 1
+      "lastRun": null,
+      "exitCode": null
     },
-    "asdf-default-packages": {
+    "java-macos-integration": {
       "status": "done",
-      "lastRun": "2026-09-15T22:49:57.253622Z",
+      "lastRun": "2026-09-25T14:33:39.719464Z",
       "exitCode": 0
     },
     "nvim-plugins": {
