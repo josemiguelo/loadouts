@@ -24,6 +24,7 @@ scripts = [
   "omarchy-dictation-gpu",
   "omarchy-1password",
   "omarchy-firefox",
+  "omarchy-default-browser-arch firefox",
 ]
 
 [pm]

@@ -1,0 +1,8 @@
+# Omarchy on Arch: the default browser, named by the machine's opt-in
+# ("omarchy-default-browser-arch firefox"). The Fedora one
+# (omarchy-default-browser) exists for a desktop-id mismatch Arch doesn't have.
+[scripts.omarchy-default-browser-arch]
+description = "Omarchy's default browser (Arch)"
+file = "scripts/maintain/omarchy-default-browser-arch.sh"
+check = "test \"$(omarchy default browser)\" = \"$1\""
+after = ["programs.firefox", "scripts.omarchy-firefox"]
