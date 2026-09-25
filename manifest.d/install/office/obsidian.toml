@@ -1,6 +1,10 @@
 [programs.obsidian]
 description = "Obsidian notes"
-depends-on = ["flathub-remote"]
 
 [programs.obsidian.install.flatpak]
 pkg = "md.obsidian.Obsidian"
+depends-on = ["flathub-remote"]
+
+# Omarchy preinstalls Arch's package (and its launch flags,
+# ~/.config/obsidian/user-flags.conf).
+[programs.obsidian.install.omarchy-pkg]

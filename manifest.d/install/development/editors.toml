@@ -5,12 +5,23 @@ description = "Visual Studio Code"
 [programs.code.install.dnf-repo.with]
 repofile = "scripts/install/repos/vscode.repo"
 
+# Omarchy's own VS Code build ([omarchy] repo); the omarchy-vscode script
+# adds Omarchy's settings with its installer.
+[programs.code.install.omarchy-pkg]
+pkg = "visual-studio-code-bin"
+
 [programs.antigravity]
 description = "Antigravity IDE"
 
 [programs.antigravity.install.dnf-repo]
 [programs.antigravity.install.dnf-repo.with]
 repofile = "scripts/install/repos/antigravity.repo"
+
+# Arch: the AUR's antigravity-ide — Google's own IDE tarball from
+# dl.google.com, repackaged. Not the AUR's `antigravity`, which is
+# Antigravity 2.0, a different product.
+[programs.antigravity.install.omarchy-aur]
+pkg = "antigravity-ide"
 
 # Sublime versions are build numbers (e.g. 4192), not dotted versions.
 # The vendor publishes a per-arch .repo file; $(uname -m) is expanded by the
@@ -23,3 +34,8 @@ regex = "([0-9]+)"
 regex = "([0-9]+)"
 [programs.sublime-text.install.dnf-repo.with]
 repofile = "https://download.sublimetext.com/rpm/stable/$(uname -m)/sublime-text.repo"
+
+# Omarchy packages it in its own repo (no installer for it); pacman's version
+# is "4.<build>", which the installer's dotted regex reads whole.
+[programs.sublime-text.install.omarchy-pkg]
+pkg = "sublime-text-4"

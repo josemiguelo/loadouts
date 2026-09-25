@@ -1,0 +1,9 @@
+# Omarchy only: VS Code through Omarchy's installer (keyring, no self-update,
+# Omarchy's theme). It overwrites settings.json and opens VS Code once.
+[scripts.omarchy-vscode]
+description = "VS Code, set up by Omarchy's installer"
+file = "scripts/maintain/omarchy-vscode.sh"
+check = "file:scripts/maintain/omarchy-vscode.sh check"
+after = ["programs.code"]
+# omarchy pkg add goes through sudo.
+sudo = true
