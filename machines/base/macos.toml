@@ -7,9 +7,9 @@ scripts = [
   "dotfiles-push",
   "dotfiles-apply",
   "dotfiles-ssh-remote",
-  "asdf-plugins",
-  "asdf-tools",
-  "asdf-default-packages",
+  "mise-tools",
+  "mise-default-packages",
+  "java-macos-integration",
   "nvim-plugins",
   "tmux-plugins",
   "zsh-plugins",
@@ -41,7 +41,9 @@ yazi = "brew"
 yq = "brew"
 zoxide = "brew"
 tpack = "brew-cask"
-asdf = "script"
+mise = "brew"
+setup-brew = "macos"
+brew-taps = "script"
 ngrok = "script"
 claude = "script"
 codex = "brew-cask"
