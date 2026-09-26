@@ -2,12 +2,17 @@
 -- running Hyprland: runs ~/.config/hypr/hyprland.lua (Omarchy's defaults,
 -- then the personal overrides, in Hyprland's own load order) with a
 -- stand-in `hl` whose config() merges every call the way Hyprland applies
--- them — later calls win, key by key. Every other hl.* / o.* use is a no-op.
--- Hyprland embeds Lua 5.5 and depends on the `lua` package, so plain `lua`
--- runs the same language.
+-- them — later calls win, key by key — and whose bind()/unbind() keep the
+-- key bindings the way Hyprland does: a bind adds to the key (two binds on
+-- one key both fire), an unbind clears it. Every other hl.* / o.* use is a
+-- no-op. Hyprland embeds Lua 5.5 and depends on the `lua` package, so plain
+-- `lua` runs the same language.
 --
 -- usage: lua hypr-option.lua <option.path> [config]
 --   prints the value (true, 0.4, "us", …) or nil when nothing sets it;
+--        lua hypr-option.lua "bind:SUPER + SHIFT + E" [config]
+--   prints the command each bind on that key runs, one per line (a
+--   dispatcher that isn't a command prints as <dispatcher>), or nil;
 --   exits 2 when the config itself fails to load.
 -- Limits: this RUNS the config (Omarchy's does read-only probes at load:
 -- `find`, command-exists checks), and anything the stand-in returns is a
@@ -52,10 +57,30 @@ local absorb = {
 }
 sink = setmetatable({}, absorb)
 
+-- "SUPER + SHIFT + E" and "super+shift+e" are the same key.
+local function key_of(keys)
+  return tostring(keys):upper():gsub("%s+", "")
+end
+
+local binds = {}
+
 hl = setmetatable({
   config = function(t)
     if type(t) == "table" then merge(merged, t) end
   end,
+  bind = function(keys, dispatcher)
+    local key = key_of(keys)
+    local exec = type(dispatcher) == "table" and rawget(dispatcher, "exec") or "<dispatcher>"
+    binds[key] = binds[key] or {}
+    table.insert(binds[key], exec)
+  end,
+  unbind = function(keys)
+    binds[key_of(keys)] = nil
+  end,
+  -- o.bind turns a command into hl.dsp.exec_cmd(command): keep the command.
+  dsp = setmetatable({
+    exec_cmd = function(command) return { exec = command } end,
+  }, { __index = function() return sink end }),
 }, { __index = function() return sink end })
 
 local ok, err = pcall(dofile, config)
@@ -66,6 +91,12 @@ if not ok then
   local why = first:sub(-1) == ":" and first .. " " .. second or first
   io.stderr:write("hypr-option: " .. config .. " failed to load: " .. why .. "\n")
   os.exit(2)
+end
+
+if path:sub(1, 5) == "bind:" then
+  local list = binds[key_of(path:sub(6))]
+  print(list and table.concat(list, "\n") or "nil")
+  os.exit(0)
 end
 
 local value = merged
