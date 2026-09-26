@@ -16,6 +16,10 @@
 --        lua hypr-option.lua "action:<window.close>" [config]
 --   the reverse: every key bound to that action (as the bind wrote it), one
 --   per line, sorted, or nil;
+--        lua hypr-option.lua "rules:size" [config]
+--   every window rule that sets that property, in load order, one per line:
+--   <class regex>\t<tag>\t<value> (empty when the rule doesn't match on
+--   it; a list value joined by spaces), or nil;
 --   exits 2 when the config itself fails to load.
 -- Limits: this RUNS the config (Omarchy's does read-only probes at load:
 -- `find`, command-exists checks), and anything the stand-in returns is a
@@ -66,6 +70,7 @@ local function key_of(keys)
 end
 
 local binds = {}
+local window_rules = {}
 local written = {} -- key -> the key as the bind wrote it ("SUPER + Q")
 
 -- hl.dsp.window.close() -> { builtin = "window.close" }, however deep.
@@ -89,6 +94,9 @@ hl = setmetatable({
     table.insert(binds[key], exec)
     written[key] = tostring(keys)
   end,
+  window_rule = function(rule)
+    if type(rule) == "table" then table.insert(window_rules, rule) end
+  end,
   unbind = function(keys)
     binds[key_of(keys)] = nil
   end,
@@ -109,6 +117,24 @@ if not ok then
   local why = first:sub(-1) == ":" and first .. " " .. second or first
   io.stderr:write("hypr-option: " .. config .. " failed to load: " .. why .. "\n")
   os.exit(2)
+end
+
+if path:sub(1, 6) == "rules:" then
+  local prop, lines = path:sub(7), {}
+  for _, rule in ipairs(window_rules) do
+    local value = rule[prop]
+    if value ~= nil then
+      local match = type(rule.match) == "table" and rule.match or {}
+      if type(value) == "table" then
+        local parts = {}
+        for _, v in ipairs(value) do table.insert(parts, tostring(v)) end
+        value = table.concat(parts, " ")
+      end
+      table.insert(lines, tostring(match.class or "") .. "\t" .. tostring(match.tag or "") .. "\t" .. tostring(value))
+    end
+  end
+  print(#lines > 0 and table.concat(lines, "\n") or "nil")
+  os.exit(0)
 end
 
 if path:sub(1, 7) == "action:" then

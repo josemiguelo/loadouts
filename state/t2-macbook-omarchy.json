@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-26T20:39:17.326216739Z",
+  "updatedAt": "2026-09-26T22:25:33.819472533Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -488,6 +488,11 @@
       "status": "done",
       "lastRun": "2026-09-25T16:30:14.424297969Z",
       "exitCode": 0
+    },
+    "omarchy-activity-monitor-size": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "omarchy-sshd": {
       "status": "done",
