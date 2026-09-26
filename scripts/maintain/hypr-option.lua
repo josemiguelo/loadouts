@@ -11,8 +11,8 @@
 -- usage: lua hypr-option.lua <option.path> [config]
 --   prints the value (true, 0.4, "us", …) or nil when nothing sets it;
 --        lua hypr-option.lua "bind:SUPER + SHIFT + E" [config]
---   prints the command each bind on that key runs, one per line (a
---   dispatcher that isn't a command prints as <dispatcher>), or nil;
+--   prints the command each bind on that key runs, one per line (a built-in
+--   dispatcher prints as <window.close>, <layout>, …), or nil;
 --   exits 2 when the config itself fails to load.
 -- Limits: this RUNS the config (Omarchy's does read-only probes at load:
 -- `find`, command-exists checks), and anything the stand-in returns is a
@@ -64,13 +64,23 @@ end
 
 local binds = {}
 
+-- hl.dsp.window.close() -> { builtin = "window.close" }, however deep.
+local function builtin(name)
+  return setmetatable({}, {
+    __index = function(_, field) return builtin(name .. "." .. field) end,
+    __call = function() return { builtin = name } end,
+  })
+end
+
 hl = setmetatable({
   config = function(t)
     if type(t) == "table" then merge(merged, t) end
   end,
   bind = function(keys, dispatcher)
     local key = key_of(keys)
-    local exec = type(dispatcher) == "table" and rawget(dispatcher, "exec") or "<dispatcher>"
+    local exec = type(dispatcher) == "table"
+        and (rawget(dispatcher, "exec") or rawget(dispatcher, "builtin") and "<" .. dispatcher.builtin .. ">")
+      or "<dispatcher>"
     binds[key] = binds[key] or {}
     table.insert(binds[key], exec)
   end,
@@ -78,9 +88,12 @@ hl = setmetatable({
     binds[key_of(keys)] = nil
   end,
   -- o.bind turns a command into hl.dsp.exec_cmd(command): keep the command.
+  -- Every other hl.dsp.* (window.close(), layout(…)) is a built-in action:
+  -- keep its name, as a plain table — not the sink, whose every field is
+  -- truthy and would pass o.bind's { omarchy = … } / { webapp = … } tests.
   dsp = setmetatable({
     exec_cmd = function(command) return { exec = command } end,
-  }, { __index = function() return sink end }),
+  }, { __index = function(_, name) return builtin(name) end }),
 }, { __index = function() return sink end })
 
 local ok, err = pcall(dofile, config)
