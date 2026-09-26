@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-26T16:42:13.726905494Z",
+  "updatedAt": "2026-09-26T17:05:11.179466970Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -282,14 +282,9 @@
       "version": "8.1.0",
       "reason": null
     },
-    "firefox": {
+    "brave": {
       "status": "installed",
-      "version": "155.0.1",
-      "reason": null
-    },
-    "google-chrome-stable": {
-      "status": "installed",
-      "version": "154.0.8037.57",
+      "version": "1.96.59",
       "reason": null
     },
     "scrcpy": {
@@ -399,14 +394,9 @@
       "lastRun": "2026-09-25T13:54:53.101932428Z",
       "exitCode": 0
     },
-    "omarchy-firefox": {
-      "status": "done",
-      "lastRun": "2026-09-25T13:54:53.186515993Z",
-      "exitCode": 0
-    },
     "omarchy-default-browser-arch": {
       "status": "done",
-      "lastRun": "2026-09-25T13:54:53.521529407Z",
+      "lastRun": "2026-09-26T17:05:07.763758053Z",
       "exitCode": 0
     },
     "omarchy-vscode": {
@@ -419,9 +409,9 @@
       "lastRun": null,
       "exitCode": null
     },
-    "omarchy-chrome": {
+    "omarchy-brave": {
       "status": "done",
-      "lastRun": "2026-09-25T16:19:30.162469868Z",
+      "lastRun": "2026-09-26T17:05:06.956377064Z",
       "exitCode": 0
     },
     "omarchy-natural-scroll": {
