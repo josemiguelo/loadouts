@@ -23,11 +23,10 @@ scripts = [
   "omarchy-dictation",
   "omarchy-dictation-gpu",
   "omarchy-1password",
-  "omarchy-firefox",
-  "omarchy-default-browser-arch firefox",
+  "omarchy-default-browser-arch brave",
   "omarchy-vscode",
   "link-jetbrains-launchers-linux",
-  "omarchy-chrome",
+  "omarchy-brave",
   "omarchy-natural-scroll",
   # web apps and agent launchers not wanted; Google in HEY's place
   "omarchy-webapps-remove Basecamp HEY",
@@ -66,7 +65,6 @@ voxtype = "omarchy-pkg"
 wtype = "omarchy-pkg"
 1password = "omarchy-pkg"
 1password-cli = "omarchy-pkg"
-firefox = "omarchy-pkg"
 code = "omarchy-pkg"
 sublime-text = "omarchy-pkg"
 obsidian = "omarchy-pkg"
@@ -74,7 +72,7 @@ vlc = "omarchy-pkg"
 scrcpy = "brew"
 jetbrains-toolbox = "script"
 # AUR, each one approved: official builds, repackaged.
-google-chrome-stable = "omarchy-aur"
+brave = "omarchy-aur"
 slack = "omarchy-aur"
 teams-for-linux = "omarchy-aur"
 anydesk = "omarchy-aur"

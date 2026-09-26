@@ -1,7 +1,7 @@
 # Omarchy on Arch: the default browser, named by the machine's opt-in
-# ("omarchy-default-browser-arch firefox").
+# ("omarchy-default-browser-arch brave").
 [scripts.omarchy-default-browser-arch]
 description = "Omarchy's default browser (Arch)"
 file = "scripts/maintain/omarchy-default-browser-arch.sh"
 check = "test \"$(omarchy default browser)\" = \"$1\""
-after = ["programs.firefox", "scripts.omarchy-firefox"]
+after = ["programs.brave", "scripts.omarchy-brave"]

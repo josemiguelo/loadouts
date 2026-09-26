@@ -1,0 +1,9 @@
+[programs.brave]
+description = "Brave browser"
+
+# Arch: the AUR's brave-bin (Brave's own build, repackaged) — the package
+# Omarchy's `omarchy install browser brave` adds; not in the Arch or Omarchy
+# repos. The omarchy-brave script runs that installer for Omarchy's policy,
+# flags and theme.
+[programs.brave.install.omarchy-aur]
+pkg = "brave-bin"
