@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-25T20:25:08.718949825Z",
+  "updatedAt": "2026-09-26T16:42:13.726905494Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -366,7 +366,7 @@
     },
     "omarchy-tmux-theme": {
       "status": "done",
-      "lastRun": "2026-09-25T13:54:52.845435380Z",
+      "lastRun": "2026-09-25T21:25:30.153584850Z",
       "exitCode": 0
     },
     "nvim-plugins": {
@@ -425,6 +425,31 @@
       "exitCode": 0
     },
     "omarchy-natural-scroll": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-webapps-remove": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-agent-launchers-prune": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-webapp-gmail": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-webapp-google-calendar": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-google-bindings": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

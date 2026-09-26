@@ -1,0 +1,7 @@
+# Gmail as a web app (own window) and the mailto handler, in HEY's place.
+[scripts.omarchy-webapp-gmail]
+description = "Gmail web app, the default for email links"
+file = "scripts/maintain/omarchy-webapp-gmail.sh"
+check = "file:scripts/maintain/omarchy-webapp-gmail.sh check"
+# HEY's launcher claims mailto too: take the default after it's gone.
+after = ["scripts.omarchy-webapps-remove"]

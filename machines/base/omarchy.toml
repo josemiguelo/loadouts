@@ -29,6 +29,12 @@ scripts = [
   "link-jetbrains-launchers-linux",
   "omarchy-chrome",
   "omarchy-natural-scroll",
+  # web apps and agent launchers not wanted; Google in HEY's place
+  "omarchy-webapps-remove Basecamp HEY",
+  "omarchy-agent-launchers-prune claude codex gh gemini",
+  "omarchy-webapp-gmail",
+  "omarchy-webapp-google-calendar",
+  "omarchy-google-bindings",
 ]
 
 [pm]

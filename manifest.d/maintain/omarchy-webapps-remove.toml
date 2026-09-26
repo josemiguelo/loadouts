@@ -1,0 +1,7 @@
+# Omarchy web apps this machine doesn't want, named by its opt-in
+# ("omarchy-webapps-remove Basecamp HEY"), removed the native way and kept
+# removed across Omarchy re-provisioning.
+[scripts.omarchy-webapps-remove]
+description = "Omarchy web apps removed"
+file = "scripts/maintain/omarchy-webapps-remove.sh"
+check = "file:scripts/maintain/omarchy-webapps-remove.sh check $@"

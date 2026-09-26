@@ -1,0 +1,5 @@
+# Google Calendar as a web app (own window), in HEY Calendar's place.
+[scripts.omarchy-webapp-google-calendar]
+description = "Google Calendar web app"
+file = "scripts/maintain/omarchy-webapp-google-calendar.sh"
+check = "file:scripts/maintain/omarchy-webapp-google-calendar.sh check"

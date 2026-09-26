@@ -1,0 +1,7 @@
+# Omarchy's ~/.local/bin launchers for coding agents, pruned to the ones this
+# machine uses — named by its opt-in ("omarchy-agent-launchers-prune claude
+# codex gh gemini"). The kept agents themselves come from mise either way.
+[scripts.omarchy-agent-launchers-prune]
+description = "only the Omarchy agent launchers in use"
+file = "scripts/maintain/omarchy-agent-launchers-prune.sh"
+check = "file:scripts/maintain/omarchy-agent-launchers-prune.sh check $@"

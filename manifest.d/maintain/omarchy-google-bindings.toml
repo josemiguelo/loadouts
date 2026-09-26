@@ -1,0 +1,6 @@
+# Omarchy's email/new-email/calendar keys (SUPER+SHIFT+E, SUPER+SHIFT+ALT+E,
+# SUPER+SHIFT+C) rebound from HEY to Gmail and Google Calendar web apps.
+[scripts.omarchy-google-bindings]
+description = "email and calendar keys open Gmail and Google Calendar"
+file = "scripts/maintain/omarchy-google-bindings.sh"
+check = "file:scripts/maintain/omarchy-google-bindings.sh check"
