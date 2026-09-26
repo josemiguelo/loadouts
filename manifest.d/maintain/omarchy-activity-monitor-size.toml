@@ -1,6 +1,6 @@
 # The activity monitor (SUPER+CTRL+T, btop) at the machine's size, named by
-# its opt-in ("omarchy-activity-monitor-size 1400 900"), instead of Omarchy's
-# 875x600 for every floating window.
+# its opt-in ("omarchy-activity-monitor-size 80% 80%"), instead of Omarchy's
+# 875x600 for every floating window. Pixels or a share of the monitor (80%).
 [scripts.omarchy-activity-monitor-size]
 description = "activity monitor (btop) window size"
 file = "scripts/maintain/omarchy-activity-monitor-size.sh"

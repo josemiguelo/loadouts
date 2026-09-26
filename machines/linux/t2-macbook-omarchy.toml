@@ -13,8 +13,8 @@ scripts = [
   # KVM/QEMU with virt-manager
   "setup-libvirt-arch",
   "ufw-libvirt",
-  # 1920x1200 logical (3072x1920 at 1.6): room for a bigger activity monitor
-  "omarchy-activity-monitor-size 1400 900",
+  # a bigger activity monitor, relative to whatever screen it opens on
+  "omarchy-activity-monitor-size 90% 90%",
   # key-only SSH for the keys on GitHub (mirrored: deleting one there revokes it)
   "omarchy-sshd josemiguelo",
 ]

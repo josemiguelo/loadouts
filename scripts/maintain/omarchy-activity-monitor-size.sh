@@ -10,6 +10,9 @@
 # file's text: hypr-option.lua evaluates the whole Lua config and lists every
 # window rule that sets a size; the last floating-window one that can match
 # btop must be this size. Install rewrites the block between its markers.
+# A size is pixels (1400) or a share of the monitor (80%), which becomes a
+# Hyprland expression — (monitor_w*0.8) — the form Omarchy's own webcam
+# overlay rule uses, so it follows whatever screen the window opens on.
 # usage: omarchy-activity-monitor-size.sh [check] <width> <height>
 set -eu
 
@@ -17,6 +20,25 @@ MODE=install
 if [ "${1:-}" = check ]; then MODE=check; shift; fi
 W=${1:?usage: $0 [check] <width> <height>}
 H=${2:?usage: $0 [check] <width> <height>}
+
+# 80% on axis w -> (monitor_w*0.8); pixels stay as they are.
+size_of() {
+  case $1 in
+  *%) awk -v p="${1%\%}" -v axis="$2" 'BEGIN { printf "(monitor_%s*%g)\n", axis, p / 100 }' ;;
+  *) printf '%s\n' "$1" ;;
+  esac
+}
+
+# As a Lua value: an expression is a string, pixels a number.
+lua_of() {
+  case $1 in
+  \(*) printf '"%s"\n' "$1" ;;
+  *) printf '%s\n' "$1" ;;
+  esac
+}
+
+SW=$(size_of "$W" w)
+SH=$(size_of "$H" h)
 
 CLASS=org.omarchy.btop
 TAG=floating-window
@@ -40,15 +62,15 @@ effective() {
 }
 
 sized() {
-  [ "$(effective)" = "$W $H" ]
+  [ "$(effective)" = "$SW $SH" ]
 }
 
 block() {
   echo "$BEGIN"
-  echo "-- The activity monitor (SUPER+CTRL+T, btop) at ${W}x${H}, not Omarchy's"
+  echo "-- The activity monitor (SUPER+CTRL+T, btop) at $W by $H, not Omarchy's"
   echo "-- floating-window size. Matches the tag too: tag rules apply after"
   echo "-- class-only ones (scripts/maintain/omarchy-activity-monitor-size.sh)."
-  echo "o.window({ class = \"^(org\\\\.omarchy\\\\.btop)\$\", tag = \"$TAG\" }, { size = { $W, $H } })"
+  echo "o.window({ class = \"^(org\\\\.omarchy\\\\.btop)\$\", tag = \"$TAG\" }, { size = { $(lua_of "$SW"), $(lua_of "$SH") } })"
   echo "$END"
 }
 
@@ -60,7 +82,7 @@ install)
   lua "$PROBE" rules:size >/dev/null || exit 1
   rest=$(awk -v b="$BEGIN" -v e="$END" '$0 == b { skip = 1 } !skip { print } $0 == e { skip = 0 }' "$CONF")
   { printf '%s\n\n' "$rest"; block; } > "$CONF"
-  sized || { echo "btop's floating size is '$(effective)', not '$W $H', after $CONF: a later rule sets it" >&2; exit 1; }
+  sized || { echo "btop's floating size is '$(effective)', not '$SW $SH', after $CONF: a later rule sets it" >&2; exit 1; }
   sig=$(live_instance)
   if [ -n "$sig" ]; then
     HYPRLAND_INSTANCE_SIGNATURE=$sig hyprctl -q reload
