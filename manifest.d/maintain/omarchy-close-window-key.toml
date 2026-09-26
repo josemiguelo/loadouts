@@ -1,0 +1,5 @@
+# SUPER+Q closes windows, instead of whatever key Omarchy uses for it.
+[scripts.omarchy-close-window-key]
+description = "SUPER+Q closes windows"
+file = "scripts/maintain/omarchy-close-window-key.sh"
+check = "file:scripts/maintain/omarchy-close-window-key.sh check"

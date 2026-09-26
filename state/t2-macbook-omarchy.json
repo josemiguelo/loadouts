@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-26T17:05:11.179466970Z",
+  "updatedAt": "2026-09-26T20:39:17.326216739Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -440,6 +440,11 @@
       "exitCode": null
     },
     "omarchy-google-bindings": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-close-window-key": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

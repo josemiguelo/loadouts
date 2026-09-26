@@ -34,6 +34,7 @@ scripts = [
   "omarchy-webapp-gmail",
   "omarchy-webapp-google-calendar",
   "omarchy-google-bindings",
+  "omarchy-close-window-key",
 ]
 
 [pm]
