@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-26T22:25:33.819472533Z",
+  "updatedAt": "2026-09-27T02:25:06.180142221Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -487,6 +487,11 @@
     "ufw-libvirt": {
       "status": "done",
       "lastRun": "2026-09-25T16:30:14.424297969Z",
+      "exitCode": 0
+    },
+    "omarchy-sudoless-docker": {
+      "status": "done",
+      "lastRun": "2026-09-27T02:25:03.108721099Z",
       "exitCode": 0
     },
     "omarchy-activity-monitor-size": {
