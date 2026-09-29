@@ -8,6 +8,7 @@ scripts = [
   "t2-hid-apple-keyboard-arch",
   "t2-fan-curve",
   "t2-boot-clock",
+  "t2-gmux-backlight",
   # Logitech receiver/mouse manager, without its session autostart.
   "solaar-no-autostart",
   # KVM/QEMU with virt-manager

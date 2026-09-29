@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-29T19:44:39.987416093Z",
+  "updatedAt": "2026-09-29T20:12:36.050724495Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -310,7 +310,7 @@
       "exitCode": 0
     },
     "dotfiles-pull": {
-      "status": "pending",
+      "status": "done",
       "lastRun": "2026-09-25T15:11:22.233389182Z",
       "exitCode": 0
     },
@@ -473,6 +473,11 @@
       "status": "done",
       "lastRun": null,
       "exitCode": null
+    },
+    "t2-gmux-backlight": {
+      "status": "done",
+      "lastRun": "2026-09-29T20:12:33.765188757Z",
+      "exitCode": 0
     },
     "solaar-no-autostart": {
       "status": "done",

@@ -1,0 +1,9 @@
+# T2 MacBook Pros: the gmux backlight wakes from sleep at its own bright
+# default while the kernel still holds the old level; a sleep hook sends the
+# level back on resume.
+[scripts.t2-gmux-backlight]
+description = "screen brightness kept across suspend (T2 Mac)"
+file = "scripts/maintain/t2-gmux-backlight.sh"
+check = "file:scripts/maintain/t2-gmux-backlight.sh check"
+# the hook goes into /usr/lib/systemd/system-sleep through sudo.
+sudo = true
