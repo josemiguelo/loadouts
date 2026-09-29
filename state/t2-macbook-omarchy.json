@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-29T21:25:11.379749255Z",
+  "updatedAt": "2026-09-29T21:53:53.776596366Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -445,6 +445,11 @@
       "exitCode": null
     },
     "omarchy-close-window-key": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-command-overrides": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

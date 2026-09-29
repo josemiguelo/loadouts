@@ -1,0 +1,7 @@
+# ~/.local/share/omarchy-overrides/bin first on the PATH of everything
+# Hyprland starts (a block in ~/.config/hypr/hyprland.lua), where fixes put
+# local replacements of Omarchy commands.
+[scripts.omarchy-command-overrides]
+description = "local replacements of Omarchy commands come first"
+file = "scripts/maintain/omarchy-command-overrides.sh"
+check = "file:scripts/maintain/omarchy-command-overrides.sh check"
