@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-29T20:12:36.050724495Z",
+  "updatedAt": "2026-09-29T21:25:11.379749255Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -449,6 +449,11 @@
       "lastRun": null,
       "exitCode": null
     },
+    "omarchy-keyboard-backlight-guard": {
+      "status": "done",
+      "lastRun": "2026-09-29T21:25:09.114757420Z",
+      "exitCode": 0
+    },
     "dotfiles-bootstrap": {
       "status": "done",
       "lastRun": "2026-09-24T21:34:49.667693031Z",
@@ -476,7 +481,7 @@
     },
     "t2-gmux-backlight": {
       "status": "done",
-      "lastRun": "2026-09-29T20:12:33.765188757Z",
+      "lastRun": "2026-09-29T20:28:45.782052542Z",
       "exitCode": 0
     },
     "solaar-no-autostart": {

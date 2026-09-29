@@ -1,0 +1,8 @@
+# Omarchy's `omarchy-brightness-keyboard off` saves 0 over the real level when
+# blanking repeats, so the keyboard backlight wakes dark. A wrapper, first on the
+# session PATH through ~/.config/hypr/hyprland.lua, skips `off`
+# on an already-dark light, and goes away once Omarchy's command is fixed.
+[scripts.omarchy-keyboard-backlight-guard]
+description = "keyboard backlight comes back after sleep"
+file = "scripts/maintain/omarchy-keyboard-backlight-guard.sh"
+check = "file:scripts/maintain/omarchy-keyboard-backlight-guard.sh check"

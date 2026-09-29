@@ -20,6 +20,9 @@
 --   every window rule that sets that property, in load order, one per line:
 --   <class regex>\t<tag>\t<value> (empty when the rule doesn't match on
 --   it; a list value joined by spaces), or nil;
+--        lua hypr-option.lua env:PATH [config]
+--   the value the config's hl.env calls leave that variable at (they change
+--   what later os.getenv calls in the config read, as in Hyprland), or nil;
 --        lua hypr-option.lua leaves [config]
 --   every setting the config ends up with, one per line: <path>\t<value>
 --   (general.gaps_in\t3; a list value joined by spaces), sorted;
@@ -74,6 +77,14 @@ end
 
 local binds = {}
 local window_rules = {}
+
+-- hl.env sets the variable for what the config reads next, like Hyprland's.
+local envs = {}
+local real_getenv = os.getenv
+os.getenv = function(name)
+  if envs[name] ~= nil then return envs[name] end
+  return real_getenv(name)
+end
 local written = {} -- key -> the key as the bind wrote it ("SUPER + Q")
 
 -- hl.dsp.window.close() -> { builtin = "window.close" }, however deep.
@@ -96,6 +107,9 @@ hl = setmetatable({
     binds[key] = binds[key] or {}
     table.insert(binds[key], exec)
     written[key] = tostring(keys)
+  end,
+  env = function(name, value)
+    envs[tostring(name)] = tostring(value)
   end,
   window_rule = function(rule)
     if type(rule) == "table" then table.insert(window_rules, rule) end
@@ -136,6 +150,11 @@ local function value_text(v)
     return table.concat(parts, " ")
   end
   return tostring(v)
+end
+
+if path:sub(1, 4) == "env:" then
+  print(envs[path:sub(5)] or "nil")
+  os.exit(0)
 end
 
 if path == "leaves" then

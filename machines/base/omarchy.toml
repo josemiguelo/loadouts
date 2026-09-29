@@ -36,6 +36,8 @@ scripts = [
   "omarchy-webapp-google-calendar",
   "omarchy-google-bindings",
   "omarchy-close-window-key",
+  # until Omarchy stops saving 0 over the keyboard backlight on repeated blanks
+  "omarchy-keyboard-backlight-guard",
 ]
 
 [pm]
