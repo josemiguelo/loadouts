@@ -20,6 +20,9 @@
 --   every window rule that sets that property, in load order, one per line:
 --   <class regex>\t<tag>\t<value> (empty when the rule doesn't match on
 --   it; a list value joined by spaces), or nil;
+--        lua hypr-option.lua leaves [config]
+--   every setting the config ends up with, one per line: <path>\t<value>
+--   (general.gaps_in\t3; a list value joined by spaces), sorted;
 --   exits 2 when the config itself fails to load.
 -- Limits: this RUNS the config (Omarchy's does read-only probes at load:
 -- `find`, command-exists checks), and anything the stand-in returns is a
@@ -119,6 +122,40 @@ if not ok then
   os.exit(2)
 end
 
+-- A table of only 1..n keys is a value ({ 1, 1 }), not a section.
+local function is_list(t)
+  local n = 0
+  for _ in pairs(t) do n = n + 1 end
+  return n > 0 and #t == n
+end
+
+local function value_text(v)
+  if type(v) == "table" then
+    local parts = {}
+    for _, x in ipairs(v) do table.insert(parts, tostring(x)) end
+    return table.concat(parts, " ")
+  end
+  return tostring(v)
+end
+
+if path == "leaves" then
+  local lines = {}
+  local function walk(t, prefix)
+    for k, v in pairs(t) do
+      local p = prefix == "" and tostring(k) or prefix .. "." .. tostring(k)
+      if type(v) == "table" and not is_list(v) then
+        walk(v, p)
+      else
+        table.insert(lines, p .. "\t" .. value_text(v))
+      end
+    end
+  end
+  walk(merged, "")
+  table.sort(lines)
+  print(table.concat(lines, "\n"))
+  os.exit(0)
+end
+
 if path:sub(1, 6) == "rules:" then
   local prop, lines = path:sub(7), {}
   for _, rule in ipairs(window_rules) do
@@ -163,4 +200,4 @@ for part in path:gmatch("[^.]+") do
   -- Not `and value[part] or nil`: that turns a set `false` into nil.
   if type(value) == "table" then value = value[part] else value = nil end
 end
-print(tostring(value))
+print(type(value) == "table" and value_text(value) or tostring(value))

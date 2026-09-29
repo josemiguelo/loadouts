@@ -1,0 +1,7 @@
+# Hyprland settings from scripts/maintain/hypr-config/<file>.lua, written into the matching
+# ~/.config/hypr/<file>.lua, named by the machine's opt-in
+# ("omarchy-hypr-config input looknfeel").
+[scripts.omarchy-hypr-config]
+description = "Hyprland settings from hypr-config/*.lua"
+file = "scripts/maintain/omarchy-hypr-config.sh"
+check = "file:scripts/maintain/omarchy-hypr-config.sh check $@"

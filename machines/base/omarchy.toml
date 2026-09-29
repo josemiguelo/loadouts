@@ -27,7 +27,8 @@ scripts = [
   "omarchy-vscode",
   "link-jetbrains-launchers-linux",
   "omarchy-brave",
-  "omarchy-natural-scroll",
+  # Hyprland settings from scripts/maintain/hypr-config/ (natural scrolling, look and feel)
+  "omarchy-hypr-config input looknfeel",
   # web apps and agent launchers not wanted; Google in HEY's place
   "omarchy-webapps-remove Basecamp HEY",
   "omarchy-agent-launchers-prune claude codex gh gemini",
