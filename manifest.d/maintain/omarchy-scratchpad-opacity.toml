@@ -1,0 +1,9 @@
+# Kitty windows in the scratchpad (SUPER+S) at the opacity its opt-in names
+# ("omarchy-scratchpad-opacity 0.95"), the rest at kitty.conf's
+# background_opacity. Needs dynamic_background_opacity from the dotfiles
+# kitty.conf, hence after dotfiles-apply.
+[scripts.omarchy-scratchpad-opacity]
+description = "scratchpad kitty windows less see-through"
+file = "scripts/maintain/omarchy-scratchpad-opacity.sh"
+check = "file:scripts/maintain/omarchy-scratchpad-opacity.sh check $@"
+after = ["programs.kitty", "scripts.dotfiles-apply"]

@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-29T21:53:53.776596366Z",
+  "updatedAt": "2026-09-30T15:42:08.733261097Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -320,7 +320,7 @@
       "exitCode": 0
     },
     "dotfiles-push": {
-      "status": "done",
+      "status": "pending",
       "lastRun": null,
       "exitCode": null
     },
@@ -513,6 +513,11 @@
       "status": "done",
       "lastRun": null,
       "exitCode": null
+    },
+    "omarchy-scratchpad-opacity": {
+      "status": "done",
+      "lastRun": "2026-09-30T15:42:06.572273181Z",
+      "exitCode": 0
     },
     "omarchy-sshd": {
       "status": "done",
