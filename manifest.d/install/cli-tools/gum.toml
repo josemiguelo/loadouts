@@ -1,0 +1,5 @@
+# charmbracelet's gum: styled prompts, spinners and logs for shell scripts
+# (the dotfiles' gclone and workmux wrappers use it). Omarchy ships it as a
+# base package.
+[programs.gum]
+via = ["brew", "omarchy-pkg"]
