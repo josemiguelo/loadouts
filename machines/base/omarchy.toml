@@ -40,6 +40,8 @@ scripts = [
   "omarchy-command-overrides",
   # until Omarchy stops saving 0 over the keyboard backlight on repeated blanks
   "omarchy-keyboard-backlight-guard",
+  # Keychron Launcher (WebHID) can open Keychron keyboards
+  "keychron-launcher-access",
 ]
 
 [pm]
