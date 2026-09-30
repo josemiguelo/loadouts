@@ -15,17 +15,33 @@
 # hypr-option.lua can list, unlike a window rule. The block is written from
 # kitty.conf's background_opacity, so it drifts (and install rewrites it)
 # when that changes. Install rewrites the block between its markers.
-# usage: omarchy-scratchpad-opacity.sh [check] <opacity>
+#
+# Omarchy reloads every kitty's config (SIGUSR1) on a theme change
+# (omarchy-restart-terminal), a font change (omarchy-font-set) and a text size
+# change (omarchy-display-text-size), which puts scratchpad windows back at
+# background_opacity. `reapply` sends the opacity again to the kitty windows in
+# the scratchpad — now and a second later, since kitty finishes reloading on
+# its own schedule — and runs from Omarchy's theme-set and font-set hooks
+# (both run after the reload) and from a wrapper for omarchy-display-text-size
+# in the directory omarchy-command-overrides puts first, since that one has no
+# hook.
+# usage: omarchy-scratchpad-opacity.sh [check|reapply] <opacity>
 set -eu
 
 MODE=install
-if [ "${1:-}" = check ]; then MODE=check; shift; fi
-INSIDE=${1:?usage: $0 [check] <opacity>}
+case "${1:-}" in check | reapply) MODE=$1; shift ;; esac
+INSIDE=${1:?usage: $0 [check|reapply] <opacity>}
 
 CONF=$HOME/.config/hypr/hyprland.lua
 KITTY=$HOME/.config/kitty/kitty.conf
 HERE="$(cd "$(dirname "$0")" && pwd)"
+SELF=$HERE/omarchy-scratchpad-opacity.sh
+PROBE=$HERE/hypr-option.lua
 . "$HERE/hypr-live.sh"
+. "$HERE/omarchy-overrides-lib.sh"
+HOOKS="$HOME/.config/omarchy/hooks/theme-set.d/scratchpad-opacity $HOME/.config/omarchy/hooks/font-set.d/scratchpad-opacity"
+TEXT_SIZE=omarchy-display-text-size
+WRAPPER=$OVERRIDES_DIR/$TEXT_SIZE
 BEGIN="-- >>> Managed by loadout (omarchy-scratchpad-opacity)"
 END="-- <<< Managed by loadout (omarchy-scratchpad-opacity)"
 
@@ -74,6 +90,48 @@ $END
 EOF
 }
 
+hook_text() {
+  cat <<EOF
+# Managed by loadout (omarchy-scratchpad-opacity): Omarchy just reloaded every
+# kitty's config, which puts scratchpad windows back at background_opacity.
+sh '$SELF' reapply $INSIDE
+EOF
+}
+
+wrapper_text() {
+  cat <<EOF
+#!/bin/bash
+# Managed by loadout (omarchy-scratchpad-opacity): after Omarchy's text size
+# change reloads every kitty's config, send the scratchpad opacity again.
+# Everything else is Omarchy's.
+"$OMARCHY_BIN/$TEXT_SIZE" "\$@"
+status=\$?
+sh '$SELF' reapply $INSIDE
+exit \$status
+EOF
+}
+
+# Send the opacity to every kitty window in the scratchpad.
+send_to_scratchpad() {
+  sig=$(live_instance)
+  [ -n "$sig" ] || return 0
+  runtime=${XDG_RUNTIME_DIR:-/run/user/$(id -u)}
+  HYPRLAND_INSTANCE_SIGNATURE=$sig hyprctl clients -j |
+    jq -r '.[] | select(.class == "kitty" and .workspace.name == "special:scratchpad") | .pid' |
+    while IFS= read -r pid; do
+      socket=$runtime/omarchy-kitty-$pid
+      [ -S "$socket" ] && kitten @ --to "unix:$socket" set-background-opacity "$INSIDE" >/dev/null 2>&1
+    done
+  return 0
+}
+
+extras_ready() {
+  for hook in $HOOKS; do
+    [ -f "$hook" ] && [ "$(cat "$hook")" = "$(hook_text)" ] || return 1
+  done
+  [ -x "$WRAPPER" ] && [ "$(cat "$WRAPPER")" = "$(wrapper_text)" ] && override_active "$TEXT_SIZE"
+}
+
 current() {
   [ -f "$CONF" ] || return 0
   awk -v b="$BEGIN" -v e="$END" '$0 == b { keep = 1 } keep { print } $0 == e { keep = 0 }' "$CONF"
@@ -81,12 +139,24 @@ current() {
 
 case "$MODE" in
 check)
-  dynamic && [ "$(current)" = "$(block)" ]
+  dynamic && [ "$(current)" = "$(block)" ] && extras_ready
+  ;;
+reapply)
+  send_to_scratchpad
+  (sleep 1; send_to_scratchpad) >/dev/null 2>&1 &
   ;;
 install)
   dynamic || { echo "$KITTY doesn't set dynamic_background_opacity yes (the dotfiles kitty.conf does, for this machine): apply the dotfiles first" >&2; exit 1; }
   rest=$(awk -v b="$BEGIN" -v e="$END" '$0 == b { skip = 1 } !skip { print } $0 == e { skip = 0 }' "$CONF")
   { printf '%s\n\n' "$rest"; block; } > "$CONF"
+  for hook in $HOOKS; do
+    mkdir -p "$(dirname "$hook")"
+    hook_text > "$hook"
+  done
+  mkdir -p "$OVERRIDES_DIR"
+  wrapper_text > "$WRAPPER"
+  chmod 755 "$WRAPPER"
+  extras_ready || { echo "hooks or $WRAPPER not in place after install (is omarchy-command-overrides installed?)" >&2; exit 1; }
   sig=$(live_instance)
   if [ -n "$sig" ]; then
     HYPRLAND_INSTANCE_SIGNATURE=$sig hyprctl -q reload
