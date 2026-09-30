@@ -25,7 +25,8 @@
 --   what later os.getenv calls in the config read, as in Hyprland), or nil;
 --        lua hypr-option.lua leaves [config]
 --   every setting the config ends up with, one per line: <path>\t<value>
---   (general.gaps_in\t3; a list value joined by spaces), sorted;
+--   (general.gaps_in\t3; a list value joined by spaces; hl.device settings
+--   as device:<name>.<key>\t<value>), sorted;
 --   exits 2 when the config itself fails to load.
 -- Limits: this RUNS the config (Omarchy's does read-only probes at load:
 -- `find`, command-exists checks), and anything the stand-in returns is a
@@ -77,6 +78,8 @@ end
 
 local binds = {}
 local window_rules = {}
+-- Per-device settings (hl.device), by device name; later calls win key by key.
+local devices = {}
 
 -- hl.env sets the variable for what the config reads next, like Hyprland's.
 local envs = {}
@@ -113,6 +116,14 @@ hl = setmetatable({
   end,
   window_rule = function(rule)
     if type(rule) == "table" then table.insert(window_rules, rule) end
+  end,
+  device = function(settings)
+    if type(settings) ~= "table" or settings.name == nil then return end
+    local name = tostring(settings.name)
+    devices[name] = devices[name] or {}
+    for k, v in pairs(settings) do
+      if k ~= "name" then devices[name][k] = v end
+    end
   end,
   unbind = function(keys)
     binds[key_of(keys)] = nil
@@ -170,6 +181,11 @@ if path == "leaves" then
     end
   end
   walk(merged, "")
+  for name, settings in pairs(devices) do
+    for k, v in pairs(settings) do
+      table.insert(lines, "device:" .. name .. "." .. tostring(k) .. "\t" .. value_text(v))
+    end
+  end
   table.sort(lines)
   print(table.concat(lines, "\n"))
   os.exit(0)
