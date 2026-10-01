@@ -1,0 +1,4 @@
+# Are the Omarchy shell plugins behind their remotes?
+[outdated.omarchy-plugins]
+command = "file:scripts/outdated/omarchy-plugins.sh"
+upgrade = "file:scripts/outdated/omarchy-plugins.sh update {item}"

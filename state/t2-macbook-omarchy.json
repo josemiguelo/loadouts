@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.17.0",
-  "updatedAt": "2026-09-30T23:44:02.103259459Z",
+  "updatedAt": "2026-10-01T02:03:23.461371310Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -467,6 +467,11 @@
     "keychron-launcher-access": {
       "status": "done",
       "lastRun": "2026-09-30T18:50:55.364556744Z",
+      "exitCode": 0
+    },
+    "omarchy-plugins": {
+      "status": "done",
+      "lastRun": "2026-10-01T02:03:21.137739988Z",
       "exitCode": 0
     },
     "dotfiles-bootstrap": {

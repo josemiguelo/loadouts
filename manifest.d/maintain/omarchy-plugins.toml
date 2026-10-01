@@ -1,0 +1,7 @@
+# Omarchy shell plugins from git, named by URL in the machine's opt-in, one
+# per line ('''omarchy-plugins <url> <url>…'''): each one installed and
+# enabled the Omarchy way. One entry for the whole list.
+[scripts.omarchy-plugins]
+description = "Omarchy shell plugins installed and enabled"
+file = "scripts/maintain/omarchy-plugins.sh"
+check = "file:scripts/maintain/omarchy-plugins.sh check $@"
