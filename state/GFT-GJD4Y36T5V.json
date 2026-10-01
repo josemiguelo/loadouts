@@ -4,12 +4,12 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.16.1",
-  "updatedAt": "2026-09-25T16:35:26.480234Z",
+  "toolVersion": "0.18.0",
+  "updatedAt": "2026-10-01T16:14:54.958587Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
-      "version": "7.0.6",
+      "version": "7.0.7",
       "reason": null
     },
     "brew-taps": {
@@ -19,12 +19,17 @@
     },
     "atuin": {
       "status": "installed",
-      "version": "18.22.0",
+      "version": "18.23.0",
       "reason": null
     },
     "awscli": {
       "status": "installed",
-      "version": "2.36.45",
+      "version": "2.37.7",
+      "reason": null
+    },
+    "azure-cli": {
+      "status": "installed",
+      "version": "2.90.0",
       "reason": null
     },
     "bat": {
@@ -39,17 +44,22 @@
     },
     "chezmoi": {
       "status": "installed",
-      "version": "2.72.2",
+      "version": "2.73.0",
       "reason": null
     },
     "claude": {
       "status": "installed",
-      "version": "2.1.282",
+      "version": "2.1.286",
       "reason": null
     },
     "codex": {
       "status": "installed",
-      "version": "0.156.1",
+      "version": "0.159.3",
+      "reason": null
+    },
+    "coreutils": {
+      "status": "installed",
+      "version": "9.12",
       "reason": null
     },
     "fd": {
@@ -62,14 +72,39 @@
       "version": "0.74.4",
       "reason": null
     },
+    "gawk": {
+      "status": "installed",
+      "version": "5.4.1",
+      "reason": null
+    },
     "gh": {
       "status": "installed",
-      "version": "2.101.0",
+      "version": "2.102.0",
       "reason": null
     },
     "git-delta": {
       "status": "installed",
       "version": "0.19.2",
+      "reason": null
+    },
+    "gnu-sed": {
+      "status": "installed",
+      "version": "4.10",
+      "reason": null
+    },
+    "gum": {
+      "status": "installed",
+      "version": "2.0.2",
+      "reason": null
+    },
+    "jira-cli": {
+      "status": "installed",
+      "version": "1.7.0",
+      "reason": null
+    },
+    "jq": {
+      "status": "installed",
+      "version": "1.8.2",
       "reason": null
     },
     "lazydocker": {
@@ -84,12 +119,17 @@
     },
     "mise": {
       "status": "installed",
-      "version": "2026.9.13",
+      "version": "2026.9.15",
       "reason": null
     },
     "ngrok": {
       "status": "installed",
       "version": "3.22.0",
+      "reason": null
+    },
+    "qemu": {
+      "status": "installed",
+      "version": "11.1.2",
       "reason": null
     },
     "ripgrep": {
@@ -100,6 +140,11 @@
     "starship": {
       "status": "installed",
       "version": "1.26.0",
+      "reason": null
+    },
+    "terraform": {
+      "status": "installed",
+      "version": "1.16.4",
       "reason": null
     },
     "tmux": {
@@ -114,7 +159,7 @@
     },
     "trash-cli": {
       "status": "installed",
-      "version": "0.26.9.14",
+      "version": "0.26.9.29",
       "reason": null
     },
     "tree-sitter-cli": {
@@ -122,9 +167,24 @@
       "version": "0.27.0",
       "reason": null
     },
+    "tree": {
+      "status": "installed",
+      "version": "2.3.2",
+      "reason": null
+    },
+    "unixodbc": {
+      "status": "installed",
+      "version": "2.3.14",
+      "reason": null
+    },
+    "wget": {
+      "status": "installed",
+      "version": "1.25.0",
+      "reason": null
+    },
     "workmux": {
       "status": "installed",
-      "version": "0.1.262",
+      "version": "0.1.269",
       "reason": null
     },
     "yazi": {
@@ -134,7 +194,7 @@
     },
     "yq": {
       "status": "installed",
-      "version": "4.53.6",
+      "version": "4.54.1",
       "reason": null
     },
     "zoxide": {
@@ -147,9 +207,39 @@
       "version": "1.89.1",
       "reason": null
     },
+    "1password-cli": {
+      "status": "installed",
+      "version": "2.39.0",
+      "reason": null
+    },
+    "jordanbaird-ice": {
+      "status": "installed",
+      "version": "0.11.12",
+      "reason": null
+    },
+    "lunar": {
+      "status": "installed",
+      "version": "6.11.0",
+      "reason": null
+    },
+    "meetingbar": {
+      "status": "installed",
+      "version": "4.11.6",
+      "reason": null
+    },
+    "obs": {
+      "status": "installed",
+      "version": "32.2.2",
+      "reason": null
+    },
     "scrcpy": {
       "status": "installed",
       "version": "4.1",
+      "reason": null
+    },
+    "kitty": {
+      "status": "installed",
+      "version": "0.49.2",
       "reason": null
     }
   },
@@ -160,7 +250,7 @@
       "exitCode": null
     },
     "dotfiles-pull": {
-      "status": "done",
+      "status": "pending",
       "lastRun": null,
       "exitCode": null
     },
@@ -170,7 +260,7 @@
       "exitCode": 0
     },
     "dotfiles-apply": {
-      "status": "done",
+      "status": "pending",
       "lastRun": null,
       "exitCode": null
     },

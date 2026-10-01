@@ -1,0 +1,3 @@
+# macOS ships BSD sed; scripts written for GNU sed's -i/-E syntax need this.
+[programs.gnu-sed]
+via = ["brew"]

@@ -1,0 +1,3 @@
+# macOS ships an old BSD awk as /usr/bin/awk; this is GNU awk.
+[programs.gawk]
+via = ["brew"]

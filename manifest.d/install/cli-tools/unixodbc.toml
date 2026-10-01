@@ -1,0 +1,5 @@
+# usql (used by the cobranded bootstrap-env.sh script) links against this at
+# a fixed path; missing it crashes usql with a dyld "Library not loaded"
+# error instead of a clear "package not found" message.
+[programs.unixodbc]
+via = ["brew"]

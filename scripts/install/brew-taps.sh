@@ -8,7 +8,8 @@ set -eu
 BREW="sh scripts/install/brew.sh"
 
 TAPS="tmuxpack/tpack
-raine/workmux"
+raine/workmux
+hashicorp/tap"
 
 each() {
   echo "$TAPS" | while read -r tap; do

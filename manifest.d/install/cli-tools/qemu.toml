@@ -1,0 +1,2 @@
+[programs.qemu]
+via = ["brew"]

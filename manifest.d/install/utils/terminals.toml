@@ -13,3 +13,9 @@ depends-on = ["dnf-plugins-core"]
 copr = "solopasha/kitty"
 
 [programs.kitty.install.omarchy-pkg]
+
+# macOS: Homebrew's cask downloads the same signed .dmg straight from
+# kitty's own GitHub releases (verified: no repackaging), so this is
+# functionally identical to a manual download -- it just gets `brew
+# upgrade --cask` instead of aging untouched with no update path at all.
+[programs.kitty.install.brew-cask]
