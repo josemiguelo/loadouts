@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "omarchy",
   "arch": "x86_64",
-  "toolVersion": "0.18.0",
-  "updatedAt": "2026-10-01T03:45:07.169208076Z",
+  "toolVersion": "0.19.0",
+  "updatedAt": "2026-10-01T16:51:18.259039936Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -320,7 +320,7 @@
       "exitCode": 0
     },
     "dotfiles-apply": {
-      "status": "done",
+      "status": "pending",
       "lastRun": "2026-09-25T15:11:24.775257457Z",
       "exitCode": 0
     },
