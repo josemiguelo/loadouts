@@ -48,6 +48,8 @@ scripts = [
   '''omarchy-plugins
      https://github.com/evindor/keystroke.git
      https://github.com/jankeesvw/omarchy-notification-center.git''',
+  # Keystroke's Windows extension, from a checkout until it ships upstream
+  "omarchy-keystroke-windows",
 ]
 
 [pm]

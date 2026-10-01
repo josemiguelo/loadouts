@@ -1,0 +1,7 @@
+# Keystroke's Windows extension from a checkout (~/Repos/gh/evindor/keystroke)
+# until it ships with Keystroke: linked, turned on, and opened by Hyper+Space.
+[scripts.omarchy-keystroke-windows]
+description = "Hyper+Space lists every window, by workspace (Keystroke)"
+file = "scripts/maintain/omarchy-keystroke-windows.sh"
+check = "file:scripts/maintain/omarchy-keystroke-windows.sh check"
+after = ["scripts.omarchy-plugins"]

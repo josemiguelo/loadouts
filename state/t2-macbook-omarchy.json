@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.19.0",
-  "updatedAt": "2026-10-01T21:42:24.568742123Z",
+  "updatedAt": "2026-10-01T22:57:27.388774354Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -483,6 +483,11 @@
       "status": "done",
       "lastRun": "2026-10-01T02:03:21.137739988Z",
       "exitCode": 0
+    },
+    "omarchy-keystroke-windows": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "dotfiles-bootstrap": {
       "status": "done",
