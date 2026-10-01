@@ -5,8 +5,8 @@
 # kept as a block in ~/.config/hypr/bindings.lua, Omarchy's personal-bindings
 # file. Hyper is SUPER+CTRL+ALT+SHIFT, which the keyboard sends from one key
 # (Keychron Launcher); Omarchy binds nothing on it. omarchy-harpoon/plugin
-# is the Omarchy shell plugin that shows where a jump landed, installed into
-# ~/.config/omarchy/plugins/ and enabled. The check compares the engine, the
+# is the Omarchy shell plugin that names the workspace you land on after any
+# workspace change, installed into ~/.config/omarchy/plugins/ and enabled. The check compares the engine, the
 # block and the plugin with the repo's, requires the plugin enabled, and has
 # hypr-option.lua evaluate the whole config: each key runs exactly one
 # binding. Install rewrites the block between its markers and confirms the

@@ -7,9 +7,9 @@
 --            current one and hidden by the same key
 -- No window yet: the key launches the app. Jump never moves windows, so
 -- layouts stay as they are. Windows on special workspaces (overlays, the
--- scratchpad) are never jumped to. A jump that changes workspace names the
--- new one in the middle of the screen (plugin/Toast.qml, an Omarchy shell
--- plugin).
+-- scratchpad) are never jumped to. The workspace card that shows after a
+-- jump to another workspace is plugin/Toast.qml, an Omarchy shell plugin that
+-- follows every workspace change, not only these keys.
 --
 -- usage, from ~/.config/hypr/bindings.lua:
 --   local harpoon = require("hypr.harpoon")
@@ -70,27 +70,6 @@ local function focus(window)
   dispatch(hl.dsp.focus({ window = window }))
 end
 
-local function shell_quote(value)
-  return "'" .. tostring(value):gsub("'", "'\\''") .. "'"
-end
-
-local function json_string(value)
-  return '"' .. tostring(value):gsub('[%c"\\]', function(c)
-    return string.format("\\u%04x", c:byte())
-  end) .. '"'
-end
-
--- Focus the window and, when that changes workspace, name the new one in
--- the harpoon toast (plugin/Toast.qml).
-local function land(window)
-  local before = hl.get_active_workspace()
-  focus(window)
-  local workspace = ws_name(window)
-  if before and before.name == workspace then return end
-  hl.exec_cmd("omarchy-shell -q harpoonToast show "
-    .. shell_quote(string.format('{"workspace":%s}', json_string(workspace))))
-end
-
 local function launch(app)
   hl.exec_cmd(app.launch)
 end
@@ -140,7 +119,7 @@ function modes.jump(app)
   table.sort(list, by_place)
   for i, w in ipairs(list) do
     if active and w.address == active.address then
-      return land(list[i % #list + 1])
+      return focus(list[i % #list + 1])
     end
   end
   local here_id = here and not here.special and here.id
@@ -149,12 +128,12 @@ function modes.jump(app)
     for _, w in ipairs(list) do
       if w.workspace.id == here_id and (not recent or by_recency(w, recent)) then recent = w end
     end
-    if recent then return land(recent) end
+    if recent then return focus(recent) end
     for _, w in ipairs(list) do
-      if w.workspace.id > here_id then return land(w) end
+      if w.workspace.id > here_id then return focus(w) end
     end
   end
-  land(list[1])
+  focus(list[1])
 end
 
 -- Moves the app's windows into its overlay, so a window opened another way
