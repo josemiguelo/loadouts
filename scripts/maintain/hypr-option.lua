@@ -26,7 +26,8 @@
 --        lua hypr-option.lua leaves [config]
 --   every setting the config ends up with, one per line: <path>\t<value>
 --   (general.gaps_in\t3; a list value joined by spaces; hl.device settings
---   as device:<name>.<key>\t<value>), sorted;
+--   as device:<name>.<key>\t<value>; hl.animation as
+--   animation:<leaf>.<key>\t<value>, the leaf's last call only), sorted;
 --   exits 2 when the config itself fails to load.
 -- Limits: this RUNS the config (Omarchy's does read-only probes at load:
 -- `find`, command-exists checks), and anything the stand-in returns is a
@@ -80,6 +81,8 @@ local binds = {}
 local window_rules = {}
 -- Per-device settings (hl.device), by device name; later calls win key by key.
 local devices = {}
+-- Animations (hl.animation), by leaf; a later call replaces the leaf's.
+local animations = {}
 
 -- hl.env sets the variable for what the config reads next, like Hyprland's.
 local envs = {}
@@ -124,6 +127,14 @@ hl = setmetatable({
     for k, v in pairs(settings) do
       if k ~= "name" then devices[name][k] = v end
     end
+  end,
+  animation = function(settings)
+    if type(settings) ~= "table" or settings.leaf == nil then return end
+    local leaf = {}
+    for k, v in pairs(settings) do
+      if k ~= "leaf" then leaf[k] = v end
+    end
+    animations[tostring(settings.leaf)] = leaf
   end,
   unbind = function(keys)
     binds[key_of(keys)] = nil
@@ -184,6 +195,11 @@ if path == "leaves" then
   for name, settings in pairs(devices) do
     for k, v in pairs(settings) do
       table.insert(lines, "device:" .. name .. "." .. tostring(k) .. "\t" .. value_text(v))
+    end
+  end
+  for leaf, settings in pairs(animations) do
+    for k, v in pairs(settings) do
+      table.insert(lines, "animation:" .. leaf .. "." .. tostring(k) .. "\t" .. value_text(v))
     end
   end
   table.sort(lines)

@@ -13,3 +13,7 @@ hl.config({
     dim_strength = 0.15,
   },
 })
+
+-- Workspace changes slide instead of cutting (Omarchy turns this off), so a
+-- jump to another workspace is visible.
+hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "easeOutQuint", style = "slide" })

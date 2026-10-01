@@ -1,6 +1,7 @@
 #!/bin/sh
 # Hyprland settings kept in this repo: hypr-config/<file>.lua (next to this
-# script) holds plain hl.config calls for ~/.config/hypr/<file>.lua, the matching personal-overrides file
+# script) holds plain hl.config and hl.animation calls for
+# ~/.config/hypr/<file>.lua, the matching personal-overrides file
 # Omarchy's hyprland.lua loads after its defaults (input, looknfeel,
 # bindings, …). The machine's opt-in names the files
 # ("omarchy-hypr-config input looknfeel"). Install writes each file's
