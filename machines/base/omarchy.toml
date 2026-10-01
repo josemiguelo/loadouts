@@ -36,6 +36,7 @@ scripts = [
   "omarchy-webapp-google-calendar",
   "omarchy-google-bindings",
   "omarchy-close-window-key",
+  "omarchy-harpoon",
   # local replacements of Omarchy commands, first on the session PATH
   "omarchy-command-overrides",
   # until Omarchy stops saving 0 over the keyboard backlight on repeated blanks

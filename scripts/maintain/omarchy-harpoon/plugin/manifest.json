@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "josemiguelo.harpoon-toast",
+  "name": "Harpoon toast",
+  "version": "1.0.0",
+  "author": "josemiguelo",
+  "license": "MIT",
+  "description": "Names the app and workspace a harpoon key jumped to, in the middle of the screen",
+  "kinds": [
+    "panel"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "panel": "Toast.qml"
+  }
+}

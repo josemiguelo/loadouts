@@ -1,0 +1,6 @@
+# Per-app hotkeys on Hyper (SUPER+CTRL+ALT+SHIFT), like Raycast's: each key
+# jumps to its app or shows it as an overlay (scripts/maintain/omarchy-harpoon/).
+[scripts.omarchy-harpoon]
+description = "Hyper+letter app hotkeys (jump, overlay)"
+file = "scripts/maintain/omarchy-harpoon.sh"
+check = "file:scripts/maintain/omarchy-harpoon.sh check"

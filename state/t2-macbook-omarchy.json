@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.19.0",
-  "updatedAt": "2026-10-01T16:51:18.259039936Z",
+  "updatedAt": "2026-10-01T21:42:24.568742123Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -13,8 +13,8 @@
       "reason": null
     },
     "brew-taps": {
-      "status": "installed",
-      "version": "trusted",
+      "status": "missing",
+      "version": null,
       "reason": null
     },
     "voxtype": {
@@ -252,6 +252,11 @@
       "version": "4.0.7",
       "reason": null
     },
+    "spotify": {
+      "status": "installed",
+      "version": "1.2.96.518",
+      "reason": null
+    },
     "vlc": {
       "status": "installed",
       "version": "3.0.23",
@@ -450,6 +455,11 @@
       "exitCode": null
     },
     "omarchy-close-window-key": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-harpoon": {
       "status": "done",
       "lastRun": null,
       "exitCode": null
