@@ -1,0 +1,5 @@
+# Omarchy: Omarchy's own package repo carries it (what its
+# omarchy-install-service-spotify installs). macOS: the brew cask.
+[programs.spotify]
+via = ["omarchy-pkg", "brew-cask"]
+description = "Spotify music streaming"

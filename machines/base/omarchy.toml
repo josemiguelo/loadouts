@@ -82,6 +82,7 @@ code = "omarchy-pkg"
 sublime-text = "omarchy-pkg"
 obsidian = "omarchy-pkg"
 vlc = "omarchy-pkg"
+spotify = "omarchy-pkg"
 scrcpy = "brew"
 jetbrains-toolbox = "script"
 # AUR, each one approved: official builds, repackaged.
