@@ -7,5 +7,3 @@
 description = "internal keyboard fn/ctrl swap and fnmode (Arch)"
 file = "scripts/maintain/t2-hid-apple-keyboard-arch.sh"
 check = "file:scripts/maintain/t2-hid-apple-keyboard-arch.sh check"
-# tee into /etc and /sys, and limine-mkinitcpio, all through sudo.
-sudo = true

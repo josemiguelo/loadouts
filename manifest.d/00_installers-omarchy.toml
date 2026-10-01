@@ -1,17 +1,14 @@
-# Arch packages the Omarchy way: `omarchy pkg add` (pacman -S --needed, then a
-# pacman -Q verification of its own) instead of a bare pacman install.
+# Arch packages the Omarchy way: `omarchy pkg add` (pacman -S --needed, then
+# its own pacman -Q verification) instead of a bare pacman install.
 #
 # upgrade is `omarchy update -y`, not pacman -Syu: Omarchy's alpm hook
 # (00-omarchy-update-guard.hook) refuses direct system upgrades, and the
 # update also runs Omarchy's migrations. -y skips the opening confirmation;
-# the orphan and reboot questions still ask on a terminal.
-#
-# Both commands call sudo from inside, where loadout's home screen can't see
-# it; `sudo = true` makes it ask for the password up front.
+# sudo and the orphan and reboot questions still ask, on the terminal.
 #
 # The oracle matches loadout's built-in pacman: checkupdates syncs a private
-# copy of the databases, which here track Omarchy's pinned mirror snapshot —
-# exactly what `omarchy update` would bring.
+# copy of the databases, which track Omarchy's pinned mirror snapshot —
+# exactly what `omarchy update` brings.
 [installers.omarchy-pkg]
 probe = "omarchy"
 install = "omarchy pkg add {pkg}"
@@ -19,16 +16,15 @@ upgrade = "omarchy update -y"
 check = "pacman -Q {pkg}"
 outdated-all = "checkupdates --nocolor | awk '$3 == \"->\" {print $1, $4}'"
 regex = "([0-9]+\\.[0-9][0-9.]*)"
-sudo = true
 
-# AUR packages the Omarchy way: `omarchy pkg add`'s AUR sibling (yay, then a
-# pacman -Q verification). The AUR is community build recipes, not
-# Omarchy's repo — each program mapped here is one the user approved.
+# AUR packages the Omarchy way: `omarchy pkg aur add` (yay, then a pacman -Q
+# verification). The AUR is community build recipes, not Omarchy's repo:
+# each program mapped here is one the user approved.
 #
-# upgrade is the same `omarchy update -y` as omarchy-pkg, on purpose: one
-# command, so loadout runs it once for both, and Omarchy's update already
-# upgrades AUR packages (omarchy-update-aur-pkgs). The oracle is yay's own
-# AUR check, "<pkg> <installed> -> <candidate>" like checkupdates.
+# upgrade is the same `omarchy update -y` as omarchy-pkg, so loadout runs it
+# once for both; Omarchy's update upgrades AUR packages too
+# (omarchy-update-aur-pkgs). The oracle is yay's own AUR check,
+# "<pkg> <installed> -> <candidate>" like checkupdates.
 [installers.omarchy-aur]
 probe = "omarchy"
 install = "omarchy pkg aur add {pkg}"
@@ -36,4 +32,3 @@ upgrade = "omarchy update -y"
 check = "pacman -Q {pkg}"
 outdated-all = "yay -Qua 2>/dev/null | awk '$3 == \"->\" {print $1, $4}'"
 regex = "([0-9]+\\.[0-9][0-9.]*)"
-sudo = true

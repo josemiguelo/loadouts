@@ -5,5 +5,3 @@ description = "sudoless Docker (user in the docker group)"
 file = "scripts/maintain/omarchy-sudoless-docker.sh"
 check = "file:scripts/maintain/omarchy-sudoless-docker.sh check"
 after = ["programs.lazydocker"]
-# usermod goes through sudo.
-sudo = true

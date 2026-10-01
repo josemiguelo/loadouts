@@ -6,5 +6,3 @@ file = "scripts/maintain/java-macos-integration.sh"
 check = "file:scripts/maintain/java-macos-integration.sh check"
 os = ["macos"]
 after = ["scripts.mise-tools"]
-# mkdir/ln/rm in /Library go through sudo.
-sudo = true

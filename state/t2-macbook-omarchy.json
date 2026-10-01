@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "omarchy",
   "arch": "x86_64",
-  "toolVersion": "0.16.2",
-  "updatedAt": "2026-09-30T18:07:46.245925882Z",
+  "toolVersion": "0.17.0",
+  "updatedAt": "2026-09-30T23:44:02.103259459Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -19,7 +19,7 @@
     },
     "voxtype": {
       "status": "installed",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "reason": null
     },
     "wtype": {
@@ -84,7 +84,7 @@
     },
     "awscli": {
       "status": "installed",
-      "version": "2.37.2",
+      "version": "2.37.7",
       "reason": null
     },
     "bat": {
@@ -154,7 +154,7 @@
     },
     "mise": {
       "status": "installed",
-      "version": "2026.9.12",
+      "version": "2026.9.14",
       "reason": null
     },
     "ngrok": {
@@ -184,7 +184,7 @@
     },
     "trash-cli": {
       "status": "installed",
-      "version": "0.26.9.14",
+      "version": "0.26.9.29",
       "reason": null
     },
     "tree-sitter-cli": {
@@ -194,12 +194,12 @@
     },
     "vim-enhanced": {
       "status": "installed",
-      "version": "9.2.1100",
+      "version": "9.2.1150",
       "reason": null
     },
     "workmux": {
       "status": "installed",
-      "version": "0.1.266",
+      "version": "0.1.269",
       "reason": null
     },
     "yazi": {
@@ -209,7 +209,7 @@
     },
     "yq": {
       "status": "installed",
-      "version": "4.53.6",
+      "version": "4.54.1",
       "reason": null
     },
     "zoxide": {
@@ -224,7 +224,7 @@
     },
     "code": {
       "status": "installed",
-      "version": "1.138.0",
+      "version": "1.139.1",
       "reason": null
     },
     "antigravity": {
@@ -234,7 +234,7 @@
     },
     "sublime-text": {
       "status": "installed",
-      "version": "4.4213",
+      "version": "4.4215",
       "reason": null
     },
     "jetbrains-toolbox": {
@@ -462,6 +462,11 @@
     "omarchy-keyboard-backlight-guard": {
       "status": "done",
       "lastRun": "2026-09-29T21:25:09.114757420Z",
+      "exitCode": 0
+    },
+    "keychron-launcher-access": {
+      "status": "done",
+      "lastRun": "2026-09-30T18:50:55.364556744Z",
       "exitCode": 0
     },
     "dotfiles-bootstrap": {

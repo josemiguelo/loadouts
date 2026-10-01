@@ -6,5 +6,3 @@ description = "Voxtype dictation on the GPU (Vulkan)"
 file = "scripts/maintain/omarchy-dictation-gpu.sh"
 check = "file:scripts/maintain/omarchy-dictation-gpu.sh check"
 after = ["scripts.omarchy-dictation"]
-# `voxtype setup gpu --enable` swaps /usr/bin/voxtype through sudo.
-sudo = true

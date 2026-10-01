@@ -17,9 +17,6 @@ depends-on = ["curl", "git", "gcc", "procps-ng"]
 command = "file:scripts/install/setup-brew.sh install"
 check = "file:scripts/install/setup-brew.sh check && echo ready"
 regex = "(ready)"
-# Homebrew's installer runs sudo itself (to create /home/linuxbrew), and the
-# script's reclaim step runs `sudo chown`: neither shows in the command.
-sudo = true
 
 # macOS: Homebrew's official installer into /opt/homebrew (Apple silicon).
 # It asks for sudo itself, and Xcode's command line tools come with it.
@@ -27,4 +24,3 @@ sudo = true
 command = "NONINTERACTIVE=1 /bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
 check = "/opt/homebrew/bin/brew --version"
 regex = "Homebrew ([0-9][0-9.]*)"
-sudo = true

@@ -5,5 +5,3 @@ description = "VS Code, set up by Omarchy's installer"
 file = "scripts/maintain/omarchy-vscode.sh"
 check = "file:scripts/maintain/omarchy-vscode.sh check"
 after = ["programs.code"]
-# omarchy pkg add goes through sudo.
-sudo = true

@@ -7,5 +7,3 @@ description = "screen brightness kept across suspend and reboots (T2 Mac)"
 file = "scripts/maintain/t2-gmux-backlight.sh"
 check = "file:scripts/maintain/t2-gmux-backlight.sh check"
 after = ["scripts.omarchy-command-overrides"]
-# the hook, the udev rule and udevadm go through sudo when they need writing.
-sudo = true

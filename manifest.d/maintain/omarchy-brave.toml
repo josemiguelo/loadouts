@@ -5,5 +5,3 @@ description = "Brave, set up by Omarchy's browser installer"
 file = "scripts/maintain/omarchy-brave.sh"
 check = "file:scripts/maintain/omarchy-brave.sh check"
 after = ["programs.brave"]
-# omarchy pkg aur add and the policy directory go through sudo.
-sudo = true

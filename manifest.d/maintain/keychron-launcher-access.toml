@@ -4,5 +4,3 @@
 description = "Keychron Launcher can reach the keyboard (WebHID)"
 file = "scripts/maintain/keychron-launcher-access.sh"
 check = "file:scripts/maintain/keychron-launcher-access.sh check"
-# the udev rule and udevadm go through sudo.
-sudo = true

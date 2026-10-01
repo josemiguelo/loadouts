@@ -5,5 +5,3 @@ description = "t2fanrd fan curve in /etc/t2fand.conf"
 file = "scripts/maintain/t2-fan-curve.sh"
 check = "file:scripts/maintain/t2-fan-curve.sh check"
 after = ["programs.t2fanrd"]
-# tee into /etc and the service restart run through sudo.
-sudo = true

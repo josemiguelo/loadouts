@@ -6,5 +6,3 @@
 description = "keep the EC hardware clock set (T2 Mac)"
 file = "scripts/maintain/t2-boot-clock.sh"
 check = "file:scripts/maintain/t2-boot-clock.sh check"
-# tee into /etc, systemctl and hwclock go through sudo.
-sudo = true

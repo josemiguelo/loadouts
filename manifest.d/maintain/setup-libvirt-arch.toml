@@ -5,5 +5,3 @@ description = "libvirtd enabled and the libvirt group joined (Arch)"
 file = "scripts/maintain/setup-libvirt-arch.sh"
 check = "file:scripts/maintain/setup-libvirt-arch.sh check"
 after = ["programs.libvirt", "programs.qemu-desktop", "programs.dnsmasq"]
-# systemctl enable, usermod and virsh on the system connection use sudo.
-sudo = true
