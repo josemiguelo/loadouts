@@ -4,8 +4,8 @@
   "os": "linux",
   "distro": "omarchy",
   "arch": "x86_64",
-  "toolVersion": "0.17.0",
-  "updatedAt": "2026-10-01T02:03:23.461371310Z",
+  "toolVersion": "0.18.0",
+  "updatedAt": "2026-10-01T03:45:07.169208076Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
