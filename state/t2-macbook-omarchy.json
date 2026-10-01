@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.19.0",
-  "updatedAt": "2026-10-01T22:57:27.388774354Z",
+  "updatedAt": "2026-10-01T23:11:31.378392073Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -13,8 +13,8 @@
       "reason": null
     },
     "brew-taps": {
-      "status": "missing",
-      "version": null,
+      "status": "installed",
+      "version": "trusted",
       "reason": null
     },
     "voxtype": {
@@ -325,7 +325,7 @@
       "exitCode": 0
     },
     "dotfiles-apply": {
-      "status": "pending",
+      "status": "done",
       "lastRun": "2026-09-25T15:11:24.775257457Z",
       "exitCode": 0
     },
