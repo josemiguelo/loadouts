@@ -1,0 +1,11 @@
+diff -ru a/Panel.qml b/Panel.qml
+--- a/Panel.qml	2026-10-02 11:18:55.420397482 -0500
++++ b/Panel.qml	2026-10-02 11:18:55.444829658 -0500
+@@ -281,6 +281,7 @@
+       ? Math.round(root.batteryFraction * 100) + "% " + root.batteryIcon()
+       : root.batteryIcon()
+     slotSize: Style.bar.iconSlot * (root.showPercentage && !vertical ? 2 : 1)
++    iconComponent: BarSvgIcon { host: button }
+     tooltipText: ""
+     onPressed: function(b) {
+       if (!root.batteryPresent) return

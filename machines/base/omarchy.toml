@@ -71,7 +71,9 @@ scripts = [
   '''omarchy-bar-icons
      omarchy.monitor
      omarchy.bluetooth
-     omarchy.network''',
+     omarchy.network
+     omarchy.audio
+     omarchy.power''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets
