@@ -5,7 +5,7 @@ diff -ru a/SystemUpdate.qml b/SystemUpdate.qml
      text: "\uf021"
      slotSize: Style.bar.statusSlot
      fontSize: Style.font.caption
-+    iconComponent: BarSvgIcon { host: button; share: 0.55 }
++    iconComponent: BarSvgIcon { host: button }
      tooltipText: "Pending Omarchy Updates"
      onPressed: root.runUpdate()
    }

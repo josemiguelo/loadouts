@@ -75,7 +75,8 @@ scripts = [
      omarchy.audio
      omarchy.power
      omarchy.agents
-     omarchy.system-update''',
+     omarchy.system-update
+     omarchy.indicators''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets
