@@ -8,7 +8,7 @@
   "labelStyle": "number",
   "density": "roomy",
   "previewSize": "medium",
-  "settingsButton": "always",
+  "settingsButton": "never",
   "showApps": "all",
   "groupApps": true
 }
