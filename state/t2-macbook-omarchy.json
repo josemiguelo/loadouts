@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.19.0",
-  "updatedAt": "2026-10-02T16:58:34.802544214Z",
+  "updatedAt": "2026-10-02T17:19:26.536349701Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -335,7 +335,7 @@
       "exitCode": 0
     },
     "dotfiles-apply": {
-      "status": "done",
+      "status": "pending",
       "lastRun": "2026-09-25T15:11:24.775257457Z",
       "exitCode": 0
     },
@@ -501,17 +501,17 @@
     },
     "omarchy-menu-button": {
       "status": "done",
-      "lastRun": "2026-10-02T16:58:25.319450799Z",
+      "lastRun": "2026-10-02T17:10:41.824857300Z",
       "exitCode": 0
     },
     "omarchy-workspace-layout": {
       "status": "done",
-      "lastRun": "2026-10-02T16:58:30.757485991Z",
+      "lastRun": "2026-10-02T17:10:36.564043837Z",
       "exitCode": 0
     },
     "omarchy-bar-icons": {
       "status": "done",
-      "lastRun": "2026-10-02T16:58:20.137269358Z",
+      "lastRun": "2026-10-02T17:19:22.553897983Z",
       "exitCode": 0
     },
     "omarchy-bar-widgets": {

@@ -15,14 +15,15 @@ import "glyphs.js" as Glyphs
 // with `color`) ends in the glyph; anything before it is a label ("86% 󰂁"),
 // drawn as text ahead of the icon in the host's font. The SVG is `source` when
 // set, else the one glyphs.js maps the glyph to; with no mapping the host's
-// text is drawn as the host would draw it. `share` is the icon's share of the
-// bar's thickness.
+// text is drawn as the host would draw it. `share` is the icon's share of
+// `extent`, the bar's thickness unless the icon sits in something smaller.
 Item {
   id: root
 
   property var host: null
   property string source: ""
   property real share: 0.7
+  property real extent: host ? host.barSize : Style.bar.sizeHorizontal
   property color color: host ? (host.active && host.useActiveColor ? host.activeColor : host.foreground) : Color.bar.text
 
   property string hostText: host ? String(host.text || "") : ""
@@ -36,7 +37,7 @@ Item {
   readonly property string glyph: text.slice(text.length - glyphLength)
   readonly property string label: text.slice(0, text.length - glyphLength).replace(/\s+$/, "")
   readonly property string file: source !== "" ? source : Glyphs.iconFor(glyph)
-  readonly property real size: Math.round((host ? host.barSize : Style.bar.sizeHorizontal) * share)
+  readonly property real size: Math.round(extent * share)
   readonly property string fontFamily: host ? host.fontFamily : Style.font.family
   readonly property real fontSize: host ? host.fontSize : Style.bar.iconFont
 

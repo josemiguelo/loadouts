@@ -9,7 +9,8 @@
 # commas; the menu's reader drops trailing ones. They run the plugin's own
 # bin/omarchy-pomodoro by its path, so nothing goes on the PATH. The widget
 # placed and configured is the plugin's, or its omarchy-bar-icons clone
-# (clonedFrom pomodoro-omarchy) once that has taken its place.
+# (clonedFrom pomodoro-omarchy) once that has taken its place; likewise the
+# clock it follows.
 # Modes: `check` / `install` (default).
 set -eu
 
@@ -26,12 +27,17 @@ enabled() {
   omarchy plugin list --json | jq -e --arg id "$1" 'any(.[]; .id == $id and .enabled)' >/dev/null
 }
 
-# The plugin's enabled clone, else the plugin.
-WIDGET=$(omarchy plugin list --json | jq -r --arg id "$ID" '[.[] | select(.enabled and .clonedFrom == $id) | .id][0] // $id')
+# A plugin's enabled clone, else the plugin: the widget and the clock it
+# sits after.
+effective() {
+  omarchy plugin list --json | jq -r --arg id "$1" '[.[] | select(.enabled and .clonedFrom == $id) | .id][0] // $id'
+}
+WIDGET=$(effective "$ID")
+CLOCK=$(effective "$AFTER")
 
 # In the center section, right after the clock.
 placed() {
-  [ -f "$JSON" ] && jq -e --arg id "$WIDGET" --arg after "$AFTER" '
+  [ -f "$JSON" ] && jq -e --arg id "$WIDGET" --arg after "$CLOCK" '
     [.bar.layout.center[]?.id] as $c
     | ($c | index($after)) as $a | $a != null and $c[$a + 1] == $id' "$JSON" >/dev/null
 }
@@ -64,7 +70,7 @@ check)
   ;;
 install)
   enabled "$WIDGET" || { echo "$ID isn't installed and enabled: add it to omarchy-plugins" >&2; exit 1; }
-  placed || omarchy bar move "$WIDGET" --section center --after "$AFTER" >/dev/null
+  placed || omarchy bar move "$WIDGET" --section center --after "$CLOCK" >/dev/null
   if ! configured; then
     for key in $(jq -r 'keys[]' "$SRC/settings.json"); do
       omarchy bar set "$WIDGET" "$key" "$(jq -c --arg k "$key" '.[$k]' "$SRC/settings.json")" --json >/dev/null

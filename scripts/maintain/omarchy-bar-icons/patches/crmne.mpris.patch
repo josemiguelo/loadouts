@@ -1,0 +1,35 @@
+diff -ru a/BarWidget.qml b/BarWidget.qml
+--- a/BarWidget.qml	2026-10-01 23:08:58.000000000 -0500
++++ b/BarWidget.qml	2026-10-02 12:09:13.294797614 -0500
+@@ -241,13 +241,12 @@
+         smooth: true
+       }
+ 
+-      Text {
++      BarSvgIcon {
+         anchors.centerIn: parent
+         visible: root.artUrl === "" || cover.status === Image.Error
+-        text: "󰝚"
++        hostText: "󰝚"
+         color: root.bar ? root.bar.barForeground : Color.foreground
+-        font.family: root.bar ? root.bar.fontFamily : Style.font.family
+-        font.pixelSize: Style.font.body
++        extent: root.artSize
+       }
+ 
+       MouseArea {
+@@ -443,12 +442,10 @@
+         : "transparent"
+     }
+ 
+-    Text {
++    BarSvgIcon {
+       anchors.centerIn: parent
+-      text: button.iconText
++      hostText: button.iconText
+       color: root.bar ? root.bar.barForeground : Color.foreground
+-      font.family: root.bar ? root.bar.fontFamily : Style.font.family
+-      font.pixelSize: Style.font.body
+     }
+ 
+     MouseArea {

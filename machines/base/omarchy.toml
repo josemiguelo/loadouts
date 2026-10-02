@@ -81,7 +81,9 @@ scripts = [
      omarchy.tray
      jankeesvw.notification-center
      io.github.zeus-deus.voxtype
-     pomodoro-omarchy''',
+     pomodoro-omarchy
+     crmne.mpris
+     omarchy.clock''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets

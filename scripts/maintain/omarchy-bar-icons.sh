@@ -110,11 +110,28 @@ pristine)
 esac
 [ $# -gt 0 ] || { echo "usage: $0 [check] <widget-id>..." >&2; exit 2; }
 
-# in_place <widget-id>: the installed clone is today's build and on the bar.
+JSON=$HOME/.config/omarchy/shell.json
+
+# The bar centres its middle section on bar.centerAnchor, matched by exact id,
+# so the anchor follows a clone into the original's place and back.
+# anchor_is <id>
+anchor_is() {
+  [ -f "$JSON" ] && jq -e --arg id "$1" '.bar.centerAnchor == $id' "$JSON" >/dev/null
+}
+# move_anchor <from-id> <to-id>
+move_anchor() {
+  anchor_is "$1" || return 0
+  tmp=$(mktemp "$JSON.XXXXXX")
+  jq --arg id "$2" '.bar.centerAnchor = $id' "$JSON" > "$tmp"
+  mv "$tmp" "$JSON"
+}
+
+# in_place <widget-id>: the installed clone is today's build and on the bar,
+# holding the centre anchor if the original did.
 in_place() {
   id=$(clone_id "$1")
   [ -d "$WORK/$id" ] && [ -d "$PLUGINS/$id" ] && diff -r "$WORK/$id" "$PLUGINS/$id" >/dev/null &&
-    enabled "$id" && ! enabled "$1"
+    enabled "$id" && ! enabled "$1" && ! anchor_is "$1"
 }
 
 failed=0
@@ -125,7 +142,8 @@ for widget in "$@"; do
   if ! build "$widget" "$WORK/$id"; then
     failed=1
     if [ "$MODE" = install ] && enabled "$id"; then
-      omarchy plugin disable "$id" >/dev/null && echo "$widget: $id disabled, the built-in is back on the bar" >&2
+      omarchy plugin disable "$id" >/dev/null && echo "$widget: $id disabled, the original is back on the bar" >&2
+      move_anchor "$id" "$widget"
     fi
     rm -rf -- "${WORK:?}/${id:?}"
     continue
@@ -151,6 +169,7 @@ for widget in "$@"; do
     [ "$tries" -lt 20 ] || { echo "couldn't enable $id (is omarchy-shell running?)" >&2; failed=1; break; }
     sleep 0.5
   done
+  move_anchor "$widget" "$id"
 done
 
 if [ "$MODE" = install ] && [ "$changed" = yes ]; then

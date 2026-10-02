@@ -6,4 +6,4 @@
 description = "Bar widgets' places and settings"
 file = "scripts/maintain/omarchy-bar-widgets.sh"
 check = "file:scripts/maintain/omarchy-bar-widgets.sh check $@"
-after = ["scripts.omarchy-plugins", "scripts.omarchy-workspace-layout", "scripts.omarchy-menu-button"]
+after = ["scripts.omarchy-plugins", "scripts.omarchy-workspace-layout", "scripts.omarchy-menu-button", "scripts.omarchy-bar-icons"]
