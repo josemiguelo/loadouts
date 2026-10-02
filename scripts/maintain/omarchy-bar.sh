@@ -1,7 +1,7 @@
 #!/bin/sh
 # The Omarchy bar's position, thickness and, optionally, the widget that
 # replaces the stock workspace numbers, from the machine's opt-in
-# ("omarchy-bar bottom 30 io.github.jburchel.workspace-nameplates").
+# ("omarchy-bar bottom 30 tornikegomareli.spaces").
 #
 # The position is Omarchy's own setting (~/.config/omarchy/shell.json,
 # bar.position), set with `omarchy bar position`. The thickness is
@@ -14,13 +14,12 @@
 # install refuses one. The bar's text (clock, workspace numbers) has no size
 # of its own: it is the shell's body text, [font] base-size.
 #
-# A workspace widget takes the stock widget's place: moved right after
-# omarchy.workspaces while that one is on the bar, then the stock one is
-# disabled. A widget with a folder here (omarchy-bar/<id>/, a plugin of this
-# repo's own) is installed from it into ~/.config/omarchy/plugins/ and the
-# shell restarted when its files change (a loaded plugin keeps its old QML
-# until then); any other widget comes from omarchy-plugins. Its own settings
-# stay in its shell.json entry, untouched here.
+# The workspace widget (a plugin omarchy-plugins installs) takes the stock
+# omarchy.workspaces' place: moved right after it while it is on the bar,
+# then the stock one is disabled. The widget's settings, when
+# omarchy-bar/settings/<id>.json lists them, are set with `omarchy bar set`
+# into its shell.json entry (keys the file doesn't list are left as they
+# are); the check compares every listed key.
 # usage: omarchy-bar.sh [check] <top|bottom|left|right> <size> [workspace-widget-id]
 set -eu
 
@@ -36,8 +35,7 @@ case "$SIZE" in '' | *[!0-9]*) echo "size must be a whole number" >&2; exit 2 ;;
 
 STOCK=omarchy.workspaces
 HERE="$(cd "$(dirname "$0")" && pwd)"
-LOCAL=$HERE/omarchy-bar/$WIDGET
-DEPLOYED=$HOME/.config/omarchy/plugins/$WIDGET
+WIDGET_SETTINGS=$HERE/omarchy-bar/settings/$WIDGET.json
 JSON=$HOME/.config/omarchy/shell.json
 TOML=$HOME/.config/omarchy/shell.toml
 BEGIN="# >>> Managed by loadout (omarchy-bar)"
@@ -78,24 +76,22 @@ on_bar() {
   [ -f "$JSON" ] && jq -e --arg id "$1" '[.bar.layout[]?[]?.id] | index($id) != null' "$JSON" >/dev/null
 }
 
-own_widget() {
-  [ -n "$WIDGET" ] && [ -f "$LOCAL/manifest.json" ]
-}
-
-# The repo's copy of an own widget is the deployed one.
-deployed() {
-  own_widget || return 0
-  [ -d "$DEPLOYED" ] && diff -r -q "$LOCAL" "$DEPLOYED" >/dev/null
-}
-
 # No widget named, or it's on the bar and the stock one is off.
 replaced() {
-  [ -z "$WIDGET" ] || { deployed && enabled "$WIDGET" && on_bar "$WIDGET" && ! enabled "$STOCK"; }
+  [ -z "$WIDGET" ] || { enabled "$WIDGET" && on_bar "$WIDGET" && ! enabled "$STOCK"; }
+}
+
+# Every key the widget's settings file lists has that value in its bar entry.
+configured() {
+  [ -n "$WIDGET" ] && [ -f "$WIDGET_SETTINGS" ] || return 0
+  jq -e -n --arg id "$WIDGET" --slurpfile want "$WIDGET_SETTINGS" --slurpfile shell "$JSON" '
+    ([$shell[0].bar.layout[]?[]? | select(.id == $id)][0] // {}) as $entry
+    | $want[0] | to_entries | all(.value == $entry[.key])' >/dev/null
 }
 
 case "$MODE" in
 check)
-  positioned && sized && replaced
+  positioned && sized && replaced && configured
   ;;
 install)
   if rest | grep -q '^[[:space:]]*\[bar\]'; then
@@ -111,21 +107,16 @@ install)
     block > "$TOML"
   fi
   if [ -n "$WIDGET" ] && ! replaced; then
-    if own_widget && ! deployed; then
-      fresh=no
-      [ -d "$DEPLOYED" ] || fresh=yes
-      mkdir -p "$DEPLOYED"
-      cp -r "$LOCAL/." "$DEPLOYED/"
-      omarchy-shell shell rescanPlugins >/dev/null
-      enabled "$WIDGET" || omarchy plugin enable "$WIDGET" >/dev/null
-      [ "$fresh" = yes ] || omarchy restart shell >/dev/null 2>&1 ||
-        echo "restart the Omarchy shell to load the new $WIDGET (omarchy restart shell)" >&2
-    fi
     enabled "$WIDGET" || { echo "$WIDGET isn't installed and enabled: add it to omarchy-plugins" >&2; exit 1; }
     if on_bar "$STOCK"; then omarchy bar move "$WIDGET" --after "$STOCK"; fi
     if enabled "$STOCK"; then omarchy plugin disable "$STOCK"; fi
   fi
-  positioned && sized && replaced ||
+  if ! configured; then
+    for key in $(jq -r 'keys[]' "$WIDGET_SETTINGS"); do
+      omarchy bar set "$WIDGET" "$key" "$(jq -c --arg k "$key" '.[$k]' "$WIDGET_SETTINGS")" --json >/dev/null
+    done
+  fi
+  positioned && sized && replaced && configured ||
     { echo "the bar's position, thickness or workspace widget isn't what the opt-in names after install" >&2; exit 1; }
   ;;
 esac

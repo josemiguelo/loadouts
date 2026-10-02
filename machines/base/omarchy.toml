@@ -29,10 +29,10 @@ scripts = [
   "omarchy-brave",
   # Hyprland settings from scripts/maintain/hypr-config/ (natural scrolling, look and feel)
   "omarchy-hypr-config input looknfeel",
-  # the bar at the bottom, a little thicker than Omarchy's 26, with the
-  # workspace numbers from scripts/maintain/omarchy-bar/josemiguelo.workspaces
-  # (the focused one in a filled circle)
-  "omarchy-bar bottom 30 josemiguelo.workspaces",
+  # the bar at the bottom, a little thicker than Omarchy's 26, with Spaces
+  # (from omarchy-plugins: each workspace's app icons) for the workspaces,
+  # its settings in scripts/maintain/omarchy-bar/settings/
+  "omarchy-bar bottom 30 tornikegomareli.spaces",
   # web apps and agent launchers not wanted; Google in HEY's place
   "omarchy-webapps-remove Basecamp HEY",
   "omarchy-agent-launchers-prune claude codex gh gemini",
@@ -48,10 +48,12 @@ scripts = [
   # Keychron Launcher (WebHID) can open Keychron keyboards
   "keychron-launcher-access",
   # shell plugins, by git URL: Keystroke replaces the Omarchy menu; the
-  # notification center keeps past notifications behind a bell in the bar
+  # notification center keeps past notifications behind a bell in the bar;
+  # Spaces shows each workspace's apps (placed by omarchy-bar)
   '''omarchy-plugins
      https://github.com/evindor/keystroke.git
-     https://github.com/jankeesvw/omarchy-notification-center.git''',
+     https://github.com/jankeesvw/omarchy-notification-center.git
+     https://github.com/tornikegomareli/omarchy-spaces.git''',
   # Keystroke's Windows extension, from a checkout until it ships upstream
   "omarchy-keystroke-windows",
 ]
