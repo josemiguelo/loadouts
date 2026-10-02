@@ -5,6 +5,21 @@
 // Material Design Icons' own codepoints, so those map to the icon of the same
 // codepoint; glyphs from other sets map to their closest MDI icon.
 var icons = {
+  "E302": "weather-partly-cloudy",
+  "E308": "weather-partly-rainy",
+  "E30A": "weather-partly-snowy",
+  "E30D": "weather-sunny",
+  "E313": "weather-fog",
+  "E318": "weather-pouring",
+  "E31A": "weather-snowy-heavy",
+  "E31D": "weather-lightning-rainy",
+  "E327": "weather-snowy",
+  "E32B": "moon-waning-crescent",
+  "E32E": "weather-night-partly-cloudy",
+  "E333": "weather-rainy",
+  "E33D": "weather-cloudy",
+  "E346": "weather-fog",
+  "E3AD": "weather-snowy-rainy",
   "EEE8": "volume-mute",
   "F0079": "battery",
   "F007A": "battery-10",
