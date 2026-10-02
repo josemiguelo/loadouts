@@ -8,8 +8,15 @@ var icons = {
   "F00AF": "bluetooth",
   "F00B1": "bluetooth-connect",
   "F00B2": "bluetooth-off",
+  "F0200": "ethernet",
   "F0379": "monitor",
-  "F037A": "monitor-multiple"
+  "F037A": "monitor-multiple",
+  "F091F": "wifi-strength-1",
+  "F0922": "wifi-strength-2",
+  "F0925": "wifi-strength-3",
+  "F0928": "wifi-strength-4",
+  "F092E": "wifi-strength-off-outline",
+  "F092F": "wifi-strength-outline"
 }
 
 // The icon file for a glyph string, or "" when it has none.

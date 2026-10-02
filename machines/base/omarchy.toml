@@ -70,7 +70,8 @@ scripts = [
   # Omarchy's source with omarchy-bar-icons/patches/<id>.patch
   '''omarchy-bar-icons
      omarchy.monitor
-     omarchy.bluetooth''',
+     omarchy.bluetooth
+     omarchy.network''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets
