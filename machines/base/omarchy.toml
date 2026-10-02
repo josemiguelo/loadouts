@@ -95,6 +95,7 @@ scripts = [
   "omarchy-keystroke-windows",
   # the Pomodoro timer by the clock, 50+10, and its Trigger menu entries
   "omarchy-pomodoro",
+  "skills-repo",
 ]
 
 [pm]

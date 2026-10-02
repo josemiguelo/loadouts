@@ -18,6 +18,7 @@ scripts = [
   "download-fonts",
   "setup-completions",
   "link-jetbrains-launchers-linux",
+  "skills-repo",
 ]
 
 [pm]

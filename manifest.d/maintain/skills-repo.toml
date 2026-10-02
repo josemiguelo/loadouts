@@ -1,0 +1,4 @@
+[scripts.skills-repo]
+description = "clone the skills repo (bare + worktree) and symlink its skills into ~/.claude/skills"
+file = "scripts/maintain/skills-repo.sh"
+check = "file:scripts/maintain/skills-repo.sh check"
