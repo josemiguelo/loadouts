@@ -29,10 +29,10 @@ scripts = [
   "omarchy-brave",
   # Hyprland settings from scripts/maintain/hypr-config/ (natural scrolling, look and feel)
   "omarchy-hypr-config input looknfeel",
-  # the bar at the bottom, a little thicker than Omarchy's 26, with Spaces
+  # the bar at the bottom, a little thinner than Omarchy's 26, with Spaces
   # (from omarchy-plugins: each workspace's app icons) for the workspaces,
   # its settings in scripts/maintain/omarchy-bar/settings/
-  "omarchy-bar bottom 30 tornikegomareli.spaces",
+  "omarchy-bar bottom 24 tornikegomareli.spaces",
   # web apps and agent launchers not wanted; Google in HEY's place
   "omarchy-webapps-remove Basecamp HEY",
   "omarchy-agent-launchers-prune claude codex gh gemini",
