@@ -9,5 +9,6 @@
   "density": "roomy",
   "previewSize": "medium",
   "settingsButton": "always",
-  "showApps": "all"
+  "showApps": "all",
+  "groupApps": true
 }

@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.19.0",
-  "updatedAt": "2026-10-02T03:13:04.441107177Z",
+  "updatedAt": "2026-10-02T04:20:12.266351311Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -25,6 +25,16 @@
     "wtype": {
       "status": "installed",
       "version": "0.4",
+      "reason": null
+    },
+    "voxtype-tui": {
+      "status": "installed",
+      "version": "0.1.8",
+      "reason": null
+    },
+    "zenity": {
+      "status": "installed",
+      "version": "4.2.2",
       "reason": null
     },
     "t2fanrd": {
@@ -488,6 +498,11 @@
       "status": "done",
       "lastRun": "2026-10-01T02:03:21.137739988Z",
       "exitCode": 0
+    },
+    "omarchy-bar-widgets": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     },
     "omarchy-keystroke-windows": {
       "status": "done",

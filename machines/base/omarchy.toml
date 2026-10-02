@@ -50,12 +50,20 @@ scripts = [
   # shell plugins, by git URL: Keystroke replaces the Omarchy menu; the
   # notification center keeps past notifications behind a bell in the bar;
   # Spaces shows each workspace's apps (placed by omarchy-bar); a Pomodoro
-  # timer (configured by omarchy-pomodoro)
+  # timer (configured by omarchy-pomodoro); a Voxtype panel (needs
+  # voxtype-tui); media controls with album art (placed by
+  # omarchy-bar-widgets)
   '''omarchy-plugins
      https://github.com/evindor/keystroke.git
      https://github.com/jankeesvw/omarchy-notification-center.git
      https://github.com/tornikegomareli/omarchy-spaces.git
-     https://github.com/binoymanoj/pomodoro-omarchy.git''',
+     https://github.com/binoymanoj/pomodoro-omarchy.git
+     https://github.com/Zeus-Deus/voxtype-omarchy-plugin.git
+     https://github.com/crmne/omarchy-mpris.git''',
+  # where bar widgets from omarchy-plugins sit, one per line:
+  # <id> <section> <before|after> <neighbour>
+  '''omarchy-bar-widgets
+     crmne.mpris left after tornikegomareli.spaces''',
   # Keystroke's Windows extension, from a checkout until it ships upstream
   "omarchy-keystroke-windows",
   # the Pomodoro timer by the clock, 50+10, and its Trigger menu entries
@@ -89,6 +97,7 @@ mise = "omarchy-pkg"
 kitty = "omarchy-pkg"
 voxtype = "omarchy-pkg"
 wtype = "omarchy-pkg"
+zenity = "omarchy-pkg"
 1password = "omarchy-pkg"
 1password-cli = "omarchy-pkg"
 code = "omarchy-pkg"
@@ -104,6 +113,9 @@ slack = "omarchy-aur"
 teams-for-linux = "omarchy-aur"
 anydesk = "omarchy-aur"
 antigravity = "omarchy-aur"
+# AUR, approved: built from its author's tagged release (the Voxtype plugin's
+# backend, same author).
+voxtype-tui = "omarchy-aur"
 bat = "omarchy-pkg"
 fd = "omarchy-pkg"
 fzf = "omarchy-pkg"

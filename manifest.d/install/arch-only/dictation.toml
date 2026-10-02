@@ -10,3 +10,16 @@ pkg = "voxtype-bin"
 [programs.wtype]
 description = "xdotool type for Wayland (voxtype's typing backend)"
 via = ["omarchy-pkg"]
+
+# What the Voxtype bar plugin (omarchy-plugins) drives: voxtype-tui, the
+# Textual TUI whose Python package does the plugin's config writes (AUR, by
+# the plugin's author), and zenity for the plugin's Import file chooser.
+[programs.voxtype-tui]
+description = "Voxtype's settings TUI and the Voxtype plugin's backend"
+
+[programs.voxtype-tui.install.omarchy-aur]
+pkg = "voxtype-tui"
+
+[programs.zenity]
+description = "GTK dialogs from scripts (the Voxtype plugin's file chooser)"
+via = ["omarchy-pkg"]

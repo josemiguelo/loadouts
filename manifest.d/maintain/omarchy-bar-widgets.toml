@@ -1,0 +1,8 @@
+# Where bar widgets from omarchy-plugins sit, one per line of the opt-in:
+# "<id> <section> <before|after> <neighbour-id>", with each widget's settings
+# from scripts/maintain/omarchy-bar/settings/<id>.json when it has one.
+[scripts.omarchy-bar-widgets]
+description = "Bar widgets' places and settings"
+file = "scripts/maintain/omarchy-bar-widgets.sh"
+check = "file:scripts/maintain/omarchy-bar-widgets.sh check $@"
+after = ["scripts.omarchy-plugins"]
