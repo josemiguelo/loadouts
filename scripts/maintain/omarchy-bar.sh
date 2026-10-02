@@ -11,15 +11,15 @@
 # machine-level file whose keys win over the theme's and which the shell
 # reloads live. `omarchy display text size` edits [font] there and leaves the
 # rest. A [bar] table outside the block would make the file invalid TOML, so
-# install refuses one. The bar's text (clock, workspace numbers) has no size
-# of its own: it is the shell's body text, [font] base-size.
+# install refuses one. The bar's text follows the shell's [font] base-size.
 #
 # The workspace widget (a plugin omarchy-plugins installs) takes the stock
 # omarchy.workspaces' place: moved right after it while it is on the bar,
 # then the stock one is disabled. The widget's settings, when
 # omarchy-bar/settings/<id>.json lists them, are set with `omarchy bar set`
 # into its shell.json entry (keys the file doesn't list are left as they
-# are); the check compares every listed key.
+# are); the check compares every listed key. Once the widget has an enabled
+# omarchy-bar-icons clone (clonedFrom), the clone stands for it.
 # usage: omarchy-bar.sh [check] <top|bottom|left|right> <size> [workspace-widget-id]
 set -eu
 
@@ -72,19 +72,24 @@ enabled() {
   omarchy plugin list --json | jq -e --arg id "$1" 'any(.[]; .id == $id and .enabled)' >/dev/null
 }
 
+# The widget's enabled clone, else the widget.
+shown() {
+  omarchy plugin list --json | jq -r --arg id "$WIDGET" '[.[] | select(.enabled and .clonedFrom == $id) | .id][0] // $id'
+}
+
 on_bar() {
   [ -f "$JSON" ] && jq -e --arg id "$1" '[.bar.layout[]?[]?.id] | index($id) != null' "$JSON" >/dev/null
 }
 
 # No widget named, or it's on the bar and the stock one is off.
 replaced() {
-  [ -z "$WIDGET" ] || { enabled "$WIDGET" && on_bar "$WIDGET" && ! enabled "$STOCK"; }
+  [ -z "$WIDGET" ] || { w=$(shown); enabled "$w" && on_bar "$w" && ! enabled "$STOCK"; }
 }
 
 # Every key the widget's settings file lists has that value in its bar entry.
 configured() {
   [ -n "$WIDGET" ] && [ -f "$WIDGET_SETTINGS" ] || return 0
-  jq -e -n --arg id "$WIDGET" --slurpfile want "$WIDGET_SETTINGS" --slurpfile shell "$JSON" '
+  jq -e -n --arg id "$(shown)" --slurpfile want "$WIDGET_SETTINGS" --slurpfile shell "$JSON" '
     ([$shell[0].bar.layout[]?[]? | select(.id == $id)][0] // {}) as $entry
     | $want[0] | to_entries | all(.value == $entry[.key])' >/dev/null
 }
@@ -107,13 +112,13 @@ install)
     block > "$TOML"
   fi
   if [ -n "$WIDGET" ] && ! replaced; then
-    enabled "$WIDGET" || { echo "$WIDGET isn't installed and enabled: add it to omarchy-plugins" >&2; exit 1; }
-    if on_bar "$STOCK"; then omarchy bar move "$WIDGET" --after "$STOCK"; fi
+    enabled "$(shown)" || { echo "$WIDGET isn't installed and enabled: add it to omarchy-plugins" >&2; exit 1; }
+    if on_bar "$STOCK"; then omarchy bar move "$(shown)" --after "$STOCK"; fi
     if enabled "$STOCK"; then omarchy plugin disable "$STOCK"; fi
   fi
   if ! configured; then
     for key in $(jq -r 'keys[]' "$WIDGET_SETTINGS"); do
-      omarchy bar set "$WIDGET" "$key" "$(jq -c --arg k "$key" '.[$k]' "$WIDGET_SETTINGS")" --json >/dev/null
+      omarchy bar set "$(shown)" "$key" "$(jq -c --arg k "$key" '.[$k]' "$WIDGET_SETTINGS")" --json >/dev/null
     done
   fi
   positioned && sized && replaced && configured ||

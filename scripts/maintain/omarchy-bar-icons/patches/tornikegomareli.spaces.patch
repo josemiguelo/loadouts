@@ -1,0 +1,12 @@
+diff -ru a/Spaces.qml b/Spaces.qml
+--- a/Spaces.qml	2026-10-01 21:38:56.000000000 -0500
++++ b/Spaces.qml	2026-10-02 12:35:03.649301073 -0500
+@@ -805,7 +805,7 @@
+             color: pill.textColor
+             opacity: pill.occupied || pill.active ? 1 : 0.5
+             font.family: root.fontFamily
+-            font.pixelSize: Style.font.body
++            font.pixelSize: Style.font.heading
+             font.bold: pill.active
+             Behavior on color { enabled: root.fastDur > 0; ColorAnimation { duration: root.fastDur } }
+             Behavior on opacity { enabled: root.fastDur > 0; NumberAnimation { duration: root.fastDur } }

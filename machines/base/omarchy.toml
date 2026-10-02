@@ -83,7 +83,8 @@ scripts = [
      io.github.zeus-deus.voxtype
      pomodoro-omarchy
      crmne.mpris
-     omarchy.clock''',
+     omarchy.clock
+     tornikegomareli.spaces''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets
