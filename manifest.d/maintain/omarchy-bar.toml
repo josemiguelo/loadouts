@@ -1,0 +1,9 @@
+# The Omarchy bar's position and thickness, and optionally a widget that
+# replaces the stock workspace numbers, named by the opt-in
+# ("omarchy-bar bottom 30 <widget-id>": at the bottom, 30 at font base-size
+# 12). The widget comes from omarchy-plugins, hence after it.
+[scripts.omarchy-bar]
+description = "Omarchy bar position, thickness and workspace widget"
+file = "scripts/maintain/omarchy-bar.sh"
+check = "file:scripts/maintain/omarchy-bar.sh check $@"
+after = ["scripts.omarchy-plugins"]

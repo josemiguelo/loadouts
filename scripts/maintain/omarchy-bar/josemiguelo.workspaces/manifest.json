@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "josemiguelo.workspaces",
+  "name": "Workspaces",
+  "version": "1.0.0",
+  "author": "josemiguelo",
+  "license": "MIT",
+  "description": "Workspace number indicators; the focused workspace is its number in a filled circle",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Workspaces.qml"
+  },
+  "barWidget": {
+    "displayName": "Workspaces (circled)",
+    "description": "Workspace number indicators; the focused workspace is its number in a filled circle",
+    "category": "Compositor",
+    "allowMultiple": false
+  },
+  "omarchy": {
+    "clonedFrom": "omarchy.workspaces"
+  }
+}
