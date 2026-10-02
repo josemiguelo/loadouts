@@ -1,0 +1,11 @@
+diff -ru a/BarWidget.qml b/BarWidget.qml
+--- a/BarWidget.qml	2026-10-01 22:27:28.000000000 -0500
++++ b/BarWidget.qml	2026-10-02 11:51:06.022705503 -0500
+@@ -38,6 +38,7 @@
+         anchors.fill: parent
+         bar: root.bar
+         text: Model.barGlyph(root.daemonState)
++        iconComponent: BarSvgIcon { host: button }
+         active: Model.barActive(root.daemonState)
+         activeColor: root.daemonState === "recording" ? Color.accent : (root.bar ? root.bar.urgent : Color.urgent)
+         tooltipText: panelLoader.item ? panelLoader.item.tooltip : "Voxtype"

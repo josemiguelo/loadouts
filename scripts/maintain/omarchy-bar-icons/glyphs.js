@@ -51,6 +51,7 @@ var icons = {
   "F028": "volume-high",
   "F02CB": "headphones",
   "F036C": "microphone",
+  "F036D": "microphone-off",
   "F0379": "monitor",
   "F037A": "monitor-multiple",
   "F050E": "weather-night",
@@ -66,6 +67,7 @@ var icons = {
   "F0928": "wifi-strength-4",
   "F092E": "wifi-strength-off-outline",
   "F092F": "wifi-strength-outline",
+  "F0989": "monitor-cellphone",
   "F0EC2": "record-circle",
   "F16A3": "robot-excited"
 }

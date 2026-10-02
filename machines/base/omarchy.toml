@@ -79,7 +79,8 @@ scripts = [
      omarchy.indicators
      omarchy.weather
      omarchy.tray
-     jankeesvw.notification-center''',
+     jankeesvw.notification-center
+     io.github.zeus-deus.voxtype''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets
