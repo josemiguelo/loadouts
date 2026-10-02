@@ -1,6 +1,6 @@
 diff -ru a/BarWidget.qml b/BarWidget.qml
 --- a/BarWidget.qml	2026-10-01 22:10:18.000000000 -0500
-+++ b/BarWidget.qml	2026-10-02 11:57:31.802427607 -0500
++++ b/BarWidget.qml	2026-10-02 14:09:14.962327613 -0500
 @@ -450,10 +450,8 @@
        spacing: Style.space(6)
  
@@ -13,6 +13,15 @@ diff -ru a/BarWidget.qml b/BarWidget.qml
 +        hostText: root.currentIcon
          color: root.isSessionActive ? root.currentPhaseColor : root.barForeground
          opacity: (root.phase === "idle" || root.paused) ? 0.75 : 1.0
+         anchors.verticalCenter: parent.verticalCenter
+@@ -465,7 +463,7 @@
+         textFormat: Text.PlainText
+         text: root.formattedTime
+         font.family: Style.font.family
+-        font.pixelSize: Style.font.body
++        font.pixelSize: Style.font.heading
+         color: root.isSessionActive ? root.barForeground : Qt.darker(root.barForeground, 1.3)
+         opacity: root.paused ? 0.6 : 1.0
          anchors.verticalCenter: parent.verticalCenter
 @@ -479,10 +477,8 @@
        anchors.centerIn: parent
