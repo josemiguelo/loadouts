@@ -4,8 +4,9 @@ import qs.Commons
 import qs.Ui
 
 // The tiling layout of the focused workspace, as Hyprland reports it in the
-// workspace's tiledLayout, shown as a Nerd Font glyph (the name is in the
-// tooltip). A click runs Omarchy's own toggle, the one on SUPER + L.
+// workspace's tiledLayout, shown as an icon drawn by BarSvgIcon in the bar's
+// foreground colour (the name is in the tooltip). A click runs Omarchy's own
+// toggle, the one on SUPER + L.
 BarWidget {
   id: root
   moduleName: "josemiguelo.workspace-layout"
@@ -16,15 +17,15 @@ BarWidget {
     return ipc && ipc.tiledLayout ? String(ipc.tiledLayout) : ""
   }
 
-  // Material Design glyphs: carousel, dashboard, quilt, fullscreen; any other
-  // layout gets a generic window glyph.
-  readonly property var glyphs: ({
-    scrolling: "\u{F056C}",
-    dwindle: "\u{F056E}",
-    master: "\u{F0574}",
-    monocle: "\u{F0293}"
+  // Material Design Icons (Apache-2.0) in icons/: carousel, dashboard,
+  // quilt, fullscreen; any other layout gets a window.
+  readonly property var icons: ({
+    scrolling: "view-carousel",
+    dwindle: "view-dashboard",
+    master: "view-quilt",
+    monocle: "fullscreen"
   })
-  readonly property string glyph: layout === "" ? "" : (glyphs[layout] || "\u{F10AC}")
+  readonly property string icon: layout === "" ? "" : "icons/" + (icons[layout] || "application-outline") + ".svg"
 
   // A workspace rule changing the layout raises no Hyprland event, so the
   // workspaces are re-read on a short interval; that is a request on
@@ -59,13 +60,21 @@ BarWidget {
     id: button
     anchors.fill: parent
     bar: root.bar
-    text: root.glyph
-    horizontalMargin: 6
+    hasVisualContent: root.icon !== ""
+    labelVisible: false
+    fixedWidth: root.vertical ? -1 : root.barSize
+    fixedHeight: root.vertical ? root.barSize : -1
     tooltipText: root.workspace ? "Workspace " + root.workspace.name + ": " + root.layout + " (click toggles)" : ""
     onPressed: function() {
       if (!root.bar) return
       root.bar.run("omarchy-hyprland-workspace-layout-toggle")
       afterToggle.restart()
+    }
+
+    BarSvgIcon {
+      anchors.centerIn: parent
+      button: button
+      source: root.icon
     }
   }
 }

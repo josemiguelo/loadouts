@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "josemiguelo.menu-button",
+  "name": "Menu button",
+  "version": "1.0.0",
+  "author": "josemiguelo",
+  "license": "MIT",
+  "description": "The Omarchy logo as an icon filling the bar, opening the menu, followed by Keystroke's bar items",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "MenuButton.qml"
+  },
+  "barWidget": {
+    "displayName": "Menu button",
+    "description": "The Omarchy logo as an icon filling the bar, opening the menu",
+    "category": "System",
+    "allowMultiple": false
+  }
+}

@@ -1,0 +1,14 @@
+diff -ru a/Panel.qml b/Panel.qml
+--- a/Panel.qml	2026-10-02 10:58:15.353116447 -0500
++++ b/Panel.qml	2026-10-02 10:58:19.266937132 -0500
+@@ -470,6 +470,10 @@
+     anchors.fill: parent
+     bar: root.bar
+     text: Quickshell.screens.length > 1 ? "󰍺" : "󰍹"
++    iconComponent: BarSvgIcon {
++      button: button
++      source: Quickshell.screens.length > 1 ? "icons/monitor-multiple.svg" : "icons/monitor.svg"
++    }
+     onPressed: function(b) { root.toggle() }
+     onWheelMoved: function(delta) {
+       if (!root.brightnessAvailable) return

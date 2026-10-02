@@ -60,13 +60,21 @@ scripts = [
      https://github.com/binoymanoj/pomodoro-omarchy.git
      https://github.com/Zeus-Deus/voxtype-omarchy-plugin.git
      https://github.com/crmne/omarchy-mpris.git''',
-  # the focused workspace's tiling layout as a glyph on the bar, between
-  # Keystroke's logo and the workspaces (placed by omarchy-bar-widgets)
+  # the Omarchy logo as an icon filling the bar, in the place of Keystroke's
+  # bar button (placed by omarchy-bar-widgets)
+  "omarchy-menu-button",
+  # the focused workspace's tiling layout as an icon on the bar, between the
+  # logo and the workspaces (placed by omarchy-bar-widgets)
   "omarchy-workspace-layout",
+  # built-in bar widgets drawing SVG icons instead of glyphs, rebuilt from
+  # Omarchy's source with omarchy-bar-icons/patches/<id>.patch
+  '''omarchy-bar-icons
+     omarchy.monitor''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets
-     josemiguelo.workspace-layout left after evindor.keystroke
+     josemiguelo.workspace-layout left before tornikegomareli.spaces
+     josemiguelo.menu-button left before josemiguelo.workspace-layout
      crmne.mpris left after tornikegomareli.spaces''',
   # Keystroke's Windows extension, from a checkout until it ships upstream
   "omarchy-keystroke-windows",
