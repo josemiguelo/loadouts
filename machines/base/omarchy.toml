@@ -49,13 +49,17 @@ scripts = [
   "keychron-launcher-access",
   # shell plugins, by git URL: Keystroke replaces the Omarchy menu; the
   # notification center keeps past notifications behind a bell in the bar;
-  # Spaces shows each workspace's apps (placed by omarchy-bar)
+  # Spaces shows each workspace's apps (placed by omarchy-bar); a Pomodoro
+  # timer (configured by omarchy-pomodoro)
   '''omarchy-plugins
      https://github.com/evindor/keystroke.git
      https://github.com/jankeesvw/omarchy-notification-center.git
-     https://github.com/tornikegomareli/omarchy-spaces.git''',
+     https://github.com/tornikegomareli/omarchy-spaces.git
+     https://github.com/binoymanoj/pomodoro-omarchy.git''',
   # Keystroke's Windows extension, from a checkout until it ships upstream
   "omarchy-keystroke-windows",
+  # the Pomodoro timer by the clock, 50+10, and its Trigger menu entries
+  "omarchy-pomodoro",
 ]
 
 [pm]

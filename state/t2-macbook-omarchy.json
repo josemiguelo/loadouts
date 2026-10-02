@@ -5,7 +5,7 @@
   "distro": "omarchy",
   "arch": "x86_64",
   "toolVersion": "0.19.0",
-  "updatedAt": "2026-10-02T00:11:34.918309303Z",
+  "updatedAt": "2026-10-02T03:13:04.441107177Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -490,6 +490,11 @@
       "exitCode": 0
     },
     "omarchy-keystroke-windows": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
+    },
+    "omarchy-pomodoro": {
       "status": "done",
       "lastRun": null,
       "exitCode": null

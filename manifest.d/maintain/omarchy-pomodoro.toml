@@ -1,0 +1,8 @@
+# The Pomodoro timer plugin (from omarchy-plugins, hence after it): next to
+# the bar's clock, its settings from scripts/maintain/omarchy-pomodoro/, and a
+# Pomodoro submenu under Trigger in the Omarchy menu.
+[scripts.omarchy-pomodoro]
+description = "Pomodoro timer: by the clock, 50+10, Trigger menu entries"
+file = "scripts/maintain/omarchy-pomodoro.sh"
+check = "file:scripts/maintain/omarchy-pomodoro.sh check"
+after = ["scripts.omarchy-plugins"]

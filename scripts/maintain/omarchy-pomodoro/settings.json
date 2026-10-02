@@ -1,0 +1,8 @@
+{
+  "showWhenIdle": true,
+  "defaultWork": 50,
+  "defaultBreak": 10,
+  "autoStartBreak": true,
+  "autoStartWork": false,
+  "soundAlert": true
+}
