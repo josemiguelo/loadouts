@@ -77,7 +77,8 @@ scripts = [
      omarchy.agents
      omarchy.system-update
      omarchy.indicators
-     omarchy.weather''',
+     omarchy.weather
+     omarchy.tray''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets

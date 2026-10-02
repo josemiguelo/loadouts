@@ -1,0 +1,19 @@
+diff -ru a/Tray.qml b/Tray.qml
+--- a/Tray.qml	2026-10-02 11:38:17.181242563 -0500
++++ b/Tray.qml	2026-10-02 11:38:29.717886407 -0500
+@@ -270,6 +270,7 @@
+           height: implicitHeight
+           x: root.drawerExtent - root.revealExtent
+           text: "\uf053"
++          iconComponent: BarSvgIcon { host: expandIcon; share: 1.0 }
+           onPressed: function(button) {
+             if (button === Qt.RightButton) root.managePopupOpen = !root.managePopupOpen
+           }
+@@ -352,6 +353,7 @@
+           height: implicitHeight
+           y: root.drawerExtent - root.revealExtent
+           text: "\uf053"
++          iconComponent: BarSvgIcon { host: expandIcon; share: 1.0 }
+           textRotation: 90
+           onPressed: function(button) {
+             if (button === Qt.RightButton) root.managePopupOpen = !root.managePopupOpen

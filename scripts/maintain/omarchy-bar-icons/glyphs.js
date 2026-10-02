@@ -54,6 +54,7 @@ var icons = {
   "F037A": "monitor-multiple",
   "F050E": "weather-night",
   "F051F": "timer-sand",
+  "F053": "chevron-left",
   "F088C": "reminder",
   "F089C": "battery-charging-10",
   "F089D": "battery-charging-50",
