@@ -51,7 +51,7 @@ BarWidget {
 
       BarSvgIcon {
         anchors.centerIn: parent
-        button: button
+        host: button
         source: "icons/omarchy.svg"
       }
     }

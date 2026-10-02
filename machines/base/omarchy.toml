@@ -69,7 +69,8 @@ scripts = [
   # built-in bar widgets drawing SVG icons instead of glyphs, rebuilt from
   # Omarchy's source with omarchy-bar-icons/patches/<id>.patch
   '''omarchy-bar-icons
-     omarchy.monitor''',
+     omarchy.monitor
+     omarchy.bluetooth''',
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets

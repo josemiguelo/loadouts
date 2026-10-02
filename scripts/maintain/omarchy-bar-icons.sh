@@ -142,7 +142,7 @@ done
 
 if [ "$MODE" = install ] && [ "$changed" = yes ]; then
   # A loaded plugin keeps its old QML until the shell restarts.
-  omarchy restart shell >/dev/null 2>&1 || echo "restart the Omarchy shell to load the new icons (omarchy restart shell)" >&2
+  restart_shell_settled "bar icons"
 fi
 
 for widget in "$@"; do

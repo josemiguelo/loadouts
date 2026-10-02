@@ -78,7 +78,7 @@ install)
   # A loaded plugin keeps its old QML, even across disable/enable, until the
   # shell restarts.
   if [ "$changed" = yes ]; then
-    omarchy restart shell >/dev/null 2>&1 || echo "restart the Omarchy shell to load the new $PLUGIN_ID (omarchy restart shell)" >&2
+    restart_shell_settled "$PLUGIN_ID"
   fi
   # A restarted shell answers `omarchy plugin list` a moment later.
   tries=0

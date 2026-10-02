@@ -73,7 +73,7 @@ BarWidget {
 
     BarSvgIcon {
       anchors.centerIn: parent
-      button: button
+      host: button
       source: root.icon
     }
   }

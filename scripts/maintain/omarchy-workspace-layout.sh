@@ -47,7 +47,7 @@ install)
   plugin_enabled || omarchy plugin enable "$PLUGIN_ID" >/dev/null ||
     { echo "couldn't enable the $PLUGIN_ID shell plugin (is omarchy-shell running?)" >&2; exit 1; }
   if [ "$changed" = yes ]; then
-    omarchy restart shell >/dev/null 2>&1 || echo "restart the Omarchy shell to load the new $PLUGIN_ID (omarchy restart shell)" >&2
+    restart_shell_settled "$PLUGIN_ID"
   fi
   # A restarted shell answers `omarchy plugin list` a moment later.
   tries=0
