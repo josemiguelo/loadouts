@@ -1,0 +1,11 @@
+diff -ru a/SystemUpdate.qml b/SystemUpdate.qml
+--- a/SystemUpdate.qml	2026-10-02 11:23:03.557842048 -0500
++++ b/SystemUpdate.qml	2026-10-02 11:23:11.966812665 -0500
+@@ -59,6 +59,7 @@
+     text: "\uf021"
+     slotSize: Style.bar.statusSlot
+     fontSize: Style.font.caption
++    iconComponent: BarSvgIcon { host: button; share: 0.55 }
+     tooltipText: "Pending Omarchy Updates"
+     onPressed: root.runUpdate()
+   }

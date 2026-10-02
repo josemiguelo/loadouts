@@ -1,0 +1,11 @@
+diff -ru a/Panel.qml b/Panel.qml
+--- a/Panel.qml	2026-10-02 11:23:03.489852903 -0500
++++ b/Panel.qml	2026-10-02 11:23:11.966750710 -0500
+@@ -340,6 +340,7 @@
+     anchors.fill: parent
+     bar: root.bar
+     text: "󱚣"
++    iconComponent: BarSvgIcon { host: button }
+     active: root.alarming
+     onPressed: function(buttonCode) {
+       if (buttonCode === Qt.RightButton) root.launchAgent()
