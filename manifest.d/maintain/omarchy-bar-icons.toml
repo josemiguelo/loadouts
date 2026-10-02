@@ -1,9 +1,10 @@
 # Bar widgets with SVG icons instead of glyphs, named in the opt-in
-# ("omarchy-bar-icons omarchy.monitor …"): each rebuilt from its source
-# (Omarchy's, or a third-party plugin's checkout from omarchy-plugins, hence
-# after it) with omarchy-bar-icons/patches/<id>.patch, in the original's place
-# on the bar. An Omarchy or plugin update that changes a widget makes it not
-# done until the next run rebuilds it.
+# ("omarchy-bar-icons omarchy.monitor …"), by
+# github.com/josemiguelo/omarchy-bar-icons: its own widgets, and the others
+# rebuilt from their source (Omarchy's, or a third-party plugin's checkout from
+# omarchy-plugins, hence after it) with its patches, in the original's place
+# on the bar. An Omarchy, plugin or repo update that changes a widget makes it
+# not done until the next run rebuilds it.
 [scripts.omarchy-bar-icons]
 description = "Bar widgets with SVG icons, rebuilt from their source"
 file = "scripts/maintain/omarchy-bar-icons.sh"

@@ -1,7 +1,7 @@
 #!/bin/sh
-# Where installed bar widgets (omarchy-plugins, omarchy-workspace-layout,
-# omarchy-menu-button) sit, from the machine's multi-line opt-in, one widget
-# per line: "<id> <section> <before|after> <neighbour-id>"
+# Where installed bar widgets (omarchy-plugins, omarchy-bar-icons) sit, from
+# the machine's multi-line opt-in, one widget per line:
+# "<id> <section> <before|after> <neighbour-id>"
 # ("crmne.mpris left after tornikegomareli.spaces"). Placement is Omarchy's
 # own bar layout (~/.config/omarchy/shell.json), changed with `omarchy bar
 # move`. A widget with omarchy-bar/settings/<id>.json gets those settings set

@@ -1,8 +1,8 @@
-# The Omarchy logo as a real icon filling the bar, in the place of Keystroke's
-# own bar button (scripts/maintain/omarchy-menu-button/plugin); Keystroke comes
-# from omarchy-plugins, hence after it. Placed by omarchy-bar-widgets.
+# The menu button (josemiguelo.menu-button, from omarchy-bar-icons) in the
+# place of Keystroke's own bar button, with Keystroke (from omarchy-plugins)
+# kept as the menu; hence after both.
 [scripts.omarchy-menu-button]
-description = "Bar widget: the Omarchy logo as an icon, opening the menu"
+description = "The menu button in the place of Keystroke's bar button"
 file = "scripts/maintain/omarchy-menu-button.sh"
 check = "file:scripts/maintain/omarchy-menu-button.sh check"
-after = ["scripts.omarchy-plugins"]
+after = ["scripts.omarchy-plugins", "scripts.omarchy-bar-icons"]

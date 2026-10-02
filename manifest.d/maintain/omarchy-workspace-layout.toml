@@ -1,7 +1,0 @@
-# A bar widget showing the focused workspace's tiling layout, click toggles it
-# (scripts/maintain/omarchy-workspace-layout/plugin); placed by
-# omarchy-bar-widgets.
-[scripts.omarchy-workspace-layout]
-description = "Bar widget: the focused workspace's tiling layout"
-file = "scripts/maintain/omarchy-workspace-layout.sh"
-check = "file:scripts/maintain/omarchy-workspace-layout.sh check"

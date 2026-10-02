@@ -60,15 +60,13 @@ scripts = [
      https://github.com/binoymanoj/pomodoro-omarchy.git
      https://github.com/Zeus-Deus/voxtype-omarchy-plugin.git
      https://github.com/crmne/omarchy-mpris.git''',
-  # the Omarchy logo as an icon filling the bar, in the place of Keystroke's
-  # bar button (placed by omarchy-bar-widgets)
-  "omarchy-menu-button",
-  # the focused workspace's tiling layout as an icon on the bar, between the
-  # logo and the workspaces (placed by omarchy-bar-widgets)
-  "omarchy-workspace-layout",
-  # built-in bar widgets drawing SVG icons instead of glyphs, rebuilt from
-  # Omarchy's source with omarchy-bar-icons/patches/<id>.patch
+  # bar widgets drawing SVG icons instead of glyphs (github.com/josemiguelo/
+  # omarchy-bar-icons): its own menu button (the Omarchy logo, opening the
+  # menu) and workspace layout icon, and the rest rebuilt from their source
+  # with its patches (placed by omarchy-bar-widgets)
   '''omarchy-bar-icons
+     josemiguelo.menu-button
+     josemiguelo.workspace-layout
      omarchy.monitor
      omarchy.bluetooth
      omarchy.network
@@ -85,6 +83,8 @@ scripts = [
      crmne.mpris
      omarchy.clock
      tornikegomareli.spaces''',
+  # the menu button in the place of Keystroke's bar button
+  "omarchy-menu-button",
   # where installed bar widgets sit, one per line:
   # <id> <section> <before|after> <neighbour>
   '''omarchy-bar-widgets
