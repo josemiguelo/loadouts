@@ -10,12 +10,13 @@ import "glyphs.js" as Glyphs
 // its foreground otherwise, so it follows the theme and the transparent bar's
 // text colour like the glyph did. Tinting is MultiEffect colorization, as the
 // tray does for symbolic icons; colour changes animate like the glyph's.
-// `host` is the WidgetButton/BarIconButton the icon stands in for. Its text's
-// last character is the glyph and anything before it a label ("86% 󰂁"), drawn
-// as text ahead of the icon in the host's font. The SVG is `source` when set,
-// else the one glyphs.js maps the glyph to; with no mapping the host's text is
-// drawn as the host would draw it. `share` is the icon's share of the bar's
-// thickness.
+// `host` is the WidgetButton/BarIconButton the icon stands in for. Its text
+// (`hostText`, which a widget drawing its glyph some other way sets itself,
+// with `color`) ends in the glyph; anything before it is a label ("86% 󰂁"),
+// drawn as text ahead of the icon in the host's font. The SVG is `source` when
+// set, else the one glyphs.js maps the glyph to; with no mapping the host's
+// text is drawn as the host would draw it. `share` is the icon's share of the
+// bar's thickness.
 Item {
   id: root
 
@@ -24,7 +25,9 @@ Item {
   property real share: 0.7
   property color color: host ? (host.active && host.useActiveColor ? host.activeColor : host.foreground) : Color.bar.text
 
-  readonly property string text: host ? String(host.text || "").replace(/\s+$/, "") : ""
+  property string hostText: host ? String(host.text || "") : ""
+
+  readonly property string text: hostText.replace(/\s+$/, "")
   // The last character, a surrogate pair for the Nerd Font md glyphs.
   readonly property int glyphLength: {
     var last = text.length > 1 ? text.charCodeAt(text.length - 1) : 0
