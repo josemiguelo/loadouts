@@ -1,16 +1,20 @@
 #!/bin/sh
 # Bar widgets drawing SVG icons instead of Nerd Font glyphs, from the
-# machine's opt-in, one built-in widget id per word ("omarchy.monitor").
-# Each is rebuilt from Omarchy's current copy, the way `omarchy plugin clone`
-# copies it, as josemiguelo.<name> with clonedFrom set (so its IPC routes stay
-# the built-in's), then omarchy-bar-icons/patches/<id>.patch is applied and
-# the shared bar-icon files are added (omarchy-bar-icons-lib.sh). Enabling the
-# clone puts it in the built-in's place on the bar, settings included.
-# The check rebuilds every clone in a temporary folder and compares it with the
-# installed one, so an Omarchy update that changes a widget's source shows up
-# as not done; install then rebuilds it from the new source. When a patch no
-# longer applies, install fails and disables that clone, which puts the
-# built-in back on the bar.
+# machine's opt-in, one widget's plugin id per word ("omarchy.monitor",
+# "jankeesvw.notification-center"). Each is rebuilt from its source: a
+# built-in from Omarchy's current copy, the way `omarchy plugin clone` copies
+# it; a third-party plugin from the tracked files of its git checkout in
+# ~/.config/omarchy/plugins/<id>, which stays untouched for `omarchy plugin
+# update`. The clone is josemiguelo.<last part of the id> with clonedFrom set,
+# so the shell routes the original's ids (IPC, services) to it; then
+# omarchy-bar-icons/patches/<id>.patch is applied and the shared bar-icon
+# files are added (omarchy-bar-icons-lib.sh). Enabling the clone puts it in
+# the original's place on the bar, settings included, and disables the
+# original. The check rebuilds every clone in a temporary folder and compares
+# it with the installed one, so an Omarchy or plugin update that changes a
+# widget's source shows up as not done; install then rebuilds it from the new
+# source. When a patch no longer applies, install fails and disables that
+# clone, which puts the original back on the bar.
 # usage: omarchy-bar-icons.sh [check] <widget-id>...
 #        omarchy-bar-icons.sh pristine <widget-id> <dir>  (the unpatched clone,
 #        to write a patch against)
@@ -23,26 +27,35 @@ PLUGINS=$HOME/.config/omarchy/plugins
 TMP=${TMPDIR:-/tmp}
 
 clone_id() {
-  echo "josemiguelo.${1#omarchy.}"
+  echo "josemiguelo.${1##*.}"
 }
 
 enabled() {
   omarchy plugin list --json 2>/dev/null | jq -e --arg id "$1" 'any(.[]; .id == $id and .enabled)' >/dev/null
 }
 
-# copy_source <widget-id> <dir>: the built-in's files and manifest into <dir>,
-# as omarchy-plugin-clone copies them: the whole folder for a plugin with its
-# own manifest.json, else the manifest, its entry points and clonePaths.
+# copy_source <widget-id> <dir>: the plugin's files and manifest into <dir>.
+# A built-in is copied as omarchy-plugin-clone copies it: the whole folder for
+# a plugin with its own manifest.json, else the manifest, its entry points and
+# clonePaths. A third-party plugin is the files its git checkout tracks.
 copy_source() {
+  manifest=""
   info=$(omarchy-plugin-catalog | jq -r --arg id "$1" \
     '.[] | select(.firstParty and .id == $id) | [.sourceDir, .manifestPath, (.name // .id)] | @tsv')
-  [ -n "$info" ] || { echo "$1: no built-in Omarchy plugin by that id" >&2; return 1; }
-  src=$(printf '%s\n' "$info" | cut -f1)
-  manifest=$(printf '%s\n' "$info" | cut -f2)
-  name=$(printf '%s\n' "$info" | cut -f3)
-  if [ "${manifest##*/}" = manifest.json ]; then
-    cp -RL "$src/." "$2/"
+  if [ -z "$info" ]; then
+    src=$PLUGINS/$1
+    [ -f "$src/manifest.json" ] && [ -d "$src/.git" ] ||
+      { echo "$1: neither a built-in Omarchy plugin nor a git checkout in $src" >&2; return 1; }
+    git -C "$src" ls-files -z | (cd "$src" && xargs -0 tar -cf -) | (cd "$2" && tar -xf -)
+    name=$(jq -r '.name // .id' "$src/manifest.json")
   else
+    src=$(printf '%s\n' "$info" | cut -f1)
+    manifest=$(printf '%s\n' "$info" | cut -f2)
+    name=$(printf '%s\n' "$info" | cut -f3)
+  fi
+  if [ -n "$manifest" ] && [ "${manifest##*/}" = manifest.json ]; then
+    cp -RL "$src/." "$2/"
+  elif [ -n "$manifest" ]; then
     cp -L "$manifest" "$2/manifest.json"
     jq -r '[(.entryPoints[] | {source: ., target: .}), (.omarchy.clonePaths[]? | {source, target})]
       | unique_by(.target)[] | [.source, .target] | @tsv' "$manifest" |

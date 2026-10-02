@@ -38,6 +38,7 @@ var icons = {
   "F0089": "battery-charging-60",
   "F008A": "battery-charging-80",
   "F008B": "battery-charging-90",
+  "F009A": "bell",
   "F009B": "bell-off",
   "F00AF": "bluetooth",
   "F00B1": "bluetooth-connect",
