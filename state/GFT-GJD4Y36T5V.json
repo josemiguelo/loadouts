@@ -4,8 +4,8 @@
   "os": "macos",
   "distro": null,
   "arch": "arm64",
-  "toolVersion": "0.18.0",
-  "updatedAt": "2026-10-01T16:14:54.958587Z",
+  "toolVersion": "0.19.0",
+  "updatedAt": "2026-10-03T00:59:57.787184Z",
   "programs": {
     "setup-brew": {
       "status": "installed",
@@ -49,7 +49,7 @@
     },
     "claude": {
       "status": "installed",
-      "version": "2.1.286",
+      "version": "2.1.288",
       "reason": null
     },
     "codex": {
@@ -172,6 +172,11 @@
       "version": "2.3.2",
       "reason": null
     },
+    "try": {
+      "status": "installed",
+      "version": "1.10.1",
+      "reason": null
+    },
     "unixodbc": {
       "status": "installed",
       "version": "2.3.14",
@@ -250,7 +255,7 @@
       "exitCode": null
     },
     "dotfiles-pull": {
-      "status": "pending",
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
@@ -260,7 +265,7 @@
       "exitCode": 0
     },
     "dotfiles-apply": {
-      "status": "pending",
+      "status": "done",
       "lastRun": null,
       "exitCode": null
     },
@@ -313,6 +318,11 @@
       "status": "done",
       "lastRun": "2026-08-19T01:40:36.883354Z",
       "exitCode": 0
+    },
+    "skills-repo": {
+      "status": "done",
+      "lastRun": null,
+      "exitCode": null
     }
   }
 }
