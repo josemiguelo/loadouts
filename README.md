@@ -1,5 +1,9 @@
 # loadouts
 
+> **Archived.** This config lives on in
+> [josemiguelo/.dotfiles](https://github.com/josemiguelo/.dotfiles), one repo
+> for loadout 1.0 and chezmoi. This repo is the loadout 0.x shape.
+
 My [loadout](https://github.com/josemiguelo/loadout) config repo: each
 machine's loadout — what it should have installed, how to install it, and
 (in `state/`) what it actually has.
