@@ -33,10 +33,16 @@ clone_repo() {
   git -C "$worktree" branch --quiet --set-upstream-to="origin/$default_branch" "$default_branch" || true
 }
 
-# The one worktree this repo has (its default branch's checkout).
+# The default branch's worktree specifically -- not just whichever one
+# `git worktree list` happens to print first. A feature worktree can
+# exist alongside it (in-progress work, not yet merged back), and
+# symlinks must always converge on the default branch's content, never on
+# whatever feature worktree happens to exist at the time.
 worktree_path() {
+  default_branch=$(git -C "$REPO" symbolic-ref --quiet --short HEAD)
+  [ -n "$default_branch" ] || return 0
   git -C "$REPO" worktree list --porcelain 2>/dev/null |
-    awk '/^worktree /{p=$2} /^branch /{print p; exit}'
+    awk -v want="refs/heads/$default_branch" '/^worktree /{p=$2} $0 == "branch " want {print p; exit}'
 }
 
 # Every top-level skill directory the worktree currently has.

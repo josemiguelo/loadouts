@@ -1,0 +1,3 @@
+[programs.try]
+description = "ephemeral workspace manager"
+via = ["brew"]
